@@ -1,12 +1,13 @@
 
 import './App.css'
+import Footer from './components/_shared/Footer'
 
 function App() {
  
 
   return (
     <>
-     <h1 className="text-6xl">Load Stone</h1>
+    <Footer/>
     </>
   )
 }
