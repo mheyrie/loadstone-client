@@ -1,27 +1,14 @@
-import { navLink } from "../../data/landing";
-import { NavLink } from "react-router-dom";
 export default function Hero() {
-
-  
   return (
-    <section className="relative bg-white">
-      <nav className="bg-linear-to-r from-b-[#A4A3A5] to-[#D6D2D6] rounded-3xl ">
-        <div className="">Logo Here</div>
-        <div className="bg-linear-to-br from-orange-400 via-yellow-500 to-green-900">
-          {navLink.map((link) => (
-            <NavLink
-              key={link.text}
-              to={link.url}
-              className="px-4 py-2 text-white hover:underline"
-            >
-              {link.text}
-            </NavLink>
-          ))} 
+    <section className="relative h-screen w-full grid grid-cols-2 bg-linear-to-br from-blue-400 via-purple-500 to-pink-600 text-center items-center px-20">
+      <div className="text-white">
+        <h1 className="text-5xl font-bold mb-4">Text</h1>
+        <p className="text-xl">Hero content goes here</p>
+      </div>
+      <div className="flex items-center justify-center">
+        <div className="w-full h-96 bg-white/20 rounded-lg flex items-center justify-center">
+          Image
         </div>
-      </nav>
-      <div className="grid grid-cols-2 bg-linear-to-br from-blue-400 via-purple-500 to-pink-600">
-        <div className="">Text</div>
-        <div className="">Image</div>
       </div>
     </section>
   );

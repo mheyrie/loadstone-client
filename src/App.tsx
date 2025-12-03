@@ -1,13 +1,13 @@
 
 import './App.css'
-import Footer from './components/_shared/Footer'
+import Home from "./pages/landing/Home"
 
 function App() {
  
 
   return (
     <>
-    <Footer/>
+   <Home />
     </>
   )
 }

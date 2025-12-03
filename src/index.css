@@ -6,37 +6,34 @@
   font-family: Montserrat, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  max-width: 1280px;
+  text-align: center;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  background-color: brown;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
 }
 
 /* stylelint-disable-next-line */
 @theme {
-  /* --font-montserrat: "", sans-serif; */
-  /* --font-display: "Satoshi", "sans-serif"; */
   --breakpoint-3xl: 120rem;
 
-  --color-white: #FFFFFF;
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
   --color-brand-black: #020008;
-  --color-brand-purple: #602FCC;
-  --color-brand-purple-light: #9668FF;
-  --color-brand-orange: #F1582E;
-  --color-brand-yellow: #EAA942;
-
-
-
+  --color-brand-purple: #602fcc;
+  --color-brand-purple-light: #9668ff;
+  --color-brand-orange: #f1582e;
+  --color-brand-yellow: #eaa942;
 }
-
-
-
 
 /* Button sizes styling */
 .btn-lg {
@@ -57,8 +54,6 @@
   font-size: 12px;
   padding: 0px 5px;
 }
-
-
 
 /* Button sizes styling */
 .btn-lg {
@@ -98,7 +93,6 @@
   border: 1px solid var(--color-brand-purple);
 }
 
-
 /* /* Primary button */
 .primary-btn {
   background: var(--color-brand-purple);
@@ -117,7 +111,6 @@
   border: 1px solid var(--color-brand-purple);
 }
 
-
 body {
   padding: 0;
   margin: 0;
@@ -131,4 +124,3 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
