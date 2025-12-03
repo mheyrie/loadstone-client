@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <section
-      className={`px-4 py-2 fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`px-4 fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-black/20 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
