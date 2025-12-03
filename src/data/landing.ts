@@ -16,7 +16,7 @@ import {
 
 export const navLink=[
     { text: 'Home',
-      url: '/home',
+      url: '/',
     },
     {
       text: 'Products',

@@ -1,15 +1,12 @@
-import Footer from "../../components/_shared/Footer";
-import Navbar from "../../components/_shared/Navbar";
+import LandingLayout from "../../components/_shared/LandingLayout";
 import Hero from "../../components/landingSections/Hero";
 
 export default function Home() {
   return (
-    <>
+    <LandingLayout>
       <title> Home - Loadstone</title>
       <meta name="description" content="Welcome to Loadstone" />
-      <Navbar />
       <Hero />
-      <Footer />
-    </>
+    </LandingLayout>
   );
 }
