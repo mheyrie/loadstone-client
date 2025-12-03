@@ -1,13 +1,10 @@
-
 import './App.css'
-import Footer from './components/_shared/Footer'
+import MainRoutes from "./routes/MainRoutes"
 
 function App() {
- 
-
   return (
     <>
-    <Footer/>
+      <MainRoutes />
     </>
   )
 }
