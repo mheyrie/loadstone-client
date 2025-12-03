@@ -24,6 +24,7 @@
   --breakpoint-3xl: 120rem;
 
   --color-white: #FFFFFF;
+  --color-white: #FFFFFF;
   --color-brand-black: #020008;
   --color-brand-purple: #602FCC;
   --color-brand-purple-light: #9668FF;
@@ -175,4 +176,4 @@ button:focus-visible {
   button {
     background-color: #612fcc;
   }
-}
+} */
