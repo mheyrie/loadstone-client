@@ -1,14 +1,9 @@
-@import "tailwindcss";
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-
-@theme {
-  --font-montserrat: "Montserrat", sans-serif;
-}
-
+@import "tailwindcss";
+@import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -22,8 +17,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@theme{
-  --font-display: "Satoshi", "sans-serif";
+/* stylelint-disable-next-line */
+@theme {
+  /* --font-montserrat: "", sans-serif; */
+  /* --font-display: "Satoshi", "sans-serif"; */
   --breakpoint-3xl: 120rem;
 
   --color-white: #FFFFFF;
@@ -130,7 +127,6 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #612FCC;
+    background-color: #612fcc;
   }
 }
- 
