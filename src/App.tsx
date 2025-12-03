@@ -1,12 +1,13 @@
 
 import './App.css'
+import MainRoutes from "./routes/MainRoutes"
 
 function App() {
  
 
   return (
     <>
-     <h1 className="text-6xl">Load Stone</h1>
+   <MainRoutes />
     </>
   )
 }

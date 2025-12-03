@@ -1,5 +1,9 @@
+import LandingLayout from "../../components/_shared/LandingLayout";
+
 export default function Support() {
   return (
-    <div>Support</div>
-  )
+    <LandingLayout>
+      <section className="h-screen text-3xl flex justify-center items-center">This is Support page</section>
+    </LandingLayout>
+  );
 }
