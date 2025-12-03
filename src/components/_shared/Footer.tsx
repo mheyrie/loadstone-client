@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="max-w lg:max-w-[1250px] mx-auto">
 
           <div className="pt-20 pb-10 mx-auto flex flex-col md:flex-row justify-between gap-8">
-            {/* Left Section: Logo / Address (1/5 width) */}
+            {/* Left Section: Logo */}
             <div className="w-1/5 min-w-[200px]">
               <div className="mb-4 mx-6">
                 <img src={LoadstoneLogo} alt="Loadstone Logo" className="h-10" />
@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Right Section: Links (remaining 4/5) */}
+            {/* Right Section: Links */}
             <div className=" w-4/5 text-start sm:flex flex-wrap justify-between gap-8 md:min-w-[400px]">
               {/* Product */}
               <div >
