@@ -1,5 +1,7 @@
 import BaseDirectories from '../../baseDir/baseDirectories';
 import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { Link } from "react-router-dom";
+
 
 export default function Footer() {
   return (
@@ -74,7 +76,12 @@ export default function Footer() {
               {/* Company */}
               <div >
                 <h3 className="fw-700 mt-10 md:mt-0 font-semibold ">COMPANY</h3>
-                <h4 className=" pt-5">About Us</h4>
+                <h4 className="pt-5">
+                  <Link to="/about-us" className="hover:text-[#9668FF] transition">
+                    About Us
+                  </Link>
+                </h4>
+
                 <h4 className=" pt-5">Careers</h4>
                 <h4 className=" pt-5">Blog</h4>
               </div>
