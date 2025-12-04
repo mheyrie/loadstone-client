@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
-@import "tailwindcss";
+
 
 :root {
   font-family: Montserrat, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -22,6 +24,13 @@
 
   overflow-x: hidden;
 }
+
+.bg-aboutus {
+  background-image: url('/images/landing/AboutUs/gradient_background.png');
+  background-size: cover;
+  background-position: center;
+}
+
 
 /* stylelint-disable-next-line */
 @theme {
