@@ -83,24 +83,6 @@ export const navLink=[
       description: 'Free Transfers and Bills Payment',
       comingSoon: false,
     },
-    // {
-    //   icon: mdiOfficeBuilding,
-    //   text: 'Islamic Facility Financing',
-    //   url: '/islamic_facility_financing',
-    //   ComingSoon: false,
-    // },
-    // {
-    //   icon: mdiCash,
-    //   text: 'Asset Financing',
-    //   url: '/asset_financing',
-    //   ComingSoon: false,
-    // },
-    // {
-    //   icon: mdiClockPlus,
-    //   text: 'A.R.M',
-    //   url: '/a_r_m',
-    //   comingSoon: false,
-    // },
   ];
 
   export const companyLinks = [
