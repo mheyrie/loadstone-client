@@ -1,6 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
 @import "tailwindcss";
 
 
@@ -10,6 +9,10 @@
   font-weight: 400;
   max-width: 1280px;
   text-align: center;
+  
+  --font-montserrat: Montserrat, sans-serif;
+  --font-inter: Inter, system-ui;
+
 
   box-sizing: border-box;
   padding: 0;
@@ -35,7 +38,7 @@
 /* stylelint-disable-next-line */
 @theme {
   --breakpoint-3xl: 120rem;
-
+  
   --color-brand-white: #ffffff;
   --color-brand-black: #020008;
   --color-brand-purple: #602fcc;
