@@ -1,0 +1,5 @@
+/* Landing Page Styles - Import all landing styles here */
+@import './landing/navbar.css';
+/* Add more landing component styles here as you create them */
+/* @import './landing/hero.css'; */
+/* @import './landing/footer.css'; */
