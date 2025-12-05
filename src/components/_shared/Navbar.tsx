@@ -59,7 +59,7 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     isActive
                       ? "font-bold bg-white text-brand-purple block text-start px-4 py-2 rounded-full"
-                      : "block text-start px-4 py-2 text-white hover:text-brand-purple"
+                      : "block text-start px-4 py-2 text-grey-800 font-medium hover:text-brand-purple"
                   }
                 >
                   {link.text}
@@ -77,12 +77,10 @@ export default function Navbar() {
           })}
         </div>
         <div className="flex gap-6">
-          <div className="text-white cursor-pointer hover:rounded-full hover:bg-brand-purple">
-            Login
-          </div>
-          {/* <div className="text-white cursor-pointer hover:rounded-full hover:py-x hover:px-4 hover:bg-brand-purple">
-            Signup
-          </div>{" "} */}
+          <button className="text-grey-800 font-medium cursor-pointer ">
+            Log in
+          </button>
+       
           <Button
             classes="primary-btn btn-sm"
             content="Signup"
