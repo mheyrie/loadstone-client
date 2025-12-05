@@ -5,7 +5,6 @@ export default function AboutUs() {
   return (
 
     <LandingLayout>
-<<<<<<< HEAD
       <section className="font-montserrat w-screen text-xl flex justify-center items-center">
         <div className="w-full bg-white">
 
@@ -313,7 +312,6 @@ export default function AboutUs() {
 
       </div>
     </section>
->>>>>>> 523a4ca (started working on the about section)
     </LandingLayout>
   );
 }
