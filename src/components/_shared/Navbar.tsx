@@ -1,8 +1,9 @@
-import { navLink, productLinks, companyLinks, supportLinks } from "../../data/landing";
+import { navLink, productLinks, supportLinks } from "../../data/landing";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BaseDirectories from "../../baseDir/baseDirectories";
 import Dropdown from "../ui/Dropdown";
+import Button from "../ui/Button";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,12 +20,10 @@ export default function Navbar() {
 
   const getDropdownLinks = (text: string) => {
     switch (text.toLowerCase()) {
-      case 'products':
-        return productLinks.map(link => ({ text: link.text, url: link.url }));
-      case 'company':
-        return companyLinks.map(link => ({ text: link.text, url: link.url }));
-      case 'support':
-        return supportLinks.map(link => ({ text: link.text, url: link.url }));
+      case "products":
+        return productLinks;
+      case "support":
+        return supportLinks;
       default:
         return null;
     }
@@ -36,9 +35,12 @@ export default function Navbar() {
         isScrolled ? "bg-black/20 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <nav className="h-16 grid bg-linear-to-br from-orange-400 via-yellow-500 to-green-900 rounded-full place-items-center lg:flex lg:justify-between lg:px-20">
+      <nav className="h-16 grid bg-linear-to-br from-[#A6A4A7] via-[#A9A7A9] to-[#D8D4D8] rounded-full place-items-center lg:flex lg:justify-between lg:px-20">
         <div className="text-white font-bold">
-          <img src={`${BaseDirectories.LOGOS_DIR}/brand.png`}  alt="Trade Lenda"/>
+          <img
+            src={`${BaseDirectories.LOGOS_DIR}/brand.png`}
+            alt="Trade Lenda"
+          />
         </div>
         <div className="flex gap-2 relative">
           {navLink.map((link) => {
@@ -48,26 +50,44 @@ export default function Navbar() {
             return (
               <div
                 key={link.text}
-                className="relative"
+                className="relative group"
                 onMouseEnter={() => hasDropdown && setActiveDropdown(link.text)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <NavLink
                   to={link.url}
-                  className="px-4 py-2 text-white hover:underline block"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "font-bold bg-white text-brand-purple block text-start px-4 py-2 rounded-full"
+                      : "block text-start px-4 py-2 text-white hover:text-brand-purple"
+                  }
                 >
                   {link.text}
                 </NavLink>
                 {hasDropdown && activeDropdown === link.text && (
-                  <Dropdown heading={link.text} links={dropdownLinks} />
+                  <div
+                    className="absolute top-full left-0 pt-2 w-full"
+                    onMouseEnter={() => setActiveDropdown(link.text)}
+                  >
+                    <Dropdown heading={link.text} links={dropdownLinks} />
+                  </div>
                 )}
               </div>
             );
           })}
         </div>
         <div className="flex gap-6">
-          <div className="text-white cursor-pointer hover:underline">Login</div>
-          <div className="text-white cursor-pointer hover:underline">Signup</div>
+          <div className="text-white cursor-pointer hover:rounded-full hover:bg-brand-purple">
+            Login
+          </div>
+          {/* <div className="text-white cursor-pointer hover:rounded-full hover:py-x hover:px-4 hover:bg-brand-purple">
+            Signup
+          </div>{" "} */}
+          <Button
+            classes="primary-btn btn-sm"
+            content="Signup"
+            onClick={() => {}}
+          />
         </div>
       </nav>
     </section>
