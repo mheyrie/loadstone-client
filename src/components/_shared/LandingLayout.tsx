@@ -11,7 +11,7 @@ export default function LandingLayout({ children }: LandingLayoutProps) {
   return (
     <>
       <Navbar />
-      <main className="bg-[#F5EFF7]">{children}</main>
+      <main className="bg-[#F5EFF7] ">{children}</main>
       <Footer />
     </>
   );
