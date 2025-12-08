@@ -6,11 +6,11 @@ export default function WhatWeDo() {
   return (
     <div>
       <div className="text-center">
-        <h5 className="text-4xl font-bold mb-4">
+        <div className="text-4xl  flex justify-center items-center font-bold mb-4">
           {" "}
           <Icon path={mdiCircleSmall} size={2} />{" "}
           <span className="mx-2">What We Do</span>{" "}
-        </h5>
+        </div>
         <h2 className="">Transforming business for MSMEs</h2>
       </div>
       <div className="">
