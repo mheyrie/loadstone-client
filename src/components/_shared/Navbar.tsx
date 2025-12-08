@@ -1,12 +1,14 @@
-import { navLink, productLinks, companyLinks, supportLinks } from "../../data/landing";
+import { navLink, productLinks, supportLinks } from "../../data/landing";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BaseDirectories from "../../baseDir/baseDirectories";
 import Dropdown from "../ui/Dropdown";
+import Button from "../ui/Button";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,15 +21,17 @@ export default function Navbar() {
 
   const getDropdownLinks = (text: string) => {
     switch (text.toLowerCase()) {
-      case 'products':
-        return productLinks.map(link => ({ text: link.text, url: link.url }));
-      case 'company':
-        return companyLinks.map(link => ({ text: link.text, url: link.url }));
-      case 'support':
-        return supportLinks.map(link => ({ text: link.text, url: link.url }));
+      case "products":
+        return productLinks;
+      case "support":
+        return supportLinks;
       default:
         return null;
     }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -36,11 +40,18 @@ export default function Navbar() {
         isScrolled ? "bg-black/20 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <nav className="h-16 grid bg-linear-to-br from-orange-400 via-yellow-500 to-green-900 rounded-full place-items-center lg:flex lg:justify-between lg:px-20">
-        <div className="text-white font-bold">
-          <img src={`${BaseDirectories.LOGOS_DIR}/brand.png`}  alt="Trade Lenda"/>
+      <nav className="h-16 bg-linear-to-br from-[#A6A4A7] via-[#A9A7A9] to-white rounded-full flex items-center justify-between px-6 lg:px-20">
+        {/* Logo */}
+        <div className="text-white font-bold z-50">
+          <img
+            src={`${BaseDirectories.LOGOS_DIR}/brand.png`}
+            alt="Trade Lenda"
+            className="h-8"
+          />
         </div>
-        <div className="flex gap-2 relative">
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex gap-2 relative">
           {navLink.map((link) => {
             const dropdownLinks = getDropdownLinks(link.text);
             const hasDropdown = dropdownLinks && dropdownLinks.length > 0;
@@ -48,28 +59,142 @@ export default function Navbar() {
             return (
               <div
                 key={link.text}
-                className="relative"
+                className="relative group"
                 onMouseEnter={() => hasDropdown && setActiveDropdown(link.text)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <NavLink
                   to={link.url}
-                  className="px-4 py-2 text-white hover:underline block"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "font-bold bg-white text-brand-purple block text-start px-4 py-2 rounded-full"
+                      : "block text-start px-4 py-2 text-grey-800 font-medium hover:text-brand-purple"
+                  }
                 >
                   {link.text}
                 </NavLink>
                 {hasDropdown && activeDropdown === link.text && (
-                  <Dropdown heading={link.text} links={dropdownLinks} />
+                  <div
+                    className="absolute top-full left-0 pt-2 w-full"
+                    onMouseEnter={() => setActiveDropdown(link.text)}
+                  >
+                    <Dropdown heading={link.text} links={dropdownLinks} />
+                  </div>
                 )}
               </div>
             );
           })}
         </div>
-        <div className="flex gap-6">
-          <div className="text-white cursor-pointer hover:underline">Login</div>
-          <div className="text-white cursor-pointer hover:underline">Signup</div>
+
+        {/* Desktop Auth Buttons */}
+        <div className="hidden lg:flex gap-6">
+          <button className="text-grey-800 font-medium cursor-pointer">
+            Log in
+          </button>
+          <Button
+            classes="primary-btn btn-sm"
+            content="Signup"
+            onClick={() => {}}
+          />
         </div>
+
+        {/* Hamburger Menu Button */}
+        <button
+          className="lg:hidden z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`block h-0.5 w-6 bg-red-800 transition-all duration-300 ease-in-out ${
+              isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`block h-0.5 w-6 bg-red-800 transition-all duration-300 ease-in-out ${
+              isMobileMenuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block h-0.5 w-6 bg-red-800 transition-all duration-300 ease-in-out ${
+              isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      <div
+        className={`lg:hidden fixed top-16 left-0 w-full bg-yellow-400 shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${
+          isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-6 py-4 space-y-4">
+          {navLink.map((link) => {
+            const dropdownLinks = getDropdownLinks(link.text);
+            const hasDropdown = dropdownLinks && dropdownLinks.length > 0;
+
+            return (
+              <div key={link.text}>
+                <div className="flex items-center justify-between">
+                  <NavLink
+                    to={link.url}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold text-brand-purple block py-2"
+                        : "block py-2 text-grey-800 font-medium"
+                    }
+                    onClick={() => !hasDropdown && setIsMobileMenuOpen(false)}
+                  >
+                    {link.text}
+                  </NavLink>
+                  {hasDropdown && (
+                    <button
+                      onClick={() =>
+                        setActiveDropdown(activeDropdown === link.text ? null : link.text)
+                      }
+                      className="p-2"
+                    >
+                      <span
+                        className={`block w-2 h-2 border-r-2 border-b-2 border-grey-800 transition-transform duration-200 ${
+                          activeDropdown === link.text ? "-rotate-135" : "rotate-45"
+                        }`}
+                      ></span>
+                    </button>
+                  )}
+                </div>
+                {hasDropdown && activeDropdown === link.text && (
+                  <div className="pl-4 space-y-2 pb-2">
+                    {dropdownLinks?.map((item, index) => (
+                      <NavLink
+                        key={index}
+                        to={item.url}
+                        className="block py-2 text-sm text-grey-600 hover:text-brand-purple"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <div className="flex items-start gap-2">
+                          <span>{item.text}</span>
+                        </div>
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+
+          {/* Mobile Auth Buttons */}
+          <div className="pt-4 border-t border-gray-200 space-y-3">
+            <button className="w-full text-left py-2 text-grey-800 font-medium">
+              Log in
+            </button>
+            <Button
+              classes="primary-btn btn-sm w-full"
+              content="Signup"
+              onClick={() => {}}
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
