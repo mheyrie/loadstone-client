@@ -14,6 +14,10 @@ export const navLink = [
     url: "/products",
   },
   {
+    text: "Business",
+    url: "/business",
+  },
+  {
     text: "About Us",
     url: "/about-us",
   },
