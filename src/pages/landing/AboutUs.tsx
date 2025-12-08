@@ -4,6 +4,7 @@ import BaseDirectories from '../../baseDir/baseDirectories';
 export default function AboutUs() {
   return (
 
+
     <LandingLayout>
       <section className="font-montserrat w-screen text-xl flex justify-center items-center">
         <div className="w-full bg-white">
@@ -315,3 +316,4 @@ export default function AboutUs() {
     </LandingLayout>
   );
 }
+
