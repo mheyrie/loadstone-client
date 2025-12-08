@@ -31,7 +31,7 @@ export default function Hero() {
           <img
             src={`${BaseDirectories.IMAGES_DIR}/landing/hero.png`}
             alt="Hero"
-            className="max-w-full md:mt-28"
+            className="max-w-full md:mt-26"
           />
         </div>
       </div>

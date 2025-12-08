@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: "var(--font-montserrat)",
-        inter: "var(--font-inter)",
+        montserrat: ['Montserrat', 'sans-serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
