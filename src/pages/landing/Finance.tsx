@@ -1,10 +1,10 @@
 import LandingLayout from "../../components/_shared/LandingLayout";
 
-export default function FAQ() {
+export default function Finance() {
   return (
     <LandingLayout>
       <section className="h-screen text-3xl flex justify-center items-center">
-        This is F A Q page
+        This is Finance page
       </section>
     </LandingLayout>
   );

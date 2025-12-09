@@ -4,6 +4,12 @@ import AboutUs from "../pages/landing/AboutUs";
 import Business from "../pages/landing/Business";
 import Support from "../pages/landing/Support";
 import Products from "../pages/landing/Products";
+import Finance from "../pages/landing/Finance";
+import SavingsInvestment from "../pages/landing/SavingsInvestment";
+import ContactUs from "../components/landingSections/ContactUs";
+import Blog from "../pages/landing/Blog";
+import FAQ from "../components/landingSections/FAQ";
+import TermsandCondition from "../components/landingSections/TermsandCondition";
 
 export default function MainRoutes() {
   return (
@@ -13,6 +19,12 @@ export default function MainRoutes() {
         <Route path="/products" element={<Products/>} />
         <Route path="/business" element={<Business/>} />
         <Route path="/support" element={<Support/>} />
+        <Route path="/finance" element={<Finance/>} />
+        <Route path="/Saving-Investment" element={<SavingsInvestment/>} />
+        <Route path="/contact-us" element={<ContactUs/>} />
+        <Route path="/blog" element={<Blog/>} />
+        <Route path="/faq" element={<FAQ/>} />
+        <Route path="/T&C" element={<TermsandCondition/>} />
     </Routes>
   )
 }

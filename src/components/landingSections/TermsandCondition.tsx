@@ -1,10 +1,10 @@
-import LandingLayout from "../../components/_shared/LandingLayout";
+import LandingLayout from "../_shared/LandingLayout";
 
-export default function FAQ() {
+export default function TermsandCondition() {
   return (
     <LandingLayout>
       <section className="h-screen text-3xl flex justify-center items-center">
-        This is F A Q page
+        This is Terms and Condition page
       </section>
     </LandingLayout>
   );
