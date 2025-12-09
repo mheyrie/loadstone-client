@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 export default function GetLoan() {
   return (
     <section
-      className="h-screen"
+      className="min-h-screen py-12"
       style={{
         backgroundImage: "url('/images/landing/bg2.png')",
         backgroundSize: "center",

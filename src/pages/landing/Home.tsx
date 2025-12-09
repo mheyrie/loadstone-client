@@ -6,19 +6,21 @@ import HowItWorks from "../../components/landingSections/HowItWorks";
 import MarqueeComponent from "../../components/landingSections/MarqueeComponent";
 import Testimonial from "../../components/landingSections/Testimonial";
 import WhatWeDo from "../../components/landingSections/WhatWeDo";
+import Blank from "./Blank";
 
 export default function Home() {
   return (
     <LandingLayout>
-      <title> Home - Loadstone</title>
+      <title> Home - Loadstone Financial</title>
       <meta name="description" content="Welcome to Loadstone" />
       <Hero />
       <MarqueeComponent />
       <WhatWeDo />
-       <GetLoan />
-       <HowItWorks />
-       <Testimonial />
-       <FAQ />
+      <GetLoan />
+      <Blank height="40px" />
+      <HowItWorks />
+      <Testimonial />
+      <FAQ />
     </LandingLayout>
   );
 }

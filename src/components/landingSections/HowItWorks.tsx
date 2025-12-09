@@ -15,9 +15,9 @@ export default function HowItWorks() {
           Access financial solution for your business
         </h2>
       </div>
-      <div className="mx-auto grid md:grid-cols-2 grid-cols-1 mt-12 max-w-6xl bg-brand-white">
+      <div className="mx-auto grid md:grid-cols-2 grid-cols-1 mt-12 max-w-5xl bg-brand-white rounded-l-2xl">
        <LoanCalc />
-        <div className="bg-brand-white flex flex-col justify-center items-center px-6 py-10 gap-6">
+        <div className=" flex flex-col justify-center items-center px-6 py-10 gap-6">
           <div className="flex justify-start items-center gap-2 mb-2">
             <div className="before:content-[''] before:block before:w-2 before:h-32 before:bg-brand-purple before:mx-auto before:my-4" />
             <div className="text-start">
