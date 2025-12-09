@@ -36,6 +36,13 @@
   background-size: cover;
   background-position: center;
 }
+.my-custom-class {
+  border-top-left-radius: 80%;    
+  border-bottom-left-radius: 5px; 
+}
+
+
+
 
 /* stylelint-disable-next-line */
 @theme {
