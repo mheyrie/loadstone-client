@@ -31,7 +31,11 @@
   background-size: cover;
   background-position: center;
 }
-
+.bg-contactus {
+  background-image: url('/images/landing/ContactUs/purplegradientbg.png');
+  background-size: cover;
+  background-position: center;
+}
 
 /* stylelint-disable-next-line */
 @theme {
