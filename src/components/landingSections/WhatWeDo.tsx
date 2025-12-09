@@ -4,8 +4,8 @@ import BaseDirectories from "../../baseDir/baseDirectories";
 
 export default function WhatWeDo() {
   return (
-    <section className="md:mt-10">
-      <div className="mx-auto ">
+    <section className="md:mt-10 mx-auto">
+      
         <div className="text-center">
           <div className="text-xmd text-brand-purple flex justify-center items-center font-bold mb-4">
             {" "}
@@ -16,9 +16,9 @@ export default function WhatWeDo() {
             Transforming business for MSMEs
           </h2>
         </div>
-        <div className="grid md:grid-cols-2 grid-rows-1 px-2 md:mb-52 items-start mx-4 text-center justify-between h-full gap-8  md:mx-20 my-12">
-          <div className="flex flex-col justify-self-start items-start gap-6 md:mt-14">
-            <p className="max-w-lg text-start font-inter font-medium leading-10 text-2xl ">
+        <div className="grid md:grid-cols-2 grid-rows-1 px-2 md:mb-36 items-start mx-4 text-center justify-between h-full gap-8  md:mx-20 my-12">
+          <div className="flex flex-col justify-self-start font-inter items-start gap-6 md:mt-14">
+            <p className="max-w-lg text-start font-medium leading-10 text-2xl ">
               We make access to B2B financing simple and easy. No collaterals or
               long forms.
             </p>{" "}
@@ -26,7 +26,7 @@ export default function WhatWeDo() {
               <div className="before:content-[''] before:block before:w-2 before:h-32 before:bg-brand-purple before:mx-auto before:my-4" />
               <div className="text-start">
                 {" "}
-                <h4 className="text-4xl">Fast-moving consumer goods (FMCG)</h4>
+                <h4 className="text-4xl font-medium mb-4">Fast-moving consumer goods (FMCG)</h4>
                 <p className="">
                   Get access to financial solutions that can help you keep your
                   shelves stocked and respond to market demand quickly.
@@ -42,7 +42,7 @@ export default function WhatWeDo() {
             />
           </div>
         </div>
-      </div>
+   
       
     </section>
   );
