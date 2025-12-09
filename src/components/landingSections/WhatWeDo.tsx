@@ -9,11 +9,11 @@ export default function WhatWeDo() {
         <div className="text-center">
           <div className="text-xmd text-brand-purple flex justify-center items-center font-bold mb-4">
             {" "}
-            <Icon path={mdiCircleSmall} size={1.5} />{" "}
+            <Icon path={mdiCircleSmall} size={2} />{" "}
             <span className=" uppercase">What We Do</span>{" "}
           </div>
-          <h2 className="text-4xl font-bold mb-8">
-            Transforming business for MSMEs
+          <h2 className="text-6xl font-bold mb-8 mx-2">
+            Transforming Business for MSMEs
           </h2>
         </div>
         <div className="grid md:grid-cols-2 grid-rows-1 px-2 md:mb-36 items-start mx-4 text-center justify-between h-full gap-8  md:mx-20 my-12">
