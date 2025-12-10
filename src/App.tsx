@@ -5,7 +5,7 @@ import MainRoutes from "./routes/MainRoutes";
 function App() {
   return (
     <>
-      <Toaster />
+      <Toaster position="bottom-right" reverseOrder={false} />
       <MainRoutes />
     </>
   );

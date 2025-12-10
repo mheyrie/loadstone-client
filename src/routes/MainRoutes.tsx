@@ -4,6 +4,8 @@ import AboutUs from "../pages/landing/AboutUs";
 import Business from "../pages/landing/Business";
 import Support from "../pages/landing/Support";
 import Products from "../pages/landing/Products";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Finance from "../pages/landing/Finance";
 import SavingsInvestment from "../pages/landing/SavingsInvestment";
 import ContactUs from "../components/landingSections/ContactUs";
@@ -12,6 +14,7 @@ import FAQ from "../components/landingSections/FAQ";
 import TermsandCondition from "../components/landingSections/TermsandCondition";
 
 export default function MainRoutes() {
+    AOS.init();
   return (
     <Routes>
         <Route path="/" element={<Home/>}/>

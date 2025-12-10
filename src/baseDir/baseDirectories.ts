@@ -8,7 +8,7 @@ const BaseDirectories = {
   CONTACT_US_DIR: "/images/landing/ContactUs",
 
   // Usage
-  //    <img src={`${BaseDirectories.IMAGES_DIR}/403.png`}  alt="Trade Lenda"/>
+  //    <img src={`${BaseDirectories.IMAGES_DIR}/403.png`}  alt="Loadstone"/>
 };
 
 export default BaseDirectories;
