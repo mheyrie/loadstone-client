@@ -1,12 +1,13 @@
 import { mdiCalculator } from "@mdi/js";
 import Icon from "@mdi/react";
 import Button from "../ui/Button";
+import toast from "react-hot-toast";
 
 export default function LoanCalc() {
   return (
-    <div className="border-[2rem] border-brand-purple-light mx-auto rounded-2xl">
-      {/* <div className="rounded-2xl p-6 shadow-md w-full max-w-md"> */}
-      <h6 className="border-b border-gray-300 flex items-center gap-2 pb-4 mb-6 font-semibold text-xl  mt-2 text-brand-purple">
+    <div className="border-[2rem] border-brand-purple-light mx-auto rounded-2xl py-4 ">
+      {/* <div className="rounded-2xl w-full bg-amber-700"> */}
+      <h6 className="border-b border-gray-300 flex items-center gap-2 pb-4 mb-6 font-semibold text-xl mt-2 text-brand-purple">
         <span className="ml-4">
           <Icon
             path={mdiCalculator}
@@ -114,12 +115,13 @@ export default function LoanCalc() {
           <Button
             type="button"
             content="Calculate Loan"
-            classes="primary-btn btn-md w-full"
+            classes="primary-btn btn-sm w-full "
             // onClick={calculateLoan}
+            onClick={()=>{toast.loading('Coming Soon')}}
           />
         </div>
       </form>
-      {/* </div> */}
-    </div>
+      </div>
+    // </div>
   );
 }
