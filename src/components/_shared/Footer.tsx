@@ -1,7 +1,7 @@
 import BaseDirectories from '../../baseDir/baseDirectories';
 import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { Link } from "react-router-dom";
-
+import Button from '../ui/Button';
 
 export default function Footer() {
   return (
@@ -30,13 +30,16 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Email address"
-                className="bg-white pl-4 pr-3 py-2  lg:w-[393px] rounded border border-gray-300 text-black"
+                className="bg-white pl-4 pr-3 py-2  lg:w-[393px] rounded border border-gray-300 text-black focus:outline-none"
               />
             </div>
+            <Button
+              classes="primary-btn btn-sm !py-5 "
+              content="Subscribe"
+              onClick={() => { }}
+            />
 
-            <button className="text-white px-4 py-2 rounded-full font-semibold">
-              Subscribe
-            </button>
+
           </div>
 
         </div>
@@ -70,7 +73,10 @@ export default function Footer() {
               <div >
                 <h3 className=" font-semibold mt-10 md:mt-0 fw-700">PRODUCT</h3>
                 <h4 className=" pt-5">Loans</h4>
-                <h4 className=" pt-5">Savings & Investment</h4>
+                <h4 className=" pt-5">
+                  <Link to="/Saving-Investment" className="hover:text-[#9668FF] transition">
+                    Savings & Investment
+                  </Link></h4>
                 <h4 className=" pt-5">FMCG</h4>
               </div>
               {/* Company */}
@@ -83,21 +89,35 @@ export default function Footer() {
                 </h4>
 
                 <h4 className=" pt-5">Careers</h4>
-                <h4 className=" pt-5">Blog</h4>
+                <h4 className=" pt-5">
+                  <Link to="/blog" className="hover:text-[#9668FF] transition">
+                    Blog
+                  </Link></h4>
               </div>
 
               {/* Support */}
               <div >
                 <h3 className=" font-semibold mt-10 md:mt-0 fw-700 ">SUPPORT</h3>
-                <h4 className="pt-5">Blog</h4>
-                <h4 className=" pt-5 ">FAQ</h4>
-                <h4 className=" pt-5">Contact Us</h4>
+                <h4 className="pt-5"> <Link to="/blog" className="hover:text-[#9668FF] transition">
+                  Blog
+                </Link></h4>
+                <h4 className=" pt-5 "> <Link to="/faq" className="hover:text-[#9668FF] transition">
+                  FAQ
+                </Link>
+                </h4>
+                <h4 className=" pt-5">
+                  <Link to="/contact-us" className="hover:text-[#9668FF] transition">
+                    Contact Us
+                  </Link>
+                </h4>
               </div>
 
               {/* Legal */}
               <div >
                 <h3 className="fw-700 mt-10 md:mt-0 font-semibold">LEGAL</h3>
-                <h4 className="pt-5">Terms & Conditions</h4>
+                <h4 className="pt-5"> <Link to="/T&C" className="hover:text-[#9668FF] transition">
+                  Terms and Conditions
+                </Link></h4>
                 <h4 className="pt-5">Privacy Policy</h4>
                 <h4 className=" pt-5">Cookies</h4>
 

@@ -31,6 +31,17 @@
   background-size: cover;
   background-position: center;
 }
+.bg-contactus {
+  background-image: url('/images/landing/ContactUs/purplegradientbg.png');
+  background-size: cover;
+  background-position: center;
+}
+.my-custom-class {
+  border-top-left-radius: 80%;    
+  border-bottom-left-radius: 5px; 
+}
+
+
 
 
 /* stylelint-disable-next-line */

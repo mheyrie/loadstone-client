@@ -14,6 +14,10 @@ export const navLink = [
     url: "/products",
   },
   {
+    text: "Business",
+    url: "/business",
+  },
+  {
     text: "About Us",
     url: "/about-us",
   },
@@ -27,7 +31,7 @@ export const productLinks = [
   {
     icon: mdiPoll,
     text: "Finance",
-    url: "/loan_for_business",
+    url: "/finance",
     description:
       "Inventory financing, Asset financing, Working Capital, Local Purchase order and Invoice Discounting.",
     comingSoon: false,
@@ -36,14 +40,14 @@ export const productLinks = [
   {
     icon: mdiPoll,
     text: "Saving & Investment",
-    url: "/invest_with_us",
+    url: "/Saving-Investment",
     description: "Save with ARM and Lend with Trade Lenda",
     comingSoon: false,
   },
   {
     icon: mdiCreditCard,
     text: "Payments",
-    url: "/sign_up",
+    url: "/payments",
     description: "Free Transfers and Bills Payment",
     comingSoon: false,
   },
@@ -53,7 +57,7 @@ export const supportLinks = [
   {
     icon: mdiAccountDetails,
     text: "Contact us",
-    url: "/support",
+    url: "/contact-us",
     comingSoon: false,
   },
   {
