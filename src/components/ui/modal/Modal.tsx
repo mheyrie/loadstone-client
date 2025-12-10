@@ -45,18 +45,26 @@ export default function Modal({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center h-screen w-full overflow-y-auto py-8">
+    <div className="overflow-hidden fixed inset-0 z-[100]  flex items-center justify-center h-screen w-full overflow-y-auto py-8">
       {/* backdrop with blur */}
       <div
-        className="fixed inset-0 bg-black/50 backdrop-blur-md transition-opacity duration-300"
+        className="fixed inset-0transition-opacity duration-300 bg-black/50 backdrop-blur-md "
         onClick={onClose}
-        style={{ minHeight: "100vh", minWidth: "100vw" }}
+        style={{
+          minHeight: "100vh",
+          minWidth: "100vw",
+        }}
       />
 
       {/* modal content*/}
       <div
         className={`relative bg-white rounded-2xl shadow-2xl ${maxWidthClasses[maxWidth]} w-full mx-4 my-auto max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-100`}
         onClick={(e) => e.stopPropagation()}
+        style={{
+          backgroundImage: "url('/images/landing/onboarding.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         {/* close button */}
         <button
