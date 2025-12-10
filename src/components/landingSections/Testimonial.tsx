@@ -42,7 +42,7 @@ export default function Testimonial() {
       </div>
 
       {/* Swiper */}
-      <div className="mx-auto mt-12 max-w-6xl px-8 pb-20">
+      <div className="mx-auto mt-12 max-w-7xl px-8 pb-20">
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
