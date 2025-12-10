@@ -9,8 +9,19 @@ export default function Testimonial() {
           We are Working to Serve the Next 400Million Customers
         </p>
       </div>
-      <div className="mx-auto grid md:grid-cols-3 grid-cols-1 mt-6 max-w-6xl gap-8 p-8 ">
+      <div className="mx-auto grid md:grid-cols-2 grid-cols-1 mt-6 max-w-6xl gap-8 p-8 ">
         <div className="flex flex-col justify-start items-start px-6 py-10 gap-4 bg-brand-white rounded-lg shadow-md">
+          <div className="flex justify-start items-start gap-4 mb-4">
+            <img
+              src="/images/landing/test1.png"
+              alt="Testimonial 1"
+              className="w-16 h-16 mb-4"
+            />
+            <div className="flex flex-col justify-start items-start">
+              <h4 className="text-xl font-bold">Ponfa Miner</h4>
+              <span className="text-sm text-gray-500">Dornan Enterprises</span>
+            </div>
+          </div>
           <p className="text-lg italic">
             "Trade Lenda has transformed the way I manage my business finances.
             The loan application process was quick and straightforward, allowing
@@ -27,15 +38,6 @@ export default function Testimonial() {
             orders."
           </p>
           <span className="font-bold mt-4">- Chinedu O., Abuja</span>
-        </div>
-        <div className="flex flex-col justify-start items-start px-6 py-10 gap-4 bg-brand-white rounded-lg shadow-md">
-          <p className="text-lg italic">
-            "I highly recommend Trade Lenda to any MSME looking for financial
-            support. Their user-friendly platform and excellent customer service
-            made the entire process seamless. Thanks to Trade Lenda, my business
-            is thriving!"
-          </p>
-          <span className="font-bold mt-4">- Fatima S., Kano</span>
         </div>
       </div>
     </section>
