@@ -48,7 +48,7 @@ export default function Modal({
     <div className="fixed inset-0 z-[100] flex items-center justify-center h-screen w-full overflow-y-auto py-8">
       {/* backdrop with blur */}
       <div
-        className="fixed inset-0 bg-black/50 backdrop-blur-md transition-opacity min-h-screen duration-300"
+        className="fixed inset-0 bg-black/50 backdrop-blur-md transition-opacity duration-300"
         onClick={onClose}
         style={{ minHeight: "100vh", minWidth: "100vw" }}
       />
