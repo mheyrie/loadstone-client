@@ -2,10 +2,11 @@ import { mdiCircleSmall } from "@mdi/js";
 import Icon from "@mdi/react";
 import LoanCalc from "./LoanCalc";
 import Button from "../ui/Button";
+import toast from "react-hot-toast";
 
 export default function HowItWorks() {
   return (
-    <section className="my-10 mt-20">
+    <section className="my-2 mt-10">
       <div className="text-center flex flex-col justify-center items-center">
         <div className="text-xmd text-brand-purple flex justify-center items-center font-bold mb-4">
           {" "}
@@ -62,7 +63,7 @@ export default function HowItWorks() {
             </div>
           </div>
           <div className=" flex items-start justify-start w-full mt-8">
-            <Button content="Take Loan" classes="primary-btn btn-md w-full " />
+            <Button content="Take Loan" classes="primary-btn btn-md w-full " onClick={()=>toast.success('Coming soon')}/>
           </div>
         </div>
       </div>
