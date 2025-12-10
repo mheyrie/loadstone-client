@@ -1,6 +1,7 @@
 import { mdiCircleSmall } from "@mdi/js";
 import Icon from "@mdi/react";
 import LoanCalc from "./LoanCalc";
+import Button from "../ui/Button";
 
 export default function HowItWorks() {
   return (
@@ -15,31 +16,48 @@ export default function HowItWorks() {
           Access financial solution for your business
         </h2>
       </div>
-      <div className="mx-auto grid md:grid-cols-2 grid-cols-1 mt-12 max-w-5xl shadow-2xl bg-brand-white rounded-l-2xl">
-       <LoanCalc />
-        <div className=" flex flex-col justify-center items-center px-6 py-10 gap-6">
+      <div className="mx-auto grid md:grid-cols-2 grid-cols-1 mt-12 max-w-6xl shadow-2xl bg-brand-white rounded-l-2xl gap-8 ">
+        <LoanCalc />
+        <div className="flex flex-col justify-start items-start px-6 py-10 gap-2">
           <div className="flex justify-start items-center gap-2 mb-2">
             <div className="before:content-[''] before:block before:w-2 before:h-32 before:bg-brand-purple before:mx-auto before:my-4" />
             <div className="text-start">
-              <h2 className="">Create an account</h2>
-              <p className="">Create an Account with Trade Lenda and access funding to grow your business</p>
+              <h2 className="text-brand-purple text-4xl font-bold mb-2">
+                Create an account
+              </h2>
+              <p className="text-md flex items-center justify-start max-w-[320px]">
+                Create an Account with Trade Lenda and access funding to grow
+                your business
+              </p>
             </div>
           </div>
-          <div className="flex justify-start items-center gap-4 mb-2">
+          <div className="flex justify-start items-center gap-2 mb-2">
             <div className="before:content-[''] before:block before:w-2 before:h-32 before:bg-[#EAA942] before:mx-auto before:my-4" />
-            <div className="text-start"> 
-              <h2 className="text-[#EAA942">Complete profile</h2>
-              <p className="">Complete your profile by telling about your business and uploading documents to verify your business.</p>
-            </div>
-          </div>
-          <div className="flex justify-start items-center gap-4 mb-2">
-            <div className="before:content-[''] before:block before:w-2 before:h-32 before:bg-brand-purple before:mx-auto before:my-4" />
             <div className="text-start">
-              <h2 className="">Apply for loan</h2>
-              <p className="">Apply for our lending financial solution no long forms or collateral</p>
+              <h2 className="text-[#EAA942] text-4xl font-bold mb-2">
+                Complete profile
+              </h2>
+              <p className="text-md flex items-center justify-start max-w-[320px]">
+                Complete your profile by telling about your business and
+                uploading documents to verify your business.
+              </p>
             </div>
           </div>
-         
+          <div className="flex justify-start items-center gap-2 mb-2">
+            <div className="before:content-[''] before:block before:w-2 before:h-24 before:bg-brand-purple before:mx-auto before:my-4" />
+            <div className="text-start">
+              <h2 className="text-brand-purple text-4xl font-bold mb-2">
+                Apply for loan
+              </h2>
+              <p className="text-md flex items-center justify-start max-w-[320px]">
+                Apply for our lending financial solution no long forms or
+                collateral
+              </p>
+            </div>
+          </div>
+          <div className=" flex items-start justify-start w-full mt-8">
+            <Button content="Take Loan" classes="primary-btn btn-md w-full " />
+          </div>
         </div>
       </div>
     </section>

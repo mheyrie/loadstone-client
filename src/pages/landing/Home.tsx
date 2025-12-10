@@ -19,6 +19,7 @@ export default function Home() {
       <GetLoan />
       <Blank height="40px" />
       <HowItWorks />
+      <Blank height="80px" />
       <Testimonial />
       <FAQ />
     </LandingLayout>
