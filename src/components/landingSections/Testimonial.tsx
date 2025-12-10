@@ -9,8 +9,7 @@ export default function Testimonial() {
           We are Working to Serve the Next 400Million Customers
         </p>
       </div>
-
-      <div className="mx-auto grid md:grid-cols-3 grid-cols-1 mt-12 max-w-6xl gap-8 p-8 ">
+      <div className="mx-auto grid md:grid-cols-3 grid-cols-1 mt-6 max-w-6xl gap-8 p-8 ">
         <div className="flex flex-col justify-start items-start px-6 py-10 gap-4 bg-brand-white rounded-lg shadow-md">
           <p className="text-lg italic">
             "Trade Lenda has transformed the way I manage my business finances.
