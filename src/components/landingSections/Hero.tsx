@@ -11,7 +11,16 @@ export default function Hero() {
         backgroundPosition: "center",
       }}
     >
-      <div className="grid min-h-screen md:grid-cols-2 grid-rows-1 px-2  items-center py-20 text-center justify-between h-full gap-2  md:mx-20">
+      <div
+        className="grid min-h-screen md:grid-cols-2 grid-rows-1 px-2  items-center py-20 text-center justify-between h-full gap-2  md:mx-20"
+        data-aos="fade-right"
+        data-aos-offset="70"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+      >
         <div className="text-white text-start flex flex-col mt-20 gap-6 ">
           <h1 className="text-5xl font-bold mb-4 md:max-w-lg">
             Driving Financial Inclusion for MSMEs

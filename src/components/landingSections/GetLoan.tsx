@@ -15,12 +15,21 @@ export default function GetLoan() {
       }}
     >
       {" "}
-      <div className="text-center">
+      <div className="text-center" data-aos="fade-up" data-aos-duration="1000">
         <h2 className="text-6xl font-extrabold font-inter max-w-3xl text-center mx-auto mb-2">
-         Get Easy and Instant Loan For Your Business
+          Get Easy and Instant Loan For Your Business
         </h2>
       </div>
-      <div className="flex md:flex-row flex-col px-2 items-center mx-4 text-center justify-between gap-8  my-12 min-h-4/5 md:mx-20">
+      <div
+        className="flex md:flex-row flex-col px-2 items-center mx-4 text-center justify-between gap-8  my-12 min-h-4/5 md:mx-20 "
+        data-aos="fade-right"
+        data-aos-offset="70"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+      >
         {" "}
         <div className="flex flex-col bg-brand-white p-4 rounded-xl shadow-md items-center gap-4 w-[400px] h-[620px]">
           <img
@@ -36,7 +45,12 @@ export default function GetLoan() {
               We can help you get the working capital you need to succeed. Apply
               now and expand your business
             </p>
-            <span className="flex text-brand-purple mt-4 font-bold cursor-pointer" onClick={()=>{toast.success('Coming Soon')}}>
+            <span
+              className="flex text-brand-purple mt-4 font-bold cursor-pointer"
+              onClick={() => {
+                toast.success("Coming Soon");
+              }}
+            >
               <span className="">Learn More </span>{" "}
               <Icon className="ml-2" path={mdiArrowRight} size={1} />{" "}
             </span>
@@ -56,7 +70,12 @@ export default function GetLoan() {
               We can help you take on larger orders and grow your business.
               Apply now and see the difference
             </p>
-            <span className="flex text-brand-purple mt-4 font-bold cursor-pointer" onClick={()=>{toast.success('Coming Soon')}}>
+            <span
+              className="flex text-brand-purple mt-4 font-bold cursor-pointer"
+              onClick={() => {
+                toast.success("Coming Soon");
+              }}
+            >
               <span className="">Learn More </span>{" "}
               <Icon className="ml-2" path={mdiArrowRight} size={1} />{" "}
             </span>
@@ -76,7 +95,12 @@ export default function GetLoan() {
               We can help you improve your cash flow and keep your business
               running smoothly. Apply now and grow your business
             </p>
-            <span className="flex text-brand-purple mt-4 font-bold cursor-pointer" onClick={()=>{toast.success('Coming Soon')}}>
+            <span
+              className="flex text-brand-purple mt-4 font-bold cursor-pointer"
+              onClick={() => {
+                toast.success("Coming Soon");
+              }}
+            >
               <span className="">Learn More </span>{" "}
               <Icon className="ml-2" path={mdiArrowRight} size={1} />{" "}
             </span>

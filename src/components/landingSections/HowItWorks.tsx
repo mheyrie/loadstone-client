@@ -18,7 +18,13 @@ export default function HowItWorks() {
       </div>
       <div className="mx-auto grid md:grid-cols-2 grid-cols-1 mt-12 max-w-6xl shadow-2xl bg-brand-white rounded-l-2xl gap-8 ">
         <LoanCalc />
-        <div className="flex flex-col justify-start items-start px-6 py-10 gap-2">
+        <div className="flex flex-col justify-start items-start px-6 py-10 gap-2"  data-aos="fade-right"
+        data-aos-offset="70"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true">
           <div className="flex justify-start items-center gap-2 mb-2">
             <div className="before:content-[''] before:block before:w-2 before:h-32 before:bg-brand-purple before:mx-auto before:my-4" />
             <div className="text-start">

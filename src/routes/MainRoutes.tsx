@@ -4,8 +4,11 @@ import AboutUs from "../pages/landing/AboutUs";
 import Business from "../pages/landing/Business";
 import Support from "../pages/landing/Support";
 import Products from "../pages/landing/Products";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function MainRoutes() {
+    AOS.init();
   return (
     <Routes>
         <Route path="/" element={<Home/>}/>

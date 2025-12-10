@@ -3,7 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Testimonial() {
   return (
-    <section className="my-10 mt-20">
+    <section
+      className="my-10 mt-20"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div className="text-center">
         <h2 className="text-5xl font-inter font-bold mb-8 mx-2 tracking-wider">
           What our users are saying
@@ -30,7 +34,16 @@ export default function Testimonial() {
         navigation={false}
         modules={[EffectFade, Autoplay, Pagination, Navigation]}
       >
-        <div className="mx-auto grid md:grid-cols-2 grid-cols-1 mt-6 max-w-6xl gap-8 p-8 ">
+        <div
+          className="mx-auto grid md:grid-cols-2 grid-cols-1 mt-6 max-w-6xl gap-8 p-8 "
+          data-aos="fade-right"
+          data-aos-offset="70"
+          data-aos-delay="0"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="true"
+          data-aos-once="true"
+        >
           <SwiperSlide>
             <div className="flex flex-col justify-start items-start px-6 py-10 gap-4 bg-brand-white rounded-lg shadow-md">
               <div className="flex justify-start items-start gap-4 mb-4">

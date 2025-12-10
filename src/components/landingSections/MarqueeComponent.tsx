@@ -1,15 +1,15 @@
 import Marquee from "react-fast-marquee";
 import BaseDirectories from "../../baseDir/baseDirectories";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 
 export default function MarqueeComponent() {
-    AOS.init();
+    // AOS.init();
   return (
     <>
     <h3 className="text-2xl font-medium my-6">Backed by strong partners</h3>
     <div className=" bg-brand-white">
-      <Marquee speed={30} gradientColor="rgb(239, 240, 246)" pauseOnHover={true}>
+      <Marquee speed={30} gradientColor="rgb(239, 240, 246)" pauseOnHover={true} >
         <div className="flex items-center space-x-10 px-10 py-5">
           <img
             src={`${BaseDirectories.LOGOS_DIR}/marquee/arm.png`}
