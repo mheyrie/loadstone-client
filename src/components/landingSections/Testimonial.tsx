@@ -8,7 +8,15 @@ const TESTIMONIALS = [
     company: "Dornan Enterprises",
     testimony:
       "Load Stone has transformed the way I manage my business finances. The loan application process was quick and straightforward, allowing me to access the funds I needed to meet customer demands.",
-    author: "- Aisha M., Lagos",
+    // author: "- Aisha M., Lagos",
+  },
+  {
+    img: "/images/landing/test2.png",
+    name: "Chinedu O.",
+    company: "Unipolar Education consults",
+    testimony:
+      "As a small business owner, finding reliable financing options has always been a challenge. Load Stone provided me with a hassle-free solution that helped me expand my operations and take on larger orders.",
+    // author: "- Chinedu O., Abuja",
   },
   {
     img: "/images/landing/test1.png",
@@ -16,15 +24,7 @@ const TESTIMONIALS = [
     company: "Business Owner",
     testimony:
       "As a small business owner, finding reliable financing options has always been a challenge. Load Stone provided me with a hassle-free solution that helped me expand my operations and take on larger orders.",
-    author: "- Chinedu O., Abuja",
-  },
-  {
-    img: "/images/landing/test1.png",
-    name: "Chinedu O.",
-    company: "Business Owner",
-    testimony:
-      "As a small business owner, finding reliable financing options has always been a challenge. Load Stone provided me with a hassle-free solution that helped me expand my operations and take on larger orders.",
-    author: "- Chinedu O., Abuja",
+    // author: "- Chinedu O., Abuja",
   },
 ];
 
@@ -63,14 +63,15 @@ export default function Testimonial() {
           {TESTIMONIALS.map((item, i) => (
             <SwiperSlide key={i}>
               <div className="flex flex-col px-6 py-10 gap-4 bg-white rounded-lg shadow-md h-full min-h-[350px]">
-                <div className="flex gap-4 mb-4">
-                  <img src={item.img} alt={item.name} className="w-16 h-16" />
+                <div className="flex gap-2 mb-4">
+                  <img src={item.img} alt={item.name} className="w-14 h-14" />
+                  
                   <div>
                     <h4 className="text-xl font-bold">{item.name}</h4>
                     <span className="text-sm text-gray-500">{item.company}</span>
                   </div>
                 </div>
-                <p className="text-lg italic">{item.testimony}</p>
+                <p className="text-sm text-start">{item.testimony}</p>
                 <div className="flex items-center gap-1 mt-4">
                   {[...Array(5)].map((_, index) => (
                     <svg key={index} className="w-5 h-5 fill-yellow-400" viewBox="0 0 20 20">
@@ -78,7 +79,7 @@ export default function Testimonial() {
                     </svg>
                   ))}
                 </div>
-                <span className="font-bold mt-2">{item.author}</span>
+                {/* <span className="font-bold mt-2">{item.author}</span> */}
               </div>
             </SwiperSlide>
           ))}
