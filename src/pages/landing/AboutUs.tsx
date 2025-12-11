@@ -36,7 +36,7 @@ export default function AboutUs() {
             lg:w-auto md:top-1/5 md:right-1/12 md:brightness-20 md:opacity-50 z-10"
             />
 
-            {/* Centered Text */}
+            
             <div className="absolute  inset-0 flex justify-center items-center z-20">
               <h2
                 className="
