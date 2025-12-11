@@ -1,5 +1,5 @@
 import LandingLayout from "../../components/_shared/LandingLayout";
-import BlogPage from "../../components/_shared/BlogPage";
+import BlogPage from "../../data/BlogPage";
 import { FaSearch } from "react-icons/fa"
 export default function Blog() {
   return (
