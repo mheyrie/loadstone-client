@@ -1,5 +1,5 @@
 import { navLink, productLinks, supportLinks } from "../../data/landing";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BaseDirectories from "../../baseDir/baseDirectories";
 import Dropdown from "../ui/Dropdown";
@@ -57,13 +57,13 @@ export default function Navbar() {
     >
       <nav className="h-16 bg-linear-to-br from-[#A6A4A7] via-[#A9A7A9] to-white rounded-full flex items-center justify-between px-6 lg:px-20">
         {/* Logo */}
-        <div className="text-white font-bold z-50">
+        <Link to={'/'} className="text-white font-bold z-50">
           <img
             src={`${BaseDirectories.LOGOS_DIR}/brand.png`}
             alt="Trade Lenda"
             className="h-8"
           />
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex gap-2 relative">

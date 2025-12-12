@@ -54,7 +54,7 @@ export default function LoanCalc() {
               <option value="Invoice Discounting">Invoice Discounting</option>
             </select>
           </div>
-          <div className="grid grid-cols-2 gap-10 justify-center items-start">
+          <div className="grid md:grid-cols-2 grid-cols-1 md:gap-10 justify-center items-start">
             <div className="grid col-sm-6 mb-4 mt-4">
               <label htmlFor="amount" className="">
                 Loan Amount (₦)
