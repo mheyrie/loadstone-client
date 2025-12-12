@@ -10,7 +10,7 @@ export default function AboutUs() {
         <div className="w-full bg-white">
 
           {/* ================= HERO SECTION ================= */}
-          <section className="relative w-full h-[600px] sm:h-[700px] md:h-[776px] bg-aboutus text-white font-inter text-center overflow-hidden px-4">
+          <section className="relative w-full h-[600px] sm:h-[700px] md:h-[784px] bg-aboutus text-white font-inter text-center overflow-hidden px-4">
 
             {/* Left Africa image */}
             <img
