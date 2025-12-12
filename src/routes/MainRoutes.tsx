@@ -12,7 +12,7 @@ import ContactUs from "../components/landingSections/ContactUs";
 import Blog from "../pages/landing/Blog";
 import FAQ from "../components/landingSections/FAQ";
 import TermsandCondition from "../components/landingSections/TermsandCondition";
-
+import BlogMain from "../pages/landing/BlogMain";
 export default function MainRoutes() {
     AOS.init();
   return (
@@ -28,6 +28,8 @@ export default function MainRoutes() {
         <Route path="/blog" element={<Blog/>} />
         <Route path="/faq" element={<FAQ/>} />
         <Route path="/T&C" element={<TermsandCondition/>} />
+        <Route path="/news" element={<BlogMain/>} />
+        
     </Routes>
   )
 }
