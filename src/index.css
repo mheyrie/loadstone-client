@@ -10,8 +10,8 @@
   max-width: 1280px;
   text-align: center;
   
-  /* --font-montserrat: Montserrat, sans-serif;
-  --font-inter: Inter, system-ui; */
+  --font-montserrat: Montserrat, sans-serif;
+  --font-inter: Inter, system-ui;
 
 
   box-sizing: border-box;
@@ -40,7 +40,11 @@
   border-top-left-radius: 80%;    
   border-bottom-left-radius: 5px; 
 }
-
+.bg-blog{
+   background-image: url('/images/landing/Blogbg.png');
+  background-size: cover;
+  background-position: center;
+}
 
 
 
