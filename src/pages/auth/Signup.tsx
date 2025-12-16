@@ -37,7 +37,18 @@ export default function Signup({
     );
   const back = () =>
     setStep((s) => (s === "verification" ? "personal" : "account"));
-  return <div className="w-full max-w-md rounded-xl bg-amber-500 p-6">
-    {step === "account" && <Account data={data} setData={setData} onNext={next} error={error} setError={setError} onSwitchToLogin={onSwitchToLogin} />}
-  </div>;
+  return (
+    <div className="w-full max-w-md rounded-xl bg-amber-500 p-6">
+      {step === "account" && (
+        <Account
+          data={data}
+          setData={setData}
+          onNext={next}
+          error={error}
+          setError={setError}
+          onSwitchToLogin={onSwitchToLogin}
+        />
+      )}
+    </div>
+  );
 }
