@@ -13,23 +13,31 @@ import Blog from "../pages/landing/Blog";
 import FAQ from "../components/landingSections/FAQ";
 import TermsandCondition from "../components/landingSections/TermsandCondition";
 import BlogMain from "../pages/landing/BlogMain";
+import ScrollToHash from "./ScrollToHash";
+
+
 export default function MainRoutes() {
-    AOS.init();
+  AOS.init();
+
   return (
-    <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about-us" element={<AboutUs/>} />
-        <Route path="/products" element={<Products/>} />
-        <Route path="/business" element={<Business/>} />
-        <Route path="/support" element={<Support/>} />
-        <Route path="/finance" element={<Finance/>} />
-        <Route path="/Saving-Investment" element={<SavingsInvestment/>} />
-        <Route path="/contact-us" element={<ContactUs/>} />
-        <Route path="/blog" element={<Blog/>} />
-        <Route path="/faq" element={<FAQ/>} />
-        <Route path="/T&C" element={<TermsandCondition/>} />
-        <Route path="/news" element={<BlogMain/>} />
-        
-    </Routes>
-  )
+    <>
+      <ScrollToHash />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/business" element={<Business />} />
+        <Route path="/support" element={<Support />} />
+        <Route path="/finance" element={<Finance />} />
+        <Route path="/Saving-Investment" element={<SavingsInvestment />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/blog" element={<Blog />} />
+        {/* ❌ REMOVE THIS */}
+        {/* <Route path="/faq" element={<FAQ />} /> */}
+        <Route path="/T&C" element={<TermsandCondition />} />
+        <Route path="/news" element={<BlogMain />} />
+      </Routes>
+    </>
+  );
 }

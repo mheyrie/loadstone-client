@@ -6,11 +6,20 @@ export default function AboutUs() {
 
 
     <LandingLayout>
-      <section className="font-montserrat w-screen text-xl flex justify-center items-center">
+      <section className="font-montserrat w-screen text-xl flex justify-center items-center"
+      
+      >
         <div className="w-full bg-white">
 
           {/* ================= HERO SECTION ================= */}
-          <section className="relative w-full h-[600px] sm:h-[700px] md:h-[784px] bg-aboutus text-white font-inter text-center overflow-hidden px-4">
+          <section className="relative w-full h-[600px] sm:h-[700px] md:h-[784px] bg-aboutus text-white font-inter text-center overflow-hidden px-4"
+           data-aos="fade-right"
+        data-aos-offset="70"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true">
 
             {/* Left Africa image */}
             <img
@@ -51,7 +60,14 @@ export default function AboutUs() {
           </section>
 
           {/* ================= MISSION SECTION ================= */}
-          <div className="bg-[#F5EFF7]  px-5">
+          <div className="bg-[#F5EFF7]  px-5"
+           data-aos="fade-right"
+        data-aos-offset="70"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true">
             <section className="max-w-7xl mx-auto  py-16 flex flex-col md:flex-row items-center gap-14 md:gap-20">
 
               {/* Image */}
@@ -78,7 +94,14 @@ export default function AboutUs() {
             </section>
 
             {/* ================= WHO WE ARE SECTION ================= */}
-            <section className="max-w-7xl  mx-auto  py-16 flex flex-col md:flex-row items-center gap-14 md:gap-20">
+            <section className="max-w-7xl  mx-auto  py-16 flex flex-col md:flex-row items-center gap-14 md:gap-20 "
+             data-aos="fade-right"
+        data-aos-offset="70"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true">
 
               {/* Text */}
               <div className="md:w-1/2 lg:pr-10  w-full md:text-start">
@@ -102,7 +125,14 @@ export default function AboutUs() {
             </section>
           </div>
           {/* ================= CORE VALUES ================= */}
-          <section className="bg-[#F8F9FB] text-[20px] w-full py-16 px-6">
+          <section className="bg-[#F8F9FB] text-[20px] w-full py-16 px-6"
+           data-aos="fade-right"
+        data-aos-offset="70"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true">
             <div className="max-w-6xl mx-auto text-center">
 
               <h2 className="text-3xl  md:text-4xl font-bold text-[#14142B] mb-8 whitespace-nowrap">

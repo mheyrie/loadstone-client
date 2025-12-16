@@ -22,7 +22,7 @@ export default function Blog() {
 
         <section className="max-w-[1250px]  mx-auto">
           <div className="md:px-3">
-            <div className="flex items-center gap-3 text-sm md:text-[20px] text-gray-600 pt-3 pb-3">
+            <div className="flex items-center gap-3 px-3 text-[10px] md:text-[20px] text-gray-600 pt-3 pb-3">
               <Link to="/" className="font-semibold text-black hover:underline">
                 Home
               </Link>
@@ -165,21 +165,31 @@ export default function Blog() {
                   <div className="flex items-center gap-6 text-gray-600 text-sm">
 
                     {/* LIKE */}
-                    <button className="flex items-center gap-2 hover:text-black">
-                      <FaRegThumbsUp className="text-lg" />
-                      <span>Like</span>
+                    <button className="flex items-center gap-2 hover:text-black active:scale-90 transition-transform duration-150">
+                      <img
+                        src={`${BaseDirectories.ICONS_DIR}/LIKE.png`}
+                        alt="Loadstone Logo"
+                        className="h-auto w-auto"
+                      />
                     </button>
 
                     {/* COMMENT */}
-                    <button className="flex items-center gap-2 hover:text-black">
-                      <FaRegComment className="text-lg" />
-                      <span>Comment</span>
+                    <button className="flex items-center gap-2 hover:text-black active:scale-90 transition-transform duration-150">
+                      <img
+                        src={`${BaseDirectories.ICONS_DIR}/Comment.png`}
+                        alt="Loadstone Logo"
+                        className="h-auto w-auto"
+                      />
                     </button>
+
 
                     {/* SHARE */}
                     <button className="flex items-center gap-2 hover:text-black">
-                      <FaShare className="text-lg" />
-                      <span>Share</span>
+                      <img
+                        src={`${BaseDirectories.ICONS_DIR}/bi_share.png`}
+                        alt="Loadstone Logo"
+                        className="h-auto w-auto"
+                      />
                     </button>
 
                   </div>
@@ -200,7 +210,7 @@ export default function Blog() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
               {/* CARD 1 */}
-              <div className="md:w-[390px] md:h-[594px] space-y-3 ">
+              <div className=" md:h-[594px] space-y-3 ">
                 <img src={`${BaseDirectories.BLOG_MAIN_DIR}/wallstreet.png`} alt="Speed" />
                 <div className="pl-5">
                   <div className="flex  items-center gap-3 text-sm text-gray-600">
@@ -224,7 +234,7 @@ export default function Blog() {
               </div>
 
               {/* CARD 2 */}
-              <div className="md:w-[390px] md:h-[594px] space-y-3 ">
+              <div className="md:h-[594px] space-y-3 ">
                 <img src={`${BaseDirectories.BLOG_MAIN_DIR}/Crypto.png`} alt="Speed" />
                 <div className="pl-5">
                   <div className="flex  items-center gap-3 text-sm text-gray-600">
@@ -248,7 +258,7 @@ export default function Blog() {
               </div>
 
               {/* CARD 3 */}
-              <div className="md:w-[390px] md:h-[594px] space-y-3 ">
+              <div className="md:h-[594px] space-y-3 ">
                 <img src={`${BaseDirectories.BLOG_MAIN_DIR}/wallstreet2.png`} alt="Speed" />
                 <div className="pl-5">
                   <div className="flex  items-center gap-3 text-sm text-gray-600">
