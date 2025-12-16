@@ -6,7 +6,7 @@ import Dropdown from "../ui/Dropdown";
 import Button from "../ui/Button";
 import Modal from "../ui/modal/Modal";
 import Login from "../../pages/auth/Login";
-import Signup from "../../pages/auth/Signup";
+import Signup from "../../pages/auth/SignupDelete";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
