@@ -48,7 +48,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-16 px-6">
+    <div id="faq" className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 py-16 px-6">
       {/* left */}
       <div className="md:col-span-1 text-start" data-aos="fade-up" data-aos-duration="1000">
         <h2 className="text-4xl font-bold text-purple-700 leading-tight">

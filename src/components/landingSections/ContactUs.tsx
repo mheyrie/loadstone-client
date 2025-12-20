@@ -12,7 +12,7 @@ export default function ContactUs() {
 
 
         {/* ================= HERO SECTION ================= */}
-        <section className="w-full h-[600px] sm:h-[700px] md:h-[776px] bg-contactus text-white font-inter text-center overflow-hidden px-4">
+        <section className="w-full h-[600px] sm:h-[700px] md:h-[784px] bg-contactus text-white font-inter text-center overflow-hidden px-4">
           
           <div className="flex items-center justify-center text-center h-full">
             <h2 className="text-xl md:text-[70px] font-bold md:w-full">
