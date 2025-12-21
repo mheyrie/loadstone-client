@@ -6,7 +6,7 @@ import Dropdown from "../ui/Dropdown";
 import Button from "../ui/Button";
 import Modal from "../ui/modal/Modal";
 import Login from "../../pages/auth/Login";
-import Signup from "../../pages/auth/SignupDelete";
+import Signup from "../../pages/auth/Signup";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -228,7 +228,7 @@ export default function Navbar() {
         isOpen={isLoginModalOpen}
         onClose={() => setIsLoginModalOpen(false)}
         title=""
-        maxWidth="md"
+        maxWidth="lg"
       >
         <Login
           onSwitchToSignup={handleSwitchToSignup}
@@ -241,7 +241,7 @@ export default function Navbar() {
         isOpen={isSignupModalOpen}
         onClose={() => setIsSignupModalOpen(false)}
         title=""
-        maxWidth="md"
+        maxWidth="lg"
       >
         <Signup
           onSwitchToLogin={handleSwitchToLogin}

@@ -5,7 +5,7 @@ interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
   title?: string;
-  maxWidth?: "sm" | "md" | "lg" | "xl";
+  maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
 }
 
 export default function Modal({
@@ -13,7 +13,7 @@ export default function Modal({
   onClose,
   children,
   title,
-  maxWidth = "md",
+  maxWidth = "lg",
 }: ModalProps) {
   // close modal on escape key press
   useEffect(() => {
@@ -38,17 +38,19 @@ export default function Modal({
   if (!isOpen) return null;
 
   const maxWidthClasses = {
-    sm: "max-w-sm",
+     sm: "max-w-sm",
     md: "max-w-md",
-    lg: "max-w-lg",
-    xl: "max-w-xl",
+    lg: "max-w-2xl",
+    xl: "max-w-4xl",
+    "2xl": "max-w-6xl",
+    "3xl": "max-w-7xl",
   };
 
   return (
-    <div className="overflow-hidden fixed inset-0 z-[100]  flex items-center justify-center h-screen w-full overflow-y-auto py-8">
+    <div className="overflow-hidden fixed inset-0 z-100 flex items-center justify-center h-screen w-full overflow-y-auto py-8">
       {/* backdrop with blur */}
       <div
-        className="fixed inset-0transition-opacity duration-300 bg-black/50 backdrop-blur-md "
+        className="fixed inset-0 transition-opacity duration-300 bg-black/50 backdrop-blur-md "
         onClick={onClose}
         style={{
           minHeight: "100vh",

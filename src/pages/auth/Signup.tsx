@@ -1,31 +1,36 @@
-import type { Sign } from "crypto";
 import type { SignupFormData, SignupStep } from "../../types/onboarding";
 import { useState } from "react";
+// import Verification from "../../components/ui/modal/onboarding/Verification";
+// import Personal from "../../components/ui/modal/onboarding/Personal";
+// import Success from "../../components/ui/modal/onboarding/Success";
 import Account from "../../components/ui/modal/onboarding/Account";
+import { useForm } from "react-hook-form";
+import { Form } from "@/components/ui/form";
 
-const initialData: SignupFormData = {
-  firstName: "",
-  lastName: "",
-  userName: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-  phoneNumber: "",
-  dateOfBirth: "",
-  businessName: "",
-  businessType: "",
-  verificationCode: "",
-};
 export default function Signup({
-  onClose,
+  // onClose,
   onSwitchToLogin,
 }: {
   onClose: () => void;
   onSwitchToLogin: () => void;
 }) {
   const [step, setStep] = useState<SignupStep>("account");
-  const [data, setData] = useState<SignupFormData>(initialData);
   const [error, setError] = useState("");
+  const form = useForm<SignupFormData>({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      userName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      phoneNumber: "",
+      dateOfBirth: "",
+      businessName: "",
+      businessType: "",
+      verificationCode: "",
+    },
+  });
 
   const next = () =>
     setStep((s) =>
@@ -35,20 +40,45 @@ export default function Signup({
         ? "verification"
         : "success"
     );
-  const back = () =>
-    setStep((s) => (s === "verification" ? "personal" : "account"));
+  // const back = () =>
+  //   setStep((s) => (s === "verification" ? "personal" : "account"));
   return (
-    <div className="w-full max-w-md rounded-xl bg-amber-500 p-6">
-      {step === "account" && (
-        <Account
+    <Form {...form}>
+      <div className=" ">
+        {step === "account" && (
+          <Account
+            control={form.control}
+            onNext={next}
+            error={error}
+            setError={setError}
+            onSwitchToLogin={onSwitchToLogin}
+          />
+        )}
+
+        {/* {step === "personal" && (
+        <Personal
           data={data}
           setData={setData}
-          onNext={next}
           error={error}
           setError={setError}
-          onSwitchToLogin={onSwitchToLogin}
+          onNext={next}
+          onBack={back}
         />
       )}
-    </div>
+
+      {step === "verification" && (
+        <Verification
+          data={data}
+          setData={setData}
+          error={error}
+          setError={setError}
+          onNext={next}
+          onBack={back}
+        />
+      )} */}
+
+        {/* {step === "success" && <Success onClose={onClose} />} */}
+      </div>
+    </Form>
   );
 }
