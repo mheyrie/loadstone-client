@@ -8,6 +8,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import type { Control, FieldValues, Path } from "react-hook-form";
+import { Input } from "../input";
 
 type FormFieldTextProps<T extends FieldValues> = {
   control: Control<T>;
@@ -35,10 +36,10 @@ export function FormFieldText<T extends FieldValues>({
           <FormLabel >{label}</FormLabel>
 
           <FormControl>
-            <input type={type} placeholder={placeholder} {...field} />
+            <Input type={type} placeholder={placeholder} {...field} />
           </FormControl>
 
-          <FormMessage />
+          <FormMessage name={name} />
         </FormItem>
       )}
     />

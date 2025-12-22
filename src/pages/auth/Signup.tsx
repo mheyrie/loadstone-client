@@ -43,12 +43,12 @@ export default function Signup({
   // const back = () =>
   //   setStep((s) => (s === "verification" ? "personal" : "account"));
   return (
-    <Form {...form}>
-      <div className=" ">
+    <Form form={form}>
+      <form onSubmit={form.handleSubmit(next)}>
         {step === "account" && (
           <Account
             control={form.control}
-            onNext={next}
+            // onNext={next}
             error={error}
             setError={setError}
             onSwitchToLogin={onSwitchToLogin}
@@ -78,7 +78,7 @@ export default function Signup({
       )} */}
 
         {/* {step === "success" && <Success onClose={onClose} />} */}
-      </div>
+      </form>
     </Form>
   );
 }
