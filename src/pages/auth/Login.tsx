@@ -48,6 +48,9 @@ export default function Login({
   };
 
   return (
+    <> 
+    <title>Login - Loadstone Financial</title>
+    <meta name="description" content="Login to Loadstone" />
     <Form form={form}>
       <form onSubmit={form.handleSubmit(handleSubmit)}>
         <h3 className="text-xl text-brand-white text-start font-semibold mb-6">
@@ -106,6 +109,8 @@ export default function Login({
           <div className="text-brand-purple">Trouble with log in?</div>
         </div>
       </form>
-    </Form>
+    </Form> 
+    </>
+   
   );
 }

@@ -8,10 +8,10 @@ import {
 } from "@mdi/js";
 
 export const navLink = [
-  { text: "Home", url: "/" },
+  // { text: "Home", url: "/" },
   {
     text: "Products",
-    url: "/products",
+    url: "/",
   },
   {
     text: "Business",

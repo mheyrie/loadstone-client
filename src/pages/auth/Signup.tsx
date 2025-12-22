@@ -44,6 +44,9 @@ export default function Signup({
   const back = () =>
     setStep((s) => (s === "verification" ? "password" : "account"));
   return (
+    <>
+    <title> Signup - Loadstone Financial</title>
+    <meta name="description" content="Signup to Loadstone" />
     <Form form={form}>
       <form onSubmit={form.handleSubmit(next)}>
         {step === "account" && (
@@ -80,6 +83,6 @@ export default function Signup({
 
         {/* {step === "success" && <Success onClose={onClose} />} */}
       </form>
-    </Form>
+    </Form></>
   );
 }
