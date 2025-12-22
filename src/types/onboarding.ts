@@ -1,4 +1,4 @@
-export type SignupStep = "account" | "personal" | "verification" | "success";
+export type SignupStep = "account" | "password" | "verification" | "success";
 
 export interface SignupFormData {
   firstName: string;
@@ -12,4 +12,9 @@ export interface SignupFormData {
   businessName: string;
   businessType: string;
   verificationCode: string;
+}
+
+export interface LoginFormData {
+  emailOrUsername: string;
+  password: string;
 }

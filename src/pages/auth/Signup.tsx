@@ -1,11 +1,12 @@
 import type { SignupFormData, SignupStep } from "../../types/onboarding";
 import { useState } from "react";
 // import Verification from "../../components/ui/modal/onboarding/Verification";
-// import Personal from "../../components/ui/modal/onboarding/Personal";
+// import Password from "../../components/ui/modal/onboarding/Password";
 // import Success from "../../components/ui/modal/onboarding/Success";
 import Account from "../../components/ui/modal/onboarding/Account";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
+import Password from "@/components/ui/modal/onboarding/Password";
 
 export default function Signup({
   // onClose,
@@ -35,13 +36,13 @@ export default function Signup({
   const next = () =>
     setStep((s) =>
       s === "account"
-        ? "personal"
-        : s === "personal"
+        ? "password"
+        : s === "password"
         ? "verification"
         : "success"
     );
-  // const back = () =>
-  //   setStep((s) => (s === "verification" ? "personal" : "account"));
+  const back = () =>
+    setStep((s) => (s === "verification" ? "password" : "account"));
   return (
     <Form form={form}>
       <form onSubmit={form.handleSubmit(next)}>
@@ -55,18 +56,18 @@ export default function Signup({
           />
         )}
 
-        {/* {step === "personal" && (
-        <Personal
-          data={data}
-          setData={setData}
+        {step === "password" && (
+        <Password
+         control={form.control} 
           error={error}
           setError={setError}
           onNext={next}
           onBack={back}
+          onSwitchToLogin={onSwitchToLogin}
         />
       )}
 
-      {step === "verification" && (
+     {/*  {step === "verification" && (
         <Verification
           data={data}
           setData={setData}

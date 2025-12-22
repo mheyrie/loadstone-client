@@ -33,6 +33,7 @@ export default function Account({
             label="First Name"
             placeholder="John"
             className="col-span-6"
+            required
           />
           <FormFieldText
             control={control}
@@ -40,36 +41,48 @@ export default function Account({
             label="Last Name"
             placeholder="Doe"
             className="col-span-6"
+            required
           />
         </div>
 
-        <FormFieldText
-          control={control}
-          name="email"
-          label="Email"
-          type="email"
-          placeholder="you@example.com"
-        />
-        <FormFieldText
-          control={control}
-          name="userName"
-          label="Username"
-          placeholder="johndoe"
-        />
+        <div className="text-start">
+          <FormFieldText
+            control={control}
+            name="email"
+            label="Email"
+            type="email"
+            placeholder="you@example.com"
+            required
+          />
+          <small className="text-gray-500 mt-0">
+            Your email must be a valid email address
+          </small>
+        </div>
+        <div className="text-start">
+          <FormFieldText
+            control={control}
+            name="userName"
+            label="Username"
+            placeholder="johndoe"
+            required
+          />
+          <small className="text-gray-500 mt-0">
+            Your username must contain only letters (a-z) and numbers (0-9)
+          </small>
+        </div>
       </div>
-      {/* <FormFieldText control={control} name="password" label="Password" type="password" placeholder="••••••••" />
-      <FormFieldText control={control} name="confirmPassword" label="Confirm Password" type="password" placeholder="••••••••" /> */}
-      <Button
+    <Button
         content="Next"
         type="submit"
-        // onClick={onNext}
+        // onClick={onNext} 
+        // disabled={loading}
         classes="primary-btn btn-md mb-2"
       />
       <div className="flex items-center gap-3 text-gray-500">
-        <Checkbox id="terms" />
+        <Checkbox id="terms" required />
         <Label htmlFor="terms">Accept terms and conditions</Label>
       </div>{" "}
-      <div className="text-sm text-center mt-4 text-brand-white">
+      <div className="text-sm text-center mt-6 text-brand-white">
         Already have an account?{" "}
         <button
           onClick={onSwitchToLogin}

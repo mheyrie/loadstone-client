@@ -17,6 +17,7 @@ type FormFieldTextProps<T extends FieldValues> = {
   placeholder?: string;
   type?: "text" | "email" | "password";
   className?: string;
+  required?: boolean | string;
 };
 
 export function FormFieldText<T extends FieldValues>({
@@ -26,11 +27,18 @@ export function FormFieldText<T extends FieldValues>({
   placeholder,
   type = "text",
   className,
+  required,
 }: FormFieldTextProps<T>) {
   return (
     <FormField
       control={control}
       name={name}
+      rules={{
+        required:
+          required === true
+            ? `${label} is required`
+            : required || false,
+      }}
       render={({ field }) => (
         <FormItem className={`${className} text-start text-brand-white `}>
           <FormLabel >{label}</FormLabel>
