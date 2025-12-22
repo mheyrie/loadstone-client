@@ -12,8 +12,8 @@ export default function Password({
   control,
   error,
   setError,
-  onNext,
-  onBack,
+  // onNext,
+  // onBack,
   onSwitchToLogin,
 }: {
   control: Control<SignupFormData>;

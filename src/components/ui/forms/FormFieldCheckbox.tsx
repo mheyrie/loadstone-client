@@ -1,4 +1,3 @@
-"use client"
 
 import {
   FormField,
@@ -7,6 +6,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import type { Control, FieldValues, Path } from "react-hook-form"
+import { Select, SelectItem, SelectLabel } from "../select"
 
 type FormFieldCheckboxProps<T extends FieldValues> = {
   control: Control<T>
@@ -26,11 +26,12 @@ export function FormFieldCheckbox<T extends FieldValues>({
       render={({ field }) => (
         <FormItem className="flex items-start gap-2">
           <FormControl>
-            <input
-              type="checkbox"
-              checked={field.value}
-              onChange={(e) => field.onChange(e.target.checked)}
-            />
+            <Select>
+             <SelectLabel>  Choose an option</SelectLabel>
+             <SelectItem value={field.value}>Option 1</SelectItem>
+             <SelectItem value={field.value}>Option 2</SelectItem>
+
+             </Select>
           </FormControl>
 
           <label className="text-sm">{label}</label>
