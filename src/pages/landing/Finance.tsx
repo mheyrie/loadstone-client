@@ -54,6 +54,37 @@ export default function Finance() {
               />
             </div>
           </div>
+          <section
+            className="grid min-h-screen  grid-rows-1 px-2  items-center py-20 text-center justify-between h-full gap-2  md:mx-20"
+            data-aos="fade-up"
+            data-aos-offset="70"
+            data-aos-delay="3"
+            data-aos-mirror="true"
+          >
+            <div className="" data-aos="fade-down">
+              <div className="">
+                <h2 className="">
+                  Streamline your supply chain with our local purchase order
+                  financing,
+                </h2>
+                <p className="">
+                  Are you a small or medium-sized business looking to expand
+                  your operations and take on large orders? with our purchase
+                  order financing you can do the following:
+                </p>
+                <Button content="Get Funding Now" classes="secondary-btn btn-sm " />
+              </div>
+              <div className="flex items-center justify-center text-white">
+                <img
+                  src={`${BaseDirectories.IMAGES_DIR}/landing/Finance/portrait.png`}
+                  alt="Hero"
+                  className="max-w-full md:mt-16"
+                />
+              </div>
+            </div>
+            <div className=""></div>
+            <div className=""></div>
+          </section>
         </div>
       </section>
     </LandingLayout>
