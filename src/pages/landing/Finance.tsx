@@ -10,7 +10,7 @@ export default function Finance() {
         name="description"
         content="Explore financial solutions with Loadstone Financial"
       />
-      <section className="">
+      <section className="min-h-screen">
         <div
           className=""
           style={{
@@ -21,7 +21,7 @@ export default function Finance() {
         >
           {" "}
           <div
-            className="min-h-screen px-2 flex flex-col py-20 text-center justify-between h-full gap-2  md:mx-20"
+            className="px-2 flex flex-col py-20 text-center justify-between h-full gap-2  md:mx-20"
             data-aos="fade-right"
             data-aos-offset="70"
             data-aos-delay="0"
@@ -53,7 +53,7 @@ export default function Finance() {
                 className="max-w-full md:mt-16"
               />
             </div>
-          </div>
+          </div> </div>
           <section
             className="grid min-h-screen  grid-rows-1 px-2  items-center py-20 text-center justify-between h-full gap-2  md:mx-20"
             data-aos="fade-up"
@@ -76,7 +76,7 @@ export default function Finance() {
               </div>
               <div className="flex items-center justify-center text-white">
                 <img
-                  src={`${BaseDirectories.IMAGES_DIR}/landing/Finance/portrait.png`}
+                  src={`${BaseDirectories.IMAGES_DIR}/landing/Finance/img5.png`}
                   alt="Hero"
                   className="max-w-full md:mt-16"
                 />
@@ -85,7 +85,7 @@ export default function Finance() {
             <div className=""></div>
             <div className=""></div>
           </section>
-        </div>
+       
       </section>
     </LandingLayout>
   );

@@ -7,6 +7,7 @@ import { Link } from "react-router";
 import { useState } from "react";
 import SmallSpinner from "../../SmallSpinner";
 import { FormFieldPassword } from "../../forms/FormFieldPassword";
+import { FormFieldSelect } from "../../forms/FormFieldSelect";
 
 export default function Password({
   control,
@@ -38,7 +39,7 @@ export default function Password({
       <div className="">
         {error && <p className="text-red-500 text-sm">{error}</p>}
         <div className="">
-          <p className="">Choose authentication method</p>
+          <p className="text-white">Choose authentication method</p>
           <div className="flex gap-4">
             
           </div>
@@ -53,6 +54,9 @@ export default function Password({
             className=""
             required
           />{" "}
+          <FormFieldSelect 
+          
+          />
           <small className="text-gray-500 mt-0">
             Your username must contain only letters (a-z) and numbers (0-9)
           </small>

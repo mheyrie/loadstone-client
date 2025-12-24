@@ -33,7 +33,7 @@ export default function Account({
             label="First Name"
             placeholder="John"
             className="col-span-6"
-            required
+            // required
           />
           <FormFieldText
             control={control}
@@ -41,7 +41,7 @@ export default function Account({
             label="Last Name"
             placeholder="Doe"
             className="col-span-6"
-            required
+            // required
           />
         </div>
 
@@ -52,7 +52,7 @@ export default function Account({
             label="Email"
             type="email"
             placeholder="you@example.com"
-            required
+            // required
           />
           <small className="text-gray-500 mt-0">
             Your email must be a valid email address
@@ -64,7 +64,7 @@ export default function Account({
             name="userName"
             label="Username"
             placeholder="johndoe"
-            required
+            // required
           />
           <small className="text-gray-500 mt-0">
             Your username must contain only letters (a-z) and numbers (0-9)
