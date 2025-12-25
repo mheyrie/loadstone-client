@@ -19,7 +19,7 @@ export default function Account({
   onSwitchToLogin: () => void;
 }) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" data-aos="zoom-in-right">
       <h3 className="text-xl text-brand-white text-start font-semibold mb-6">
         Create an Account
       </h3>

@@ -12,9 +12,12 @@ export interface SignupFormData {
   businessName: string;
   businessType: string;
   verificationCode: string;
+  
 }
 
 export interface LoginFormData {
   emailOrUsername: string;
   password: string;
 }
+
+export type AuthOption = "password" | "passkey";

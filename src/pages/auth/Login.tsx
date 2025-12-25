@@ -52,7 +52,7 @@ export default function Login({
     <title>Login - Loadstone Financial</title>
     <meta name="description" content="Login to Loadstone" />
     <Form form={form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)}>
+      <form onSubmit={form.handleSubmit(handleSubmit)} data-aos='zoom-out-left'>
         <h3 className="text-xl text-brand-white text-start font-semibold mb-6">
          Log into Loanstone
         </h3>

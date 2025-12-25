@@ -1,4 +1,8 @@
-import type { SignupFormData, SignupStep } from "../../types/onboarding";
+import type {
+  AuthOption,
+  SignupFormData,
+  SignupStep,
+} from "../../types/onboarding";
 import { useState } from "react";
 // import Verification from "../../components/ui/modal/onboarding/Verification";
 // import Password from "../../components/ui/modal/onboarding/Password";
@@ -6,7 +10,7 @@ import { useState } from "react";
 import Account from "../../components/ui/modal/onboarding/Account";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
-import Password from "@/components/ui/modal/onboarding/Password";
+import AuthMethod from "@/components/ui/modal/onboarding/AuthMethod";
 
 export default function Signup({
   // onClose,
@@ -15,6 +19,7 @@ export default function Signup({
   onClose: () => void;
   onSwitchToLogin: () => void;
 }) {
+  const [authMethod, setAuthMethod] = useState<AuthOption>("password");
   const [step, setStep] = useState<SignupStep>("account");
   const [error, setError] = useState("");
   const form = useForm<SignupFormData>({
@@ -41,36 +46,36 @@ export default function Signup({
         ? "verification"
         : "success"
     );
-  const back = () =>
-    setStep((s) => (s === "verification" ? "password" : "account"));
+  // const back = () =>
+  //   setStep((s) => (s === "verification" ? "password" : "account"));
   return (
     <>
-    <title> Signup - Loadstone Financial</title>
-    <meta name="description" content="Signup to Loadstone" />
-    <Form form={form}>
-      <form onSubmit={form.handleSubmit(next)}>
-        {step === "account" && (
-          <Account
+      <title> Signup - Loadstone Financial</title>
+      <meta name="description" content="Signup to Loadstone" />
+      <Form form={form}>
+        <form onSubmit={form.handleSubmit(next)} data-aos="fade-right" >
+          {step === "account" && (
+            <Account
+              control={form.control}
+              // onNext={next}
+              error={error}
+              setError={setError}
+              onSwitchToLogin={onSwitchToLogin}
+            />
+          )}
+
+          {step === "password" && (
+          <AuthMethod
             control={form.control}
-            // onNext={next}
+            value={authMethod}
+            onChange={setAuthMethod}
             error={error}
             setError={setError}
             onSwitchToLogin={onSwitchToLogin}
           />
-        )}
+          )}
 
-        {step === "password" && (
-        <Password
-         control={form.control} 
-          error={error}
-          setError={setError}
-          onNext={next}
-          onBack={back}
-          onSwitchToLogin={onSwitchToLogin}
-        />
-      )}
-
-     {/*  {step === "verification" && (
+          {/*  {step === "verification" && (
         <Verification
           data={data}
           setData={setData}
@@ -81,8 +86,9 @@ export default function Signup({
         />
       )} */}
 
-        {/* {step === "success" && <Success onClose={onClose} />} */}
-      </form>
-    </Form></>
+          {/* {step === "success" && <Success onClose={onClose} />} */}
+        </form>
+      </Form>
+    </>
   );
 }
