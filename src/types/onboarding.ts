@@ -1,4 +1,12 @@
-export type SignupStep = "account" | "password" | "verification" | "success";
+export type SignupStep =
+  | "account"
+  | "password"
+  | "verification"
+  | "success"
+  | "phoneVerification"
+  | "pinVerification"
+  | "bvnVerification"
+  | "pinSetup";
 
 export interface SignupFormData {
   firstName: string;
@@ -12,7 +20,6 @@ export interface SignupFormData {
   businessName: string;
   businessType: string;
   verificationCode: string;
-
 }
 
 export interface LoginFormData {

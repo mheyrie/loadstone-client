@@ -10,12 +10,12 @@ import { FormFieldPassword } from "@/components/ui/forms/FormFieldPassword";
 interface LoginProps {
   onSwitchToSignup?: () => void;
   onClose?: () => void;
-  control: Control<LoginFormData>;
+  
 }
 
 export default function Login({
   onSwitchToSignup,
-  control,
+  // control,
   onClose,
 }: LoginProps) {
   const [isLoading, setIsLoading] = useState(false);
@@ -60,7 +60,7 @@ export default function Login({
         <div className="space-y-4 my-4">
           {" "}
           <FormFieldText
-            control={control}
+            control={form.control}
             name="emailOrUsername"
             label="Email or Username"
             placeholder="you@example.com"
@@ -68,7 +68,7 @@ export default function Login({
             required
           />
           <FormFieldPassword
-            control={control}
+            control={form.control}
             name="password"
             label="Password"
             placeholder="••••••••"
