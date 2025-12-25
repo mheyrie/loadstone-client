@@ -51,7 +51,7 @@ export default function AuthMethod({
               onClick={() => onChange("password")}
               className={`flex-1 rounded-xl border p-4 text-left transition ${
                 value === "password"
-                  ? "border-brand-purple bg-brand-purple/10"
+                  ? "border-brand-purple border-2 bg-brand-purple/10"
                   : "border-white/20"
               }`}
             >
@@ -66,12 +66,12 @@ export default function AuthMethod({
               onClick={() => onChange("passkey")}
               className={`relative flex-1 rounded-xl border p-4 text-left transition ${
                 value === "passkey"
-                  ? "border-brand-purple bg-brand-purple/10"
+                  ? "border-brand-purple border-2 bg-brand-purple/10"
                   : "border-white/20"
               }`}
             >
-              <span className="absolute top-2 right-2 text-xs bg-gray-600 px-2 rounded">
-                NEW
+              <span className="absolute -top-2 right-2 text-xs bg-gray-600 px-2 rounded-full">
+                NEW 
               </span>
               <p className="font-semibold text-white">Passkey</p>
               <p className="text-sm text-gray-400">
@@ -86,15 +86,15 @@ export default function AuthMethod({
             <>
               <FormFieldPassword
                 control={control}
-                name="password"
+                name="password" 
                 label="Password"
                 placeholder="••••••••"
                 required
               />
 
-              <small className="text-gray-500">
+              <p className="text-start text-xs text-gray-500">
                 Your password must contain letters and numbers
-              </small>
+              </p>
             </>
           )}
           {value === "passkey" && (
@@ -104,13 +104,11 @@ export default function AuthMethod({
               </div>
             </div>
           )}
-          <small className="text-gray-500 mt-0">
-            Your username must contain only letters (a-z) and numbers (0-9)
-          </small>
+         
         </div>
       </div>
      
-      <div className="flex items-center gap-3 text-gray-500">
+      <div className="flex items-center justify-center gap-3 text-gray-300 my-4">
         <Checkbox id="terms" required />
         <Label htmlFor="terms">
           Receive our newsletter & marketing communication
@@ -133,7 +131,7 @@ export default function AuthMethod({
           type="submit"
           disabled={isLoading}
           onClick={handleSubmit}
-          classes="primary-btn btn-md mb-2 !w-full"
+          classes="primary-btn btn-md mb-2 !w-full mt-6"
         />
       )}
       <div className="text-sm text-center mt-6 text-brand-white">

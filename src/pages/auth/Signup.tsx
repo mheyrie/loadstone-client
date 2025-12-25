@@ -4,7 +4,7 @@ import type {
   SignupStep,
 } from "../../types/onboarding";
 import { useState } from "react";
-// import Verification from "../../components/ui/modal/onboarding/Verification";
+import Verification from "../../components/ui/modal/onboarding/Verification";
 // import Password from "../../components/ui/modal/onboarding/Password";
 // import Success from "../../components/ui/modal/onboarding/Success";
 import Account from "../../components/ui/modal/onboarding/Account";
@@ -53,7 +53,7 @@ export default function Signup({
       <title> Signup - Loadstone Financial</title>
       <meta name="description" content="Signup to Loadstone" />
       <Form form={form}>
-        <form onSubmit={form.handleSubmit(next)} data-aos="fade-right" >
+        <form onSubmit={form.handleSubmit(next)} data-aos="fade-right">
           {step === "account" && (
             <Account
               control={form.control}
@@ -65,26 +65,25 @@ export default function Signup({
           )}
 
           {step === "password" && (
-          <AuthMethod
-            control={form.control}
-            value={authMethod}
-            onChange={setAuthMethod}
-            error={error}
-            setError={setError}
-            onSwitchToLogin={onSwitchToLogin}
-          />
+            <AuthMethod
+              control={form.control}
+              value={authMethod}
+              onChange={setAuthMethod}
+              error={error}
+              setError={setError}
+              onSwitchToLogin={onSwitchToLogin}
+            />
           )}
 
-          {/*  {step === "verification" && (
-        <Verification
-          data={data}
-          setData={setData}
-          error={error}
-          setError={setError}
-          onNext={next}
-          onBack={back}
-        />
-      )} */}
+          {step === "verification" && (
+            <Verification
+              control={form.control}
+              error={error}
+              setError={setError}
+              onNext={next}
+          
+            />
+          )}
 
           {/* {step === "success" && <Success onClose={onClose} />} */}
         </form>

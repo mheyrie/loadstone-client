@@ -12,7 +12,7 @@ export interface SignupFormData {
   businessName: string;
   businessType: string;
   verificationCode: string;
-  
+
 }
 
 export interface LoginFormData {
