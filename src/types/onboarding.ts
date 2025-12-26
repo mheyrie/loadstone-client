@@ -8,6 +8,16 @@ export type SignupStep =
   | "bvnVerification"
   | "pinSetup";
 
+  export const SIGNUP_FLOW: SignupStep[] = [
+  "account",
+  "password",
+  "verification",
+  "phoneVerification",
+  "pinSetup",
+  "success",
+];
+
+
 export interface SignupFormData {
   firstName: string;
   lastName: string;

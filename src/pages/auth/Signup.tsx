@@ -1,7 +1,7 @@
-import type {
-  AuthOption,
-  SignupFormData,
-  SignupStep,
+import {
+  SIGNUP_FLOW,
+  type AuthOption,
+  type SignupFormData,
 } from "../../types/onboarding";
 import { useState } from "react";
 import Verification from "../../components/ui/modal/onboarding/Verification";
@@ -11,6 +11,7 @@ import Account from "../../components/ui/modal/onboarding/Account";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
 import AuthMethod from "@/components/ui/modal/onboarding/AuthMethod";
+import PhoneNo from "@/components/ui/modal/onboarding/PhoneNo";
 
 export default function Signup({
   // onClose,
@@ -20,7 +21,8 @@ export default function Signup({
   onSwitchToLogin: () => void;
 }) {
   const [authMethod, setAuthMethod] = useState<AuthOption>("password");
-  const [step, setStep] = useState<SignupStep>("account");
+  const [stepIndex, setStepIndex] = useState(0);
+  const step = SIGNUP_FLOW[stepIndex];
   const [error, setError] = useState("");
   const form = useForm<SignupFormData>({
     defaultValues: {
@@ -39,13 +41,7 @@ export default function Signup({
   });
 
   const next = () =>
-    setStep((s) =>
-      s === "account"
-        ? "password"
-        : s === "password"
-        ? "verification"
-        : "success"
-    );
+   setStepIndex((index)=> Math.min(index + 1, SIGNUP_FLOW.length -1))
   // const back = () =>
   //   setStep((s) => (s === "verification" ? "password" : "account"));
   return (
@@ -77,13 +73,12 @@ export default function Signup({
 
           {step === "verification" && (
             <Verification
-              control={form.control}
-              error={error}
-              setError={setError}
-              onNext={next}
-          
+            // control={form.control}
+            // error={error}
+            // setError={setError}
             />
           )}
+          {step === "phoneVerification" && <PhoneNo />}
 
           {/* {step === "success" && <Success onClose={onClose} />} */}
         </form>

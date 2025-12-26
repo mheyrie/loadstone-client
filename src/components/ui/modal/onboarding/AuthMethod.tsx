@@ -9,7 +9,6 @@ import SmallSpinner from "../../SmallSpinner";
 import { FormFieldPassword } from "../../forms/FormFieldPassword";
 import BaseDirectories from "@/baseDir/baseDirectories";
 
-
 type AuthMethodProps = {
   control: Control<SignupFormData>;
   value: AuthOption;
@@ -17,8 +16,8 @@ type AuthMethodProps = {
   error: string;
   setError: (error: string) => void;
   onSwitchToLogin: () => void;
-};
 
+};
 
 export default function AuthMethod({
   control,
@@ -30,7 +29,7 @@ export default function AuthMethod({
 }: AuthMethodProps) {
   const [isLoading, setIsLoading] = useState(false);
 
-
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleSubmit = async () => {
     setError("");
     setIsLoading(true);
@@ -71,7 +70,7 @@ export default function AuthMethod({
               }`}
             >
               <span className="absolute -top-2 right-2 text-xs bg-gray-600 px-2 rounded-full">
-                NEW 
+                NEW
               </span>
               <p className="font-semibold text-white">Passkey</p>
               <p className="text-sm text-gray-400">
@@ -86,10 +85,10 @@ export default function AuthMethod({
             <>
               <FormFieldPassword
                 control={control}
-                name="password" 
+                name="password"
                 label="Password"
                 placeholder="••••••••"
-                required
+                // required
               />
 
               <p className="text-start text-xs text-gray-500">
@@ -100,14 +99,15 @@ export default function AuthMethod({
           {value === "passkey" && (
             <div className="flex justify-center py-10">
               <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center">
-                <img src={`${BaseDirectories.ICONS_DIR}/key.png`}  alt="Auth Key"/>
+                <img
+                  src={`${BaseDirectories.ICONS_DIR}/key.png`}
+                  alt="Auth Key"
+                />
               </div>
             </div>
           )}
-         
         </div>
       </div>
-     
       <div className="flex items-center justify-center gap-3 text-gray-300 my-4">
         <Checkbox id="terms" required />
         <Label htmlFor="terms">
@@ -123,14 +123,14 @@ export default function AuthMethod({
           Terms of Service
         </Link>
       </small>
-       {isLoading ? (
+      {isLoading ? (
         <SmallSpinner />
       ) : (
         <Button
           content="Sign Up"
           type="submit"
           disabled={isLoading}
-          onClick={handleSubmit}
+          // onClick={handleSubmit}
           classes="primary-btn btn-md mb-2 !w-full mt-6"
         />
       )}
