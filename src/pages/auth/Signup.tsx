@@ -12,6 +12,7 @@ import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
 import AuthMethod from "@/components/ui/modal/onboarding/AuthMethod";
 import PhoneNo from "@/components/ui/modal/onboarding/PhoneNo";
+import Otp from "@/components/ui/modal/onboarding/Otp";
 
 export default function Signup({
   // onClose,
@@ -79,6 +80,7 @@ export default function Signup({
             />
           )}
           {step === "phoneVerification" && <PhoneNo />}
+          {step === "pinSetup" && <Otp />}
 
           {/* {step === "success" && <Success onClose={onClose} />} */}
         </form>
