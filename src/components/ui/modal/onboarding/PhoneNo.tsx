@@ -1,30 +1,31 @@
-
 import BaseDirectories from "@/baseDir/baseDirectories";
 import Button from "../../Button";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
+import { useState } from "react";
+
 
 export default function PhoneNo() {
-  this.state = {
-    phone: "",
-  };
+  const [phone, setPhone] = useState('')
+
   return (
     <div className="flex flex-col items-center">
       {" "}
       <div className="flex flex-col items-center mb-6 md:mt-12">
         <img src={`${BaseDirectories.ICONS_DIR}/mail2.png`} alt="Auth Key" />
-        <small className="text-gray-500">Email verification Successful</small>
+        <small className="text-gray-500 text-md">Email verification Successful</small>
       </div>{" "}
-      <h2 className="text-2xl text-gray-100 font-extrabold">
+      <h3 className="text-2xl text-gray-100 font-extrabold">
         Enter Your Phone Number
-      </h2>
-      <p className="text-gray-500 mb-6 max-w-104 flex text-center">
+      </h3>
+      <p className="text-gray-500 mt-6 flex items-start">
         Mobile number
       </p>
-      <PhoneInput
-        country={"ng"}
-        value={this.state.phone}
-        onChange={(phone) => this.setState({ phone })}
+       <PhoneInput
+        defaultCountry="ng"
+        value={phone}
+        onChange={(phone) => setPhone(phone)}
+        className=""
       />
       <Button
         content="Proceed"
