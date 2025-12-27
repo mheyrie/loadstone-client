@@ -18,7 +18,7 @@ export default function PhoneNo() {
       <h3 className="text-2xl text-gray-100 font-extrabold">
         Enter Your Phone Number
       </h3>
-      <p className="text-gray-500 mt-6 flex items-start">
+      <p className="text-gray-500 mt-6 flex items-start!">
         Mobile number
       </p>
        <PhoneInput

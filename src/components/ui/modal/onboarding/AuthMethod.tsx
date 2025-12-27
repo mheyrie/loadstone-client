@@ -109,7 +109,7 @@ export default function AuthMethod({
         </div>
       </div>
       <div className="flex items-center justify-center gap-3 text-gray-300 my-4">
-        <Checkbox id="terms" required />
+        <Checkbox id="terms"  />
         <Label htmlFor="terms">
           Receive our newsletter & marketing communication
         </Label>

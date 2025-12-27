@@ -247,6 +247,19 @@ h1 {
   line-height: 1.1;
 }
 
+ .pin-style {
+    max-width: 48px;
+    width: auto !important;
+    height: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    outline: none;
+
+    &:focus {
+      box-shadow: 0 0 0 0.25rem #0d6efd40;
+    }
+  }
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
