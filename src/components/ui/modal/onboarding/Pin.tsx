@@ -1,11 +1,54 @@
 import OTPInput from "react-otp-input";
 import Button from "../../Button";
-import { useState } from "react";
+import {  useState } from "react";
+import { Input } from "../../input";
+import { Label } from "../../label";
+import toast from "react-hot-toast";
 
 export default function Pin() {
   const [pin, setPin] = useState("");
   const [confirmPin, setConfirmPin] = useState("");
   const [showPin, setShowPin] = useState(false);
+  const [error, setError] = useState("");
+
+  const inputType = showPin ? "text" : "password";
+  const PIN_LENGTH = 4;
+
+  if (
+    pin.length === PIN_LENGTH &&
+    confirmPin.length === PIN_LENGTH &&
+    pin !== confirmPin
+  ) {
+    setError("Pins do not matvch");
+    setConfirmPin("");
+  }
+
+  const handlePinChange = (value: string) => {
+    if (/^\d*$/.test(value)) {
+      setPin(value);
+      setError("");
+    }
+  };
+
+  const handleConfirmPinChange = (value: string) => {
+    if (/^\d*$/.test(value)) {
+      setConfirmPin(value);
+      setError("");
+    }
+  };
+
+  const isPinComplete =
+    pin.length === PIN_LENGTH && confirmPin.length === PIN_LENGTH;
+
+  const pinMatch = pin === confirmPin;
+
+  const canSubmit = isPinComplete && pinMatch;
+
+  const handleSubmit = () => {
+    if (!canSubmit) return;
+    toast.success("PIN created successfully");
+  };
+
   return (
     <div className="flex flex-col items-center">
       {" "}
@@ -18,10 +61,13 @@ export default function Pin() {
       </h3>
       <OTPInput
         value={pin}
-        onChange={setPin}
-        numInputs={4}
+        onChange={handlePinChange}
+        numInputs={PIN_LENGTH}
+        // numInputs={4}
         containerStyle="flex justify-center gap-4"
-        renderInput={(props) => <input {...props} placeholder="*" />}
+        renderInput={(props) => (
+          <input {...props} type={inputType} placeholder="*" />
+        )}
         inputStyle="pin-style rounded-md border border-gray-300 text-center text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent transition"
         renderSeparator={<span className="hidden" />}
       />
@@ -29,18 +75,21 @@ export default function Pin() {
         Confirm Pin
       </h3>
       <OTPInput
-        value={pin}
-        onChange={setPin}
-        numInputs={4}
+        value={confirmPin}
+        onChange={handleConfirmPinChange}
+        numInputs={PIN_LENGTH}
         containerStyle="flex justify-center gap-4"
-        renderInput={(props) => <input {...props} placeholder="*" />}
+        renderInput={(props) => (
+          <input {...props} type={inputType} placeholder="*" />
+        )}
         inputStyle="pin-style rounded-md border border-gray-300 text-center text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent transition"
         renderSeparator={<span className="hidden" />}
       />
+      {error && <small className="text-red-500 text-sm mt-3">{error}</small>}
       <div className="">
-        <label htmlFor="pinCheckbox"> Show PIN</label>
-        {" "}
-        <input
+        <Label htmlFor="pinCheckbox"> Show PIN</Label>{" "}
+        <Input
+          onChange={() => setShowPin(!showPin)}
           type="checkbox"
           id="pinCheckbox"
           name="pinCheckbox"
@@ -48,9 +97,13 @@ export default function Pin() {
         />
       </div>
       <Button
+        onClick={handleSubmit}
+        disabled={!canSubmit}
         content="Create PIN"
-        classes="primary-btn btn-md my-6 !w-full"
-        type="submit"
+        classes={`primary-btn btn-md my-6 !w-full ${
+          !canSubmit ? "opacity-50 cursor-not-allowed" : ""
+        }`}
+        type="button"
       />
     </div>
   );
