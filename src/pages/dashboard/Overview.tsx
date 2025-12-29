@@ -1,5 +1,5 @@
 export default function Overview() {
   return (
-    <div>Dashboard Overview</div>
+    <div className="text-start">Dashboard Overview</div>
   )
 }

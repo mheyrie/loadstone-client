@@ -1,18 +1,18 @@
-import {  useState } from "react";
+import { useState } from "react";
 import BaseDirectories from "../../../baseDir/baseDirectories";
 import Button from "../Button";
 import { X } from "lucide-react";
 
 export default function SessionConflictModal() {
-    const [isOpen, setIsOpen] = useState(true);
-  
-const closeModal = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
   if (!isOpen) return null;
 
-  return (  
+  return (
     <div className="">
       <X className="" size={2} onClick={closeModal} />
       <div className="">
@@ -21,11 +21,13 @@ const closeModal = () => {
       </div>
 
       <div className="">
-        <h4 className="text-red-700">Alert</h4>
+        <h4 className="text-brand-purple">
+          YOU ARE LOGGED INTO LOANSTONE ON ANOTHER DEVICE
+        </h4>
         <div className="my-4">
           <p>
-            We detected another device login. <br /> As such you have been
-            logged out of this device
+            To prevent losing any of you log history, please sign out of the
+            other device before continuing
           </p>
         </div>
         <Button
@@ -33,6 +35,7 @@ const closeModal = () => {
           classes="primary-btn btn-lg"
           content="Return to Login"
         />
+        <p className="text-xl text-brand-purple-light font-medium">Continue Anyway</p>
       </div>
     </div>
   );

@@ -1,16 +1,27 @@
-import { useState } from "react"
-import Spinner from "../ui/Spinner"
-import Header from "../dasbboard/Header"
-import Sidebar from "../dasbboard/Sidebar"
+import { useState } from "react";
+import Spinner from "../ui/Spinner";
+import Header from "../dasbboard/Header";
+import Sidebar from "../dasbboard/Sidebar";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-  const [loading,] = useState(false)
+  const [loading] = useState(false);
   return (
     <>
-    {loading &&<Spinner/>}
-    <Header/>
-    <Sidebar/>
+      {loading && <Spinner />}
+      <div className="flex">
+        <div className="w-[275px] h-screen bg-brand-purple left-0 top-0">
+          <Sidebar />{" "}
+        </div>
+        <div className="w-full">
+          <div className="">
+            <Header />
+          </div>
+
+          <Outlet />
+        </div>
+      </div>
     </>
-  )
-}
-export default Dashboard
+  );
+};
+export default Dashboard;

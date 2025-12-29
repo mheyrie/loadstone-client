@@ -10,7 +10,6 @@ import Finance from "../pages/landing/Finance";
 import SavingsInvestment from "../pages/landing/SavingsInvestment";
 import ContactUs from "../components/landingSections/ContactUs";
 import Blog from "../pages/landing/Blog";
-import FAQ from "../components/landingSections/FAQ";
 import TermsandCondition from "../components/landingSections/TermsandCondition";
 import BlogMain from "../pages/landing/BlogMain";
 import Dashboard from "@/components/_shared/Dashboard";
@@ -20,6 +19,7 @@ import Loans from "@/pages/dashboard/Loans";
 import Wallet from "@/pages/dashboard/Wallet";
 import Invest from "@/pages/dashboard/Invest";
 import Guarantors from "@/pages/dashboard/Guarantors";
+import FAQ from "@/pages/landing/FAQ";
 
 export default function MainRoutes() {
   AOS.init();
