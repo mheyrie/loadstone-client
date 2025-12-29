@@ -13,7 +13,10 @@ import Blog from "../pages/landing/Blog";
 import FAQ from "../components/landingSections/FAQ";
 import TermsandCondition from "../components/landingSections/TermsandCondition";
 import BlogMain from "../pages/landing/BlogMain";
-// import ScrollToHash from "./ScrollToHash";
+import Dashboard from "@/components/_shared/Dashboard";
+import Overview from "@/pages/dashboard/Overview";
+import Settings from "@/pages/dashboard/Settings";
+
 
 
 export default function MainRoutes() {
@@ -21,7 +24,7 @@ export default function MainRoutes() {
 
   return (
     <>
-      {/* <ScrollToHash /> */}
+  
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -40,8 +43,16 @@ export default function MainRoutes() {
 
 
         {/* TO BE PROTECTED  */}
-        <Route path="dashboard" element={<Das/>}>
+        <Route path="dashboard" element={<Dashboard/>}>
           <Route path="overview" element={<div>Dashboard Page - To be implemented</div>} />
+           <Route index element={<Overview />} />
+           
+             <Route path="settings" element={<Settings />} />
+             <Route path="settings" element={<Settings />} />
+             <Route path="settings" element={<Settings />} />
+             <Route path="settings" element={<Settings />} />
+             <Route path="settings" element={<Settings />} />
+             <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
     </>
