@@ -1,6 +1,12 @@
 import {
+  mdiAccessPoint,
   mdiAccountDetails,
+  mdiAccountEyeOutline,
+  mdiAccountLock,
+  mdiAccountOff,
+  mdiAlphaQBox,
   mdiCreditCard,
+  mdiDanceBallroom,
   mdiFrequentlyAskedQuestions,
   mdiNotebook,
   mdiPoll,
@@ -79,3 +85,36 @@ export const supportLinks = [
     comingSoon: false,
   },
 ];
+
+export const sideBar = [
+   {
+    text: "Dashboard",
+    url: "/dashboard",
+    icon: mdiAccessPoint
+  },
+   {
+    text: "Loans",
+    url: "/dashboard/loans",
+    icon: mdiAccountLock
+  },
+   {
+    text: "Guarantors",
+    url: "/dashboard/guarantors",
+    icon: mdiAlphaQBox
+  },
+   {
+    text: "Invest",
+    url: "/dashboard/invest",
+    icon: mdiAccountOff
+  },
+   {
+    text: "Wallet",
+    url: "/dashboard/wallet",
+    icon:mdiAccountEyeOutline
+  },
+   {
+    text: "Settings",
+    url: "/dashboard/settings",
+    icon: mdiDanceBallroom
+  },
+]

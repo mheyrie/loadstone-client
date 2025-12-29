@@ -10,10 +10,10 @@ const Dashboard = () => {
     <>
       {loading && <Spinner />}
       <div className="flex">
-        <div className="w-[275px] h-screen bg-brand-purple left-0 top-0">
+        <div className="w-[275px] h-screen left-0 top-0">
           <Sidebar />{" "}
         </div>
-        <div className="w-full">
+        <div className="w-full bg-[#EFF0F7] min-h-screen">
           <div className="">
             <Header />
           </div>

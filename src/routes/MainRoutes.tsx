@@ -42,11 +42,11 @@ export default function MainRoutes() {
         <Route path="/news" element={<BlogMain />} />
 
         {/* TO BE PROTECTED  */}
-        <Route path="dashboard" element={<Dashboard />}>
-          <Route
+        <Route path="dashboard/" element={<Dashboard />}>
+          {/* <Route
             path="overview"
             element={<div>Dashboard Page - To be implemented</div>}
-          />
+          /> */}
           <Route index element={<Overview />} />
 
           <Route path="loans" element={<Loans />} />

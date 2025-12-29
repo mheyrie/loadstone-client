@@ -65,7 +65,7 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navn */}
         <div className="hidden lg:flex gap-2 relative">
           {navLink.map((link) => {
             const dropdownLinks = getDropdownLinks(link.text);
