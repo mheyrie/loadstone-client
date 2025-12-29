@@ -101,9 +101,9 @@ export default function Footer() {
                 <h4 className="pt-5"> <Link to="/blog" className="hover:text-[#9668FF] transition">
                   Blog
                 </Link></h4>
-                <h4 className=" pt-5 "> <Link to="/#faq" className="hover:text-[#9668FF] transition">
+                <h4 className=" pt-5 "> <a href='#faq' className="hover:text-[#9668FF] transition">
                   FAQ
-                </Link>
+                </a>
                 </h4>
                 <h4 className=" pt-5">
                   <Link to="/contact-us" className="hover:text-[#9668FF] transition">

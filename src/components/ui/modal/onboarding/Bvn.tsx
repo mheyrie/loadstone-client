@@ -17,11 +17,11 @@ export default function Bvn() {
       <p className="text-gray-500 mt-6 flex items-start!">
       Industry regulation requires us to collect this information to verify your identity.
       </p>
-      <div className="">
+      <div className="w-full">
         <Label className="text-gray-500 mt-6 mb-2 flex items-start!">BVN (Bank Verification Number) <span className="text-red-500">*</span></Label>
         <Input type="text" placeholder="Enter your bank verification number" className="w-80 md:w-96" />
       </div>
-      <div className="">
+      <div className="w-full">
         <Label className="text-gray-500 mt-6 mb-2 flex items-start!">NIN (National Identity Number *<span className="text-red-500">*</span></Label>
         <Input type="text" placeholder="National Identity number" className="w-80 md:w-96" />
       </div>

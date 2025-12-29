@@ -56,9 +56,9 @@ export default function Pin() {
         <h2 className=" text-brand-white">PIN</h2>
         <small className="text-gray-500 text-md">Create Transaction Pin</small>
       </div>{" "}
-      <h3 className="text-2xl text-gray-100 font-extrabold border-b border-gray-300 mb-4 pb-4">
+      <p className="text-xl text-gray-100 font-extrabold border-b border-gray-300 mb-4 pb-4">
         Enter Pin
-      </h3>
+      </p>
       <OTPInput
         value={pin}
         onChange={handlePinChange}
@@ -71,9 +71,9 @@ export default function Pin() {
         inputStyle="pin-style rounded-md border border-gray-300 text-center text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple text-gray-100 focus:border-transparent transition"
         renderSeparator={<span className="hidden" />}
       />
-      <h3 className="text-2xl text-gray-100 font-extrabold border-b border-gray-300 mb-4 pb-4">
+      <p className="text-xl text-gray-100 font-extrabold border-b border-gray-300 my-4 pb-4">
         Confirm Pin
-      </h3>
+      </p>
       <OTPInput
         value={confirmPin}
         onChange={handleConfirmPinChange}

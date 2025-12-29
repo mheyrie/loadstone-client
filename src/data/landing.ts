@@ -63,7 +63,7 @@ export const supportLinks = [
   {
     icon: mdiFrequentlyAskedQuestions,
     text: "FAQ",
-    url: "/#faq",
+    url: "/faq",
     comingSoon: false,
   },
   {

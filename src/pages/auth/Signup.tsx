@@ -5,8 +5,6 @@ import {
 } from "../../types/onboarding";
 import { useState } from "react";
 import Verification from "../../components/ui/modal/onboarding/Verification";
-// import Password from "../../components/ui/modal/onboarding/Password";
-// import Success from "../../components/ui/modal/onboarding/Success";
 import Account from "../../components/ui/modal/onboarding/Account";
 import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";

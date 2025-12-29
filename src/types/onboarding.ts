@@ -2,24 +2,21 @@ export type SignupStep =
   | "account"
   | "password"
   | "verification"
-  | "success"
   | "phoneVerification"
   | "otpVerification"
   | "bvnVerification"
   | "pinSetup";
 
-  export const SIGNUP_FLOW: SignupStep[] = [
+export const SIGNUP_FLOW: SignupStep[] = [
   "account",
   "password",
   "verification",
   "phoneVerification",
   "otpVerification",
-  "pinSetup",
-  "success",
   "bvnVerification",
-
+  "pinSetup",
+ 
 ];
-
 
 export interface SignupFormData {
   firstName: string;
