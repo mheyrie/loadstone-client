@@ -13,6 +13,8 @@ import { Form } from "@/components/ui/form";
 import AuthMethod from "@/components/ui/modal/onboarding/AuthMethod";
 import PhoneNo from "@/components/ui/modal/onboarding/PhoneNo";
 import Otp from "@/components/ui/modal/onboarding/Otp";
+import Bvn from "@/components/ui/modal/onboarding/Bvn";
+import Pin from "@/components/ui/modal/onboarding/Pin";
 
 export default function Signup({
   // onClose,
@@ -42,7 +44,7 @@ export default function Signup({
   });
 
   const next = () =>
-   setStepIndex((index)=> Math.min(index + 1, SIGNUP_FLOW.length -1))
+    setStepIndex((index) => Math.min(index + 1, SIGNUP_FLOW.length - 1));
   // const back = () =>
   //   setStep((s) => (s === "verification" ? "password" : "account"));
   return (
@@ -80,8 +82,9 @@ export default function Signup({
             />
           )}
           {step === "phoneVerification" && <PhoneNo />}
-          {step === "pinSetup" && <Otp />}
-
+          {step === "otpVerification" && <Otp />}
+          {step === "bvnVerification" && <Bvn />}
+          {step === "pinSetup" && <Pin />}
           {/* {step === "success" && <Success onClose={onClose} />} */}
         </form>
       </Form>

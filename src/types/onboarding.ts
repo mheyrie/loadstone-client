@@ -4,7 +4,7 @@ export type SignupStep =
   | "verification"
   | "success"
   | "phoneVerification"
-  | "pinVerification"
+  | "otpVerification"
   | "bvnVerification"
   | "pinSetup";
 
@@ -13,8 +13,11 @@ export type SignupStep =
   "password",
   "verification",
   "phoneVerification",
+  "otpVerification",
   "pinSetup",
   "success",
+  "bvnVerification",
+
 ];
 
 

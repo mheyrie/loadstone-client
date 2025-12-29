@@ -68,7 +68,7 @@ export default function Pin() {
         renderInput={(props) => (
           <input {...props} type={inputType} placeholder="*" />
         )}
-        inputStyle="pin-style rounded-md border border-gray-300 text-center text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent transition"
+        inputStyle="pin-style rounded-md border border-gray-300 text-center text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple text-gray-100 focus:border-transparent transition"
         renderSeparator={<span className="hidden" />}
       />
       <h3 className="text-2xl text-gray-100 font-extrabold border-b border-gray-300 mb-4 pb-4">
@@ -82,19 +82,19 @@ export default function Pin() {
         renderInput={(props) => (
           <input {...props} type={inputType} placeholder="*" />
         )}
-        inputStyle="pin-style rounded-md border border-gray-300 text-center text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple focus:border-transparent transition"
+        inputStyle="pin-style rounded-md border border-gray-300 text-center text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple text-gray-100 focus:border-transparent transition"
         renderSeparator={<span className="hidden" />}
       />
       {error && <small className="text-red-500 text-sm mt-3">{error}</small>}
-      <div className="">
-        <Label htmlFor="pinCheckbox"> Show PIN</Label>{" "}
-        <Input
+      <div className="flex text-gray-300 gap-2 mt-2">
+         <Input
           onChange={() => setShowPin(!showPin)}
           type="checkbox"
           id="pinCheckbox"
           name="pinCheckbox"
-          checked={showPin}
-        />
+          checked={showPin} className="size-4"
+        /><Label htmlFor="pinCheckbox"> Show PIN</Label>{" "}
+       
       </div>
       <Button
         onClick={handleSubmit}
@@ -103,7 +103,7 @@ export default function Pin() {
         classes={`primary-btn btn-md my-6 !w-full ${
           !canSubmit ? "opacity-50 cursor-not-allowed" : ""
         }`}
-        type="button"
+        type="submit"
       />
     </div>
   );
