@@ -3,11 +3,9 @@ import { mdiAccountVoiceOff, mdiContentCopy } from "@mdi/js";
 import Icon from "@mdi/react";
 import { NavLink } from "react-router-dom";
 
-
-
 const Sidebar = () => {
   return (
-    <aside className="flex flex-col h-full mx-4 justify-between ">
+    <aside className="flex flex-col  h-full mx-4 justify-between ">
       <div className="mt-24">
         {" "}
         <div className="mb-4">
