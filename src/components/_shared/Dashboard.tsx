@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Spinner from "../ui/Spinner";
-import Header from "../dasbboard/Header";
-import Sidebar from "../dasbboard/Sidebar";
+import Header from "../dashboard/Header";
+import Sidebar from "../dashboard/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
@@ -9,12 +9,12 @@ const Dashboard = () => {
   return (
     <>
       {loading && <Spinner />}
-      <div className="flex">
-        <div className="w-[275px] h-screen left-0 top-0">
+      <div className="flex h-screen">
+        <div className=" hidden lg:block ">
           <Sidebar />{" "}
         </div>
-        <div className="w-full bg-[#EFF0F7] min-h-screen">
-          <div className="">
+        <div className="w-full bg-[#EFF0F7] ">
+          <div className="hidden lg:block">
             <Header />
           </div>
 

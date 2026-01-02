@@ -1,4 +1,4 @@
-import Header from "@/components/dasbboard/overview/Header";
+import Header from "@/components/dashboard/overview/Header";
 
 export default function Overview() {
   return (

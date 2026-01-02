@@ -3,9 +3,11 @@ import { mdiAccountVoiceOff, mdiContentCopy } from "@mdi/js";
 import Icon from "@mdi/react";
 import { NavLink } from "react-router-dom";
 
+
+
 const Sidebar = () => {
   return (
-    <div className="flex flex-col h-full mx-4 justify-between ">
+    <aside className="flex flex-col h-full mx-4 justify-between ">
       <div className="mt-24">
         {" "}
         <div className="mb-4">
@@ -21,12 +23,14 @@ const Sidebar = () => {
               <div className="relative group " key={link.text}>
                 <NavLink
                   to={link.url}
-                  end={link.url === "/dashboard"} 
+                  end={link.url === "/dashboard"}
                   className={({ isActive }) =>
-                   ` font-bold flex items-center px-4 space-x-2 py-2 ${isActive
-                      ? "text-brand-white flex bg-brand-purple rounded-md "
-                      : " flex text-start text-gray-700"
-                 }`  }
+                    ` font-bold flex items-center px-4 space-x-2 py-2 ${
+                      isActive
+                        ? "text-brand-white flex bg-brand-purple rounded-md "
+                        : " flex text-start text-gray-700"
+                    }`
+                  }
                 >
                   {" "}
                   <Icon path={link.icon} className="size-4 font-bold" />
@@ -42,7 +46,7 @@ const Sidebar = () => {
         <Icon path={mdiAccountVoiceOff} className="size-4 text-gray-800 " />
         <span className="">Sign Out</span>
       </div>
-    </div>
+    </aside>
   );
 };
 export default Sidebar;
