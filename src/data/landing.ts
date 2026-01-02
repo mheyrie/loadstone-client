@@ -47,7 +47,7 @@ export const productLinks = [
     icon: mdiPoll,
     text: "Saving & Investment",
     url: "/Saving-Investment",
-    description: "Save with ARM and Lend with Trade Lenda",
+    description: "Save with ARM and Lend with LoadStone",
     comingSoon: false,
   },
   {

@@ -13,32 +13,32 @@ export default function MarqueeComponent() {
         <div className="flex items-center space-x-10 px-10 py-5">
           <img
             src={`${BaseDirectories.LOGOS_DIR}/marquee/arm.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
           />
           <img
             src={`${BaseDirectories.LOGOS_DIR}/marquee/onek.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
           />
           <img
             src={`${BaseDirectories.LOGOS_DIR}/marquee/buffex.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
           />
           <img
             src={`${BaseDirectories.LOGOS_DIR}/marquee/farmer.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
           />
           <img
             src={`${BaseDirectories.LOGOS_DIR}/marquee/glidex.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
             // style={{ paddingTop: "30px" }}
           />
           <img
             src={`${BaseDirectories.LOGOS_DIR}/marquee/smart.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
           />
           <img
             src={`${BaseDirectories.LOGOS_DIR}/marquee/terminal.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
             // style={{ width: "280px" }}
           />
          

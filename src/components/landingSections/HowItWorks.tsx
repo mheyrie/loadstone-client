@@ -36,7 +36,7 @@ export default function HowItWorks() {
                 Create an account
               </h2>
               <p className="text-md flex items-center justify-start max-w-[320px]">
-                Create an Account with Trade Lenda and access funding to grow
+                Create an Account with LoadStone and access funding to grow
                 your business
               </p>
             </div>

@@ -3,7 +3,7 @@ import { mdiAccountVoiceOff, mdiContentCopy } from "@mdi/js";
 import Icon from "@mdi/react";
 import { NavLink } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ onNavigate }: { onNavigate?: () => void }) => {
   return (
     <aside className="flex flex-col  h-full mx-4 justify-between ">
       <div className="mt-24">
@@ -22,6 +22,7 @@ const Sidebar = () => {
                 <NavLink
                   to={link.url}
                   end={link.url === "/dashboard"}
+                  onClick={onNavigate}
                   className={({ isActive }) =>
                     ` font-bold flex items-center px-4 space-x-2 py-2 ${
                       isActive

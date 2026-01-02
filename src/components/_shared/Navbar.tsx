@@ -60,7 +60,7 @@ export default function Navbar() {
         <Link to={'/'} className="text-white font-bold z-50">
           <img
             src={`${BaseDirectories.LOGOS_DIR}/brand.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
             className="h-8"
           />
         </Link>
