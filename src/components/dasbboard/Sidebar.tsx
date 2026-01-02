@@ -25,7 +25,7 @@ const Sidebar = () => {
                   className={({ isActive }) =>
                    ` font-bold flex items-center px-4 space-x-2 py-2 ${isActive
                       ? "text-brand-white flex bg-brand-purple rounded-md "
-                      : " flex text-start text-gray-800"
+                      : " flex text-start text-gray-700"
                  }`  }
                 >
                   {" "}
