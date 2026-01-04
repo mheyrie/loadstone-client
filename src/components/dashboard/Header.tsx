@@ -1,5 +1,5 @@
 import BaseDirectories from "@/baseDir/baseDirectories";
-import { mdiAccount, mdiBellAlert, mdiMenuDown } from "@mdi/js";
+import { mdiAccount, mdiBell, mdiMenuDown } from "@mdi/js";
 import Icon from "@mdi/react";
 
 export default function Header({
@@ -10,7 +10,7 @@ export default function Header({
   onClick: () => void;
 }) {
   return (
-    <header className="sticky top-0 z-50 h-20 flex items-center px-4">
+    <header className="sticky top-0 z-50 h-20 flex justify-between items-center px-10 pt-12">
       {/* Mobile hamburger */}
       <div className="flex lg:hidden w-full items-center justify-between">
         {" "}
@@ -47,15 +47,15 @@ export default function Header({
       </div>
 
       {/* Desktop header */}
-      <div className="hidden lg:flex mx-auto font-semibold">
-        <div className="">
-          <h2 className="text-xl font-bold">Welcome Zee!</h2>
+      <div className="hidden lg:flex justify-between items-center w-full font-semibold">
+        <div className="text-left">
+          <h2 className="text-xl font-extrabold! -mb-2">Welcome Zee!</h2>
           <p className="">let’s boost your business today</p>
         </div>
         <div className="flex gap-2 justify-end items-center">
-          <Icon path={mdiBellAlert} className="" size={2} />
-          <span className="bg-yellow-300 rounded-full p-2">
-            <Icon path={mdiAccount} className="" size={2} />
+          <Icon path={mdiBell} className="" size={.7} />
+          <span className=" flex items-center  gap-2">
+            <Icon path={mdiAccount} size={1} className="bg-yellow-300 rounded-full p-auto p-1" />
             <h4 className="">Zion Imago-Dei</h4>
           </span>
           <Icon path={mdiMenuDown} size={1} className="" />

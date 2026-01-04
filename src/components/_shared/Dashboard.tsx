@@ -27,7 +27,7 @@ const Dashboard = () => {
         <div className="flex-1 flex flex-col bg-[#EFF0F7]">
           <Header isOpen={isOpen} onClick={toggle} />
 
-          <main className="flex-1 overflow-y-auto p-4">
+          <main className="flex-1 overflow-y-auto p-8 ">
             <Outlet />
           </main>
         </div>
