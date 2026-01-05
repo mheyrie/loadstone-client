@@ -5,7 +5,7 @@ export default function Overview() {
   return (
     <div className="text-start">
       {" "}
-      <Header />   Dashboard Overview
+      <Header />
       <Main/>
    
     </div>
