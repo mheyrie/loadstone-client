@@ -2,17 +2,17 @@ import { mdiEye } from "@mdi/js";
 import Icon from "@mdi/react";
 
  const variantStyles = {
-  wallet: {
+  one: {
     base: "bg-white text-gray-900",
     before: "before:bg-[#EDE9FE]",
     position: "before:translate-y-1/2 before:-translate-y-1/4",
   },
-  loan: {
+  two: {
     base: "bg-[#5B3CC4] text-white",
     before: "before:bg-[#7C5CF5]",
     position: "before:-translate-y-2/4 before:-translate-x-1/8",
   },
-  investment: {
+  three: {
     base: "bg-[#FACC15] text-gray-900",
     before: "before:bg-[#FDE68A]",
     position: "before:-translate-x-1/6 before:translate-y-1/4",
@@ -24,7 +24,7 @@ type StatCardProps = {
   value: string;
   subtitle?: string;
   action?: React.ReactNode;
-  variant?: "wallet" | "loan" | "investment";
+  variant?: "one" | "two" | "three" ;
 };
 
 export default function StatCard({
@@ -32,7 +32,7 @@ export default function StatCard({
   value,
   subtitle,
   action,
-  variant = "wallet",
+  variant = "one",
 }: StatCardProps) {
   return (  
     // before:absolute before:inset-0 before:content-['']

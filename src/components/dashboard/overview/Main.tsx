@@ -16,21 +16,21 @@ export default function Main() {
               Fund Wallet
             </button>
           }
-          variant="wallet"
+          variant="one"
         />
 
         <StatCard
           title="Loans"
           value="₦0.00"
           action={<span className="text-sm underline">View all</span>}
-          variant="loan"
+          variant="two"
         />
 
         <StatCard
           title="Investment"
           value="₦0.00"
           action={<span className="text-sm underline">View all</span>}
-          variant="investment"
+          variant="three"
         />
       </div>
       <div className="flex flex-col">
