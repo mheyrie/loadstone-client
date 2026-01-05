@@ -1,16 +1,17 @@
 import {
-  mdiAccessPoint,
+
   mdiAccountDetails,
-  mdiAccountEyeOutline,
-  mdiAccountLock,
-  mdiAccountOff,
-  mdiAlphaQBox,
+    mdiAccountGroup,
+  mdiCogOutline,
   mdiCreditCard,
-  mdiDanceBallroom,
+  mdiFinance,
   mdiFrequentlyAskedQuestions,
+  mdiHandCoin,
   mdiNotebook,
   mdiPoll,
   mdiSquareEditOutline,
+  mdiViewDashboard,
+  mdiWallet,
 } from "@mdi/js";
 
 export const navLink = [
@@ -90,31 +91,31 @@ export const sideBar = [
    {
     text: "Dashboard",
     url: "/dashboard",
-    icon: mdiAccessPoint
+    icon: mdiViewDashboard
   },
    {
     text: "Loans",
     url: "/dashboard/loans",
-    icon: mdiAccountLock
+    icon: mdiHandCoin
   },
    {
     text: "Guarantors",
     url: "/dashboard/guarantors",
-    icon: mdiAlphaQBox
+    icon: mdiAccountGroup
   },
    {
     text: "Invest",
     url: "/dashboard/invest",
-    icon: mdiAccountOff
+    icon: mdiFinance
   },
    {
     text: "Wallet",
     url: "/dashboard/wallet",
-    icon:mdiAccountEyeOutline
+    icon:mdiWallet
   },
    {
     text: "Settings",
     url: "/dashboard/settings",
-    icon: mdiDanceBallroom
+    icon: mdiCogOutline
   },
 ]

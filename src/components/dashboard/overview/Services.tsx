@@ -1,28 +1,32 @@
-import { mdiAbacus, mdiAbugidaThai, mdiAccessPointOff } from "@mdi/js";
+import { mdiCashMultiple, mdiFlowerTulip, mdiHandCoin, mdiHome } from "@mdi/js";
 import Icon from "@mdi/react";
 
 const ServicesCards = [
   {
-    title: "Service One",
-    Icon: mdiAbacus,
+    title: "Loan",
+    Icon: mdiHandCoin,
   },
   {
-    title: "Service Two",
-    Icon: mdiAbugidaThai,
+    title: "Invest",
+    Icon: mdiFlowerTulip,
   },
   {
-    title: "Service Three",
-    Icon: mdiAccessPointOff,
+    title: "Save",
+    Icon: mdiHome,
+  },
+  {
+    title: "Pay Bills",
+    Icon: mdiCashMultiple,
   },
 ];
 
 export default function Services() {
   return (
-    <div className="bg-white p-4 rounded-2xl">
+    <div className=" grid md:grid-cols-4 grid-cols-2 gap-6 p-4 rounded-2xl">
       {ServicesCards.map((service, index) => (
-        <span className="" key={index}>
-          <Icon path={service.Icon} size={2} className="text-brand-purple" />
-          <h4 className="">{service.title}</h4>
+        <span className="bg-white flex items-center gap-2 order-2 p-2 shadow-2xl rounded-lg  justify-center" key={index}>
+          <Icon path={service.Icon} size={1} className="text-brand-purple" />
+          <h4 className="font-bold">{service.title}</h4>
         </span>
       ))}
     </div>
