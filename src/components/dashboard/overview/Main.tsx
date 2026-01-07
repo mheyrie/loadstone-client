@@ -35,7 +35,7 @@ export default function Main() {
       </div>
       <div className="flex flex-col">
         <div className="flex items-center">
-          <h3 className="uppercase font-bold text-sm! min-w-28">our services</h3>
+          <h3 className="uppercase font-extrabold text-sm! min-w-28 text-brand-purple ">our services</h3>
           <div className="bg-gray-300 h-0.5 w-full ml-4"></div>
         </div>
        <Services/>
