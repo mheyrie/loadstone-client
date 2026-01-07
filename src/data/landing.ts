@@ -1,7 +1,6 @@
 import {
-
   mdiAccountDetails,
-    mdiAccountGroup,
+  mdiAccountGroup,
   mdiCogOutline,
   mdiCreditCard,
   mdiFinance,
@@ -88,34 +87,34 @@ export const supportLinks = [
 ];
 
 export const sideBar = [
-   {
+  {
     text: "Dashboard",
     url: "/dashboard",
-    icon: mdiViewDashboard
+    icon: mdiViewDashboard,
   },
-   {
+  {
     text: "Loans",
     url: "/dashboard/loans",
-    icon: mdiHandCoin
+    icon: mdiHandCoin,
   },
-   {
+  {
     text: "Guarantors",
     url: "/dashboard/guarantors",
-    icon: mdiAccountGroup
+    icon: mdiAccountGroup,
   },
-   {
+  {
     text: "Invest",
     url: "/dashboard/invest",
-    icon: mdiFinance
+    icon: mdiFinance,
   },
-   {
+  {
     text: "Wallet",
     url: "/dashboard/wallet",
-    icon:mdiWallet
+    icon: mdiWallet,
   },
-   {
+  {
     text: "Settings",
     url: "/dashboard/settings",
-    icon: mdiCogOutline
+    icon: mdiCogOutline,
   },
-]
+];
