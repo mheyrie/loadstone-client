@@ -22,9 +22,9 @@ const ServicesCards = [
 
 export default function Services() {
   return (
-    <div className=" grid md:grid-cols-4 grid-cols-2 gap-6 p-4 rounded-2xl">
+    <div className=" grid md:grid-cols-4 grid-cols-2 gap-6 my-4 rounded-2xl">
       {ServicesCards.map((service, index) => (
-        <span className="bg-white flex items-center gap-2 order-2 p-2 shadow-2xl rounded-lg  justify-center" key={index}>
+        <span className="bg-white flex items-center gap-2 order-2 p-2 py-4 shadow-2xl rounded-lg hover:bg-gray-100 cursor-pointer justify-center" key={index}>
           <Icon path={service.Icon} size={1} className="text-brand-purple" />
           <h4 className="font-bold">{service.title}</h4>
         </span>

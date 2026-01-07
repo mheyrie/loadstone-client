@@ -1,7 +1,8 @@
+import { mdiContentCopy, mdiWallet } from "@mdi/js";
 import StatCard from "../StatCard";
 import RecentTable from "./RecentTable";
 import Services from "./Services";
-
+import Button from "@/components/ui/Button";
 
 export default function Main() {
   return (
@@ -9,13 +10,12 @@ export default function Main() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-4">
         <StatCard
           title="Wallet Balance"
+          icon={mdiWallet}
           value="₦5,000,000.00"
-          subtitle="LOANSTONE 01234567890"
-          action={
-            <button className="mt-4 px-4 py-2 bg-brand-purple text-white rounded-lg text-sm">
-              Fund Wallet
-            </button>
-          }
+          title2="LOANSTONE"
+          value2="01234567890"
+          icon2={mdiContentCopy}
+          action={<Button content="Fund Wallet" classes="primary-btn btn-md" />}
           variant="one"
         />
 
@@ -33,14 +33,16 @@ export default function Main() {
           variant="three"
         />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col my-4">
         <div className="flex items-center">
-          <h3 className="uppercase font-extrabold text-sm! min-w-28 text-brand-purple ">our services</h3>
+          <h1 className="uppercase font-extrabold text-sm! min-w-28 text-brand-purple ">
+            our services
+          </h1>
           <div className="bg-gray-300 h-0.5 w-full ml-4"></div>
         </div>
-       <Services/>
+        <Services />
       </div>
-      <RecentTable/>
+      <RecentTable />
     </>
   );
 }
