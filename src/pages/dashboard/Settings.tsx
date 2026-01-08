@@ -1,5 +1,9 @@
+import SettingMain from "@/components/dashboard/setting/SettingMain";
+
 export default function Settings() {
   return (
-    <div>Settings</div>
+    <div>
+      <SettingMain/>
+    </div>
   )
 }

@@ -1,5 +1,9 @@
+import WalletMain from "@/components/dashboard/wallet/WalletMain";
+
 export default function Wallet() {
   return (
-    <div>Wallet</div>
+    <div>
+      <WalletMain/>
+    </div>
   )
 }

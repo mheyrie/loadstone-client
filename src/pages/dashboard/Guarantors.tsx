@@ -1,5 +1,9 @@
+import GuarantorMain from "@/components/dashboard/guarantor/GuarantorMain";
+
 export default function Guarantors() {
   return (
-    <div>Guarantors</div>
+    <div>
+      <GuarantorMain/>
+    </div>
   )
 }

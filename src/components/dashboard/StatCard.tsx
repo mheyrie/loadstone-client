@@ -29,6 +29,7 @@ type StatCardProps = {
   icon2?: string;
   action?: React.ReactNode;
   variant?: "one" | "two" | "three";
+  titleSize?: "sm" | "base" | "lg";
 };
 
 export default function StatCard({
@@ -40,11 +41,18 @@ export default function StatCard({
   value2,
   icon2,
   variant = "one",
+  titleSize = "sm",
 }: StatCardProps) {
   const [isVisible, setIsVisible] = useState(true);
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
+  };
+
+  const titleSizeClasses = {
+    sm: "text-sm",
+    base: "text-base",
+    lg: "text-2xl",
   };
 
   return (
@@ -68,7 +76,9 @@ export default function StatCard({
             {icon && (
               <Icon path={icon} size={1} className="text-brand-purple" />
             )}
-            <h4 className="text-sm font-medium opacity-80">{title}</h4>
+            <h4 className={`${titleSizeClasses[titleSize]} font-bold opacity-80 `}>
+              {title}
+            </h4>
           </div>
           <button
             onClick={toggleVisibility}
