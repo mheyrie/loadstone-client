@@ -1,19 +1,19 @@
 // components/dashboard/table/StatusBadge.tsx
 type Props = {
-  status: 'Success' | 'Pending' | 'Failed' | 'Active' | 'Matured' | 'paid' | 'unpaid' | 'approved' | 'pending';
+  status: 'success' | 'pending' | 'failed' | 'active' | 'matured' | 'paid' | 'unpaid' | 'approved' | 'pending' | 'inactive';
 };
 
 export function StatusBadge({ status }: Props) {
   const styles = {
-    Success : 'bg-green-100 text-green-700',
-    Pending: 'bg-yellow-100 text-yellow-700',
-    Failed: 'bg-red-100 text-red-700',
-    Active: 'bg-blue-100 text-blue-700',
-    Matured: 'bg-purple-100 text-purple-700',
+    success : 'bg-green-100 text-green-700',
+    pending: 'bg-yellow-100 text-yellow-700',
+    failed: 'bg-red-100 text-red-700',
+    active: 'bg-blue-100 text-blue-700',
+    matured: 'bg-purple-100 text-purple-700',
     paid: 'bg-green-100 text-green-700',
     unpaid: 'bg-red-100 text-red-700',
     approved: 'bg-green-100 text-green-700',
-    pending: 'bg-yellow-100 text-yellow-700',
+    inactive: 'bg-gray-100 text-gray-700',
 
   };
 
