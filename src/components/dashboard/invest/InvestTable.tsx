@@ -42,7 +42,7 @@ export default function InvestTable() {
     return (
       <EmptyState
         title="No investments yet"
-        imageSrc={`${BaseDirectories.IMAGES_DIR}/dashboard/empty.png`}
+        imageSrc={`${BaseDirectories.IMAGES_DIR}/dashboard/okay.png`}
         message="You haven't made any investments. Start investing to grow your wealth."
         actionButton={
           <Button

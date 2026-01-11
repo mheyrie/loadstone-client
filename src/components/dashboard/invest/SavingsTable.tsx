@@ -51,7 +51,7 @@ export default function SavingsTable() {
     return (
       <EmptyState
         title="No savings yet"
-        imageSrc={`${BaseDirectories.IMAGES_DIR}/dashboard/empty.png`}
+        imageSrc={`${BaseDirectories.IMAGES_DIR}/dashboard/okay.png`}
         message="You haven't started any savings plan. Start saving today to achieve your goals."
         actionButton={
           <Button
