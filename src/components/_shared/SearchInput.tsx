@@ -4,7 +4,7 @@ import { mdiMagnify } from "@mdi/js";
 
 export default function SearchInput() {
   return (
-    <div className="mx-4 my-2 text-brand-purple relative">
+    <div className="mx-4 my-2  text-brand-purple relative">
       <Icon
         className="absolute ml-3 mt-3 text-brand-purple "
         path={mdiMagnify}
