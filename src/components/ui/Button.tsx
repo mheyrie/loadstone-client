@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 
 type Props = {
   type?: any;
-  children: React.ReactNode;
-  className?: string;
+  classes: string;
   url?: string;
   onClick?: () => void;
   route?: string;
@@ -21,7 +20,7 @@ type Props = {
 
 const Button: FC<Props> = (props) => {
   const {
-    className,
+    classes,
     onClick,
     loading,
     content,
@@ -58,7 +57,7 @@ const Button: FC<Props> = (props) => {
     return (
       <button
         type={type || "button"}
-        className={`btn ${className || ""}`}
+         className={'btn' + (classes ? ' ' + classes : '')}
         onClick={(e) => {
           createRippleEffect(e);
           onClick();
@@ -87,7 +86,7 @@ const Button: FC<Props> = (props) => {
   return (
     <button
       type={type || "button"}
-      className={`btn ${className || ""}`}
+      className={'btn' + (classes ? ' ' + classes : '')}
       onClick={onClick}
       disabled={disabled || loading}
       title={title}
