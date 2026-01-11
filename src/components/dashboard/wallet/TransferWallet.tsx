@@ -45,6 +45,8 @@ export default function TransferWallet() {
         <h3 className="text-xl font-bold text-brand-purple">
           Transfer to Wallet
         </h3>
+        //NOTE - wallet balance
+        <div className="bg-brand-purple-light p-4 w-full rounded-md"># 0.00</div>
         <div className="space-y-3">
           <FormFieldText
             control={walletTransferForm.control}

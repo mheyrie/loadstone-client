@@ -1,7 +1,7 @@
 import { Tabs, Tab } from "@mui/material";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import EmptyState from "./EmptyState";
+import EmptyState from "../EmptyState";
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/modal/Modal";
 import RequestLoan from "@/components/ui/modal/loan/RequestLoan";
