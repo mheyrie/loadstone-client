@@ -7,6 +7,7 @@ interface ModalProps {
   title?: string;
   maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
   useBackgroundImage?: boolean;
+  className?: string;
 }
 
 export default function Modal({
@@ -16,6 +17,7 @@ export default function Modal({
   title,
   maxWidth = "lg",
   useBackgroundImage = true,
+  className,
 }: ModalProps) {
   // close modal on escape key press
   useEffect(() => {
@@ -40,7 +42,7 @@ export default function Modal({
   if (!isOpen) return null;
 
   const maxWidthClasses = {
-     sm: "max-w-sm",
+    sm: "max-w-sm",
     md: "max-w-md",
     lg: "max-w-2xl",
     xl: "max-w-4xl",
@@ -62,7 +64,7 @@ export default function Modal({
 
       {/* modal content*/}
       <div
-        className={`relative bg-white rounded-2xl shadow-2xl ${maxWidthClasses[maxWidth]} w-full mx-4 my-auto max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-100`}
+        className={`relative ${!className?.includes('bg-') ? 'bg-white' : ''} rounded-2xl shadow-2xl ${maxWidthClasses[maxWidth]} w-full mx-4 my-auto max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-100 ${className || ''}`}
         onClick={(e) => e.stopPropagation()}
         style={
           useBackgroundImage

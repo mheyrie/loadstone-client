@@ -10,7 +10,7 @@ export type LoanRequestForm = {
 export type Loan = {
   id: string;
   purpose: string;
-  amount: string;
+  amount: number;
   loanTenor: string;
   monthlyInterest: string;
   status: "paid" | "unpaid" | "approved" | "pending";
@@ -20,4 +20,6 @@ export type Loan = {
   reason: string;
   note: string;
   createdAt: string;
+  payBackDate: string;
+  approvedAt?: string;
 };

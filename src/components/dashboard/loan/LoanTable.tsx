@@ -10,21 +10,21 @@ import { Form } from "@/components/ui/form";
 import { DataTable } from "../table/DataTable";
 import { paidLoanColumns } from "@/features/loanColumns";
 import type { LoanRequestForm, Loan } from "@/types/loan";
-
-
+import { mdiChevronRight } from "@mdi/js";
+import Icon from "@mdi/react";
 
 export default function LoanTable() {
   const [activeTab, setActiveTab] = useState(0);
   const [isRequestLoanModalOpen, setIsRequestLoanModalOpen] = useState(false);
   const [isLoanDetailsModalOpen, setIsLoanDetailsModalOpen] = useState(false);
   const [selectedLoan, setSelectedLoan] = useState<Loan | null>(null);
-  
+
   // Mock data for paid loans - replace with actual data from your API
-  const paidLoans: Loan[] = [
+  const allLoans: Loan[] = [
     {
       id: "LN001",
       purpose: "Business Expansion",
-      amount: "₦5,000,000.00",
+      amount: 5000000,
       loanTenor: "12 months",
       monthlyInterest: "5%",
       status: "paid",
@@ -34,11 +34,13 @@ export default function LoanTable() {
       reason: "Business Expansion",
       note: "Fully repaid",
       createdAt: "2025-01-10",
+      payBackDate: "2026-01-10",
+      approvedAt: "2025-01-15",
     },
     {
       id: "LN002",
       purpose: "Education",
-      amount: "₦2,500,000.00",
+      amount: 2500000,
       loanTenor: "6 months",
       monthlyInterest: "4%",
       status: "paid",
@@ -48,14 +50,32 @@ export default function LoanTable() {
       reason: "Education",
       note: "Completed payment",
       createdAt: "2024-12-15",
+      payBackDate: "2025-06-15",
+      approvedAt: "2024-12-20",
     },
+    {
+      id: "LN003",
+      purpose: "Home Renovation",
+      amount: 3000000,
+      loanTenor: "9 months",
+      monthlyInterest: "4.5%",
+      status: "unpaid",
+      loanType: "Home Improvement Loan",
+      email: "user@example.com",
+      duration: "9 months",
+      reason: "Home Renovation",
+      note: "Completed payment",
+      createdAt: "2024-11-20",
+      payBackDate: "2025-08-20",
+      approvedAt: "2024-11-25",
+    }
   ];
 
   const handleViewLoanDetails = (loan: Loan) => {
     setSelectedLoan(loan);
     setIsLoanDetailsModalOpen(true);
   };
-  
+
   const form = useForm<LoanRequestForm>({
     defaultValues: {
       email: "uuseremail@test.com",
@@ -119,18 +139,19 @@ export default function LoanTable() {
         {/* Table content here */}
         {activeTab === 0 && (
           <div className="p-4">
-            {paidLoans.length > 0 ? (
-              <DataTable 
-                data={paidLoans} 
-                columns={paidLoanColumns(handleViewLoanDetails)} 
+            {allLoans.length > 0 ? (
+              <DataTable
+                data={allLoans}
+                columns={paidLoanColumns(handleViewLoanDetails)}
+                pageSize={10}
               />
             ) : (
               <EmptyState
                 title="No paid loans"
                 message="You haven't fully paid off any loans yet."
                 actionButton={
-                  <Button 
-                    content="Request for Loan" 
+                  <Button
+                    content="Request for Loan"
                     classes="primary-btn btn-md"
                     onClick={handleRequestLoan}
                   />
@@ -140,57 +161,104 @@ export default function LoanTable() {
           </div>
         )}
         {activeTab === 1 && (
-          <EmptyState
-            title="No approved loans"
-            message="You don't have any approved loans at the moment."
-            actionButton={
-              <Button 
-                content="Request for Loan" 
-                classes="primary-btn btn-md"
-                onClick={handleRequestLoan}
+          <div className="p-4">
+            {allLoans.filter(loan => loan.status === "approved").length > 0 ? (
+              <DataTable
+                data={allLoans.filter(loan => loan.status === "approved")}
+                columns={paidLoanColumns(handleViewLoanDetails)}
+                pageSize={10}
               />
-            }
-          />
+            ) : (
+              <EmptyState
+                title="No approved loans"
+                message="You don't have any approved loans at the moment."
+                actionButton={
+                  <Button
+                    content="Request for Loan"
+                    classes="primary-btn btn-md"
+                    onClick={handleRequestLoan}
+                  />
+                }
+              />
+            )}
+          </div>
         )}
-        {activeTab === 2 && (
-          <EmptyState
-            title="No unapproved loans"
-            message="You don't have any pending loan applications."
-            actionButton={
-              <Button 
-                content="Request for Loan" 
-                classes="primary-btn btn-md"
-                onClick={handleRequestLoan}
+      {activeTab === 2 && (
+          <div className="p-4">
+            {allLoans.filter(loan => loan.status === "pending").length > 0 ? (
+              <DataTable
+                data={allLoans.filter(loan => loan.status === "pending")}
+                columns={paidLoanColumns(handleViewLoanDetails)}
+                pageSize={10}
               />
-            }
-          />
+            ) : (
+              <EmptyState
+                title="No pending loans"
+                message="You don't have any pending loans at the moment."
+                actionButton={
+                  <Button
+                    content="Request for Loan"
+                    classes="primary-btn btn-md"
+                    onClick={handleRequestLoan}
+                  />
+                }
+              />
+            )}
+          </div>
         )}
         {activeTab === 3 && (
-          <EmptyState
-            title="No paid loans"
-            message="You haven't fully paid off any loans yet."
-            actionButton={
-              <Button 
-                content="Request for Loan" 
-                classes="primary-btn btn-md"
-                onClick={handleRequestLoan}
+          <div className="p-4">
+            {allLoans.filter(loan => loan.status === "paid").length > 0 ? (
+              <DataTable
+                data={allLoans.filter(loan => loan.status === "paid")}
+                columns={paidLoanColumns(handleViewLoanDetails)}
+                pageSize={10}
               />
-            }
-          />
-        )}
-        {activeTab === 4 && (
-          <EmptyState
-            title="No unpaid loans"
-            message="All your loans are paid up. Great job!"
-            actionButton={
-              <Button 
-                content="Request for Loan" 
-                classes="primary-btn btn-md"
-                onClick={handleRequestLoan}
+            ) : (
+              <EmptyState
+                title="No approved loans"
+                message="You don't have any approved loans at the moment."
+                actionButton={
+                  <Button
+                    content="Request for Loan"
+                    classes="primary-btn btn-md"
+                    onClick={handleRequestLoan}
+                  />
+                }
               />
-            }
-          />
+            )}
+          </div>
         )}
+     {activeTab === 4 && (
+          <div className="p-4">
+            {allLoans.filter(loan => loan.status === "unpaid").length > 0 ? (
+              <DataTable
+                data={allLoans.filter(loan => loan.status === "unpaid")}
+                columns={paidLoanColumns(handleViewLoanDetails)}
+                pageSize={10}
+              />
+            ) : (
+              <EmptyState
+                title="No approved loans"
+                message="You don't have any approved loans at the moment."
+                actionButton={
+                  <Button
+                    content="Request for Loan"
+                    classes="primary-btn btn-md"
+                    onClick={handleRequestLoan}
+                  />
+                }
+              />
+            )}
+          </div>
+        )}
+        <div className="h-4 flex justify-between items-center px-4 py-3 rounded-lg my-4">
+          <span className="border"> See More</span>
+          <span className="flex items-center gap-2">
+            <Icon path={mdiChevronRight} size={1} className="rotate-180" />{" "}
+            <span>Back</span>
+          </span>
+        </div>
       </div>
 
       {/* Request Loan Modal */}
@@ -211,17 +279,6 @@ export default function LoanTable() {
                 onClick={() => setIsRequestLoanModalOpen(false)}
                 type="button"
               />
-
-      {/* Loan Details Modal */}
-      <Modal
-        isOpen={isLoanDetailsModalOpen}
-        onClose={() => setIsLoanDetailsModalOpen(false)}
-        title=""
-        maxWidth="2xl"
-        useBackgroundImage={false}
-      >
-        {selectedLoan && <LoanDetailsModal loan={selectedLoan} />}
-      </Modal>
               <Button
                 content="Submit Request"
                 classes="primary-btn btn-md"
@@ -230,6 +287,18 @@ export default function LoanTable() {
             </div>
           </form>
         </Form>
+      </Modal>
+
+      {/* Loan Details Modal */}
+      <Modal
+        isOpen={isLoanDetailsModalOpen}
+        onClose={() => setIsLoanDetailsModalOpen(false)}
+        title=""
+        maxWidth="xl"
+        useBackgroundImage={false}
+        className="bg-[#F5EFF7]"
+      >
+        {selectedLoan && <LoanDetailsModal loan={selectedLoan} />}
       </Modal>
     </div>
   );

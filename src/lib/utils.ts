@@ -6,9 +6,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatCurrency(amount: number, currency: string = "₦"): string {
-  return `${currency}${amount.toLocaleString(undefined, {
+  return `${currency}${amount.toLocaleString('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })}`;
-  // return `${currency}${amount.toLocaleString()}`;
 }

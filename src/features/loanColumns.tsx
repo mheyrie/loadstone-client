@@ -2,6 +2,7 @@ import type { ColumnDef } from "@tanstack/react-table";
 import type { Loan } from "@/types/loan";
 import Button from "@/components/ui/Button";
 import { StatusBadge } from "@/components/dashboard/table/StatusBadge";
+import { formatCurrency } from "@/lib/utils";
 
 
 export const paidLoanColumns = (
@@ -11,14 +12,16 @@ export const paidLoanColumns = (
     accessorKey: "purpose",
     header: "Purpose",
     cell: ({ row }) => (
-      <div className="font-medium text-gray-900">{row.original.purpose}</div>
+      <div className=" text-start font-medium text-gray-900">{row.original.purpose}</div>
     ),
   },
   {
     accessorKey: "amount",
     header: "Amount",
     cell: ({ row }) => (
-      <div className="font-semibold text-gray-900">{row.original.amount}</div>
+      <div className="font-semibold text-gray-900">
+        {formatCurrency(row.original.amount)}
+      </div>
     ),
   },
   {

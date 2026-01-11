@@ -106,6 +106,3 @@ export const investments = [
     maturity: "24 Jul 2025",
   },
 ];
-
-export const formatCurrency = (amount: number) =>
-  `₦${amount.toLocaleString()}`;
