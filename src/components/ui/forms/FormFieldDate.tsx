@@ -10,25 +10,27 @@ import {
 import type { Control, FieldValues, Path } from "react-hook-form";
 import { Input } from "../input";
 
-type FormFieldTextProps<T extends FieldValues> = {
+type FormFieldDateProps<T extends FieldValues> = {
   control: Control<T>;
   name: Path<T>;
   label: string;
   placeholder?: string;
-  type?: "text" | "email" | "password" ;
   className?: string;
   required?: boolean | string;
+  min?: string;
+  max?: string;
 };
 
-export function FormFieldText<T extends FieldValues>({
+export function FormFieldDate<T extends FieldValues>({
   control,
   name,
   label,
   placeholder,
-  type = "text",
   className,
   required,
-}: FormFieldTextProps<T>) {
+  min,
+  max,
+}: FormFieldDateProps<T>) {
   return (
     <FormField
       control={control}
@@ -40,11 +42,17 @@ export function FormFieldText<T extends FieldValues>({
             : required || false,
       }}
       render={({ field }) => (
-        <FormItem className={`${className} text-start text-brand-white `}>
-          <FormLabel >{label}</FormLabel>
+        <FormItem className={`${className} text-start text-brand-white`}>
+          <FormLabel>{label}</FormLabel>
 
           <FormControl>
-            <Input type={type} placeholder={placeholder} {...field} />
+            <Input 
+              type="date" 
+              placeholder={placeholder} 
+              min={min}
+              max={max}
+              {...field} 
+            />
           </FormControl>
 
           <FormMessage name={name} />
