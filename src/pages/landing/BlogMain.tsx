@@ -1,7 +1,7 @@
 import BaseDirectories from "../../baseDir/baseDirectories";
 import LandingLayout from "../../components/_shared/LandingLayout";
 import { Link } from "react-router-dom";
-import { FaRegThumbsUp, FaRegComment, FaShare } from "react-icons/fa";
+
 
 export default function Blog() {
   return (

@@ -1,14 +1,29 @@
 import { navLink, productLinks, supportLinks } from "../../data/landing";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BaseDirectories from "../../baseDir/baseDirectories";
 import Dropdown from "../ui/Dropdown";
 import Button from "../ui/Button";
+import Modal from "../ui/modal/Modal";
+import Login from "../../pages/auth/Login";
+import Signup from "../../pages/auth/Signup";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+
+  const handleSwitchToSignup = () => {
+    setIsLoginModalOpen(false);
+    setIsSignupModalOpen(true);
+  };
+
+  const handleSwitchToLogin = () => {
+    setIsSignupModalOpen(false);
+    setIsLoginModalOpen(true);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,15 +57,15 @@ export default function Navbar() {
     >
       <nav className="h-16 bg-linear-to-br from-[#A6A4A7] via-[#A9A7A9] to-white rounded-full flex items-center justify-between px-6 lg:px-20">
         {/* Logo */}
-        <div className="text-white font-bold z-50">
+        <Link to={'/'} className="text-white font-bold z-50">
           <img
             src={`${BaseDirectories.LOGOS_DIR}/brand.png`}
-            alt="Trade Lenda"
+            alt="LoadStone"
             className="h-8"
           />
-        </div>
+        </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navn */}
         <div className="hidden lg:flex gap-2 relative">
           {navLink.map((link) => {
             const dropdownLinks = getDropdownLinks(link.text);
@@ -88,13 +103,16 @@ export default function Navbar() {
 
         {/* Desktop Auth Buttons */}
         <div className="hidden lg:flex gap-6">
-          <button className="text-grey-800 font-medium cursor-pointer">
+          <button 
+            className="text-grey-800 font-medium cursor-pointer"
+            onClick={() => setIsLoginModalOpen(true)}
+          >
             Log in
           </button>
           <Button
             classes="primary-btn btn-sm"
             content="Signup"
-            onClick={() => {}}
+            onClick={() => setIsSignupModalOpen(true)}
           />
         </div>
 
@@ -184,17 +202,52 @@ export default function Navbar() {
 
           {/* Mobile Auth Buttons */}
           <div className="pt-4 border-t border-gray-200 space-y-3">
-            <button className="w-full text-left py-2 text-grey-800 font-medium">
+            <button 
+              className="w-full text-left py-2 text-grey-800 font-medium"
+              onClick={() => {
+                setIsLoginModalOpen(true);
+                setIsMobileMenuOpen(false);
+              }}
+            >
               Log in
             </button>
             <Button
               classes="primary-btn btn-sm w-full"
               content="Signup"
-              onClick={() => {}}
+              onClick={() => {
+                setIsSignupModalOpen(true);
+                setIsMobileMenuOpen(false);
+              }}
             />
           </div>
         </div>
       </div>
+
+      {/* Login Modal */}
+      <Modal
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+        title=""
+        maxWidth="lg"
+      >
+        <Login
+          onSwitchToSignup={handleSwitchToSignup}
+          onClose={() => setIsLoginModalOpen(false)}
+        />
+      </Modal>
+
+      {/* Signup Modal */}
+      <Modal
+        isOpen={isSignupModalOpen}
+        onClose={() => setIsSignupModalOpen(false)}
+        title=""
+        maxWidth="lg"
+      >
+        <Signup
+          onSwitchToLogin={handleSwitchToLogin}
+          onClose={() => setIsSignupModalOpen(false)}
+        />
+      </Modal>
     </section>
   );
 }

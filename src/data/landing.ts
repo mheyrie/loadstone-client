@@ -1,17 +1,23 @@
 import {
   mdiAccountDetails,
+  mdiAccountGroup,
+  mdiCogOutline,
   mdiCreditCard,
+  mdiFinance,
   mdiFrequentlyAskedQuestions,
+  mdiHandCoin,
   mdiNotebook,
   mdiPoll,
   mdiSquareEditOutline,
+  mdiViewDashboard,
+  mdiWallet,
 } from "@mdi/js";
 
 export const navLink = [
-  { text: "Home", url: "/" },
+  // { text: "Home", url: "/" },
   {
     text: "Products",
-    url: "/products",
+    url: "/",
   },
   {
     text: "Business",
@@ -41,7 +47,7 @@ export const productLinks = [
     icon: mdiPoll,
     text: "Saving & Investment",
     url: "/Saving-Investment",
-    description: "Save with ARM and Lend with Trade Lenda",
+    description: "Save with ARM and Lend with LoadStone",
     comingSoon: false,
   },
   {
@@ -63,7 +69,7 @@ export const supportLinks = [
   {
     icon: mdiFrequentlyAskedQuestions,
     text: "FAQ",
-    url: "/#faq",
+    url: "/faq",
     comingSoon: false,
   },
   {
@@ -77,5 +83,38 @@ export const supportLinks = [
     text: "Blog",
     url: "/blog",
     comingSoon: false,
+  },
+];
+
+export const sideBar = [
+  {
+    text: "Dashboard",
+    url: "/dashboard",
+    icon: mdiViewDashboard,
+  },
+  {
+    text: "Loans",
+    url: "/dashboard/loans",
+    icon: mdiHandCoin,
+  },
+  {
+    text: "Guarantors",
+    url: "/dashboard/guarantors",
+    icon: mdiAccountGroup,
+  },
+  {
+    text: "Invest",
+    url: "/dashboard/invest",
+    icon: mdiFinance,
+  },
+  {
+    text: "Wallet",
+    url: "/dashboard/wallet",
+    icon: mdiWallet,
+  },
+  {
+    text: "Settings",
+    url: "/dashboard/settings",
+    icon: mdiCogOutline,
   },
 ];

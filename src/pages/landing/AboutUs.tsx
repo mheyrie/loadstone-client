@@ -6,6 +6,8 @@ export default function AboutUs() {
 
 
     <LandingLayout>
+      <title>About Us - Loadstone Financial</title>
+      <meta name="description" content="Learn more about Loadstone Financial, our mission, and how we support SMEs across Africa." />
       <section className="font-montserrat w-screen text-xl flex justify-center items-center"
       
       >

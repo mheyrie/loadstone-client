@@ -6,10 +6,10 @@ export default function WhatWeDo() {
   return (
     <section className="md:mt-10 mx-auto">
       <div className="text-center">
-        <div className="text-xmd text-brand-purple flex justify-center items-center font-bold mb-4">
+        <div className="text-md text-brand-purple flex justify-center items-center font-bold mb-4">
           {" "}
-          <Icon path={mdiCircleSmall} size={2} />{" "}
-          <span className=" uppercase">What We Do</span>{" "}
+          <Icon path={mdiCircleSmall} size={3} className="" />{" "}
+          <span className="uppercase -ml-4">What We Do</span>{" "}
         </div>
         <h2 className="text-6xl font-bold mb-8 mx-2">
           Transforming Business for MSMEs
