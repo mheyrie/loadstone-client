@@ -20,6 +20,7 @@ import Wallet from "@/pages/dashboard/Wallet";
 import Invest from "@/pages/dashboard/Invest";
 import Guarantors from "@/pages/dashboard/Guarantors";
 import FAQ from "@/pages/landing/FAQ";
+import GuarantorDetails from "@/components/dashboard/guarantor/GuarantorDetails";
 
 export default function MainRoutes() {
   AOS.init();
@@ -51,6 +52,7 @@ export default function MainRoutes() {
 
           <Route path="loans" element={<Loans />} />
           <Route path="guarantors" element={<Guarantors />} />
+           <Route path="guarantors/:id" element={<GuarantorDetails />} />
           <Route path="invest" element={<Invest />} />
           <Route path="wallet" element={<Wallet />} />
 
