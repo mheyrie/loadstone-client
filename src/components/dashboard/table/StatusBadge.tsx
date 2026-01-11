@@ -1,6 +1,6 @@
 // components/dashboard/table/StatusBadge.tsx
 type Props = {
-  status: 'success' | 'pending' | 'failed' | 'active' | 'matured' | 'paid' | 'unpaid' | 'approved' | 'pending' | 'inactive';
+  status: 'success' | 'pending' | 'failed' | 'active' | 'matured' | 'paid' | 'unpaid' | 'approved' | 'pending' | 'inactive' | 'completed' | 'paused';
 };
 
 export function StatusBadge({ status }: Props) {
@@ -14,6 +14,8 @@ export function StatusBadge({ status }: Props) {
     unpaid: 'bg-red-100 text-red-700',
     approved: 'bg-green-100 text-green-700',
     inactive: 'bg-gray-100 text-gray-700',
+    completed: 'bg-green-100 text-green-700',
+    paused: 'bg-yellow-100 text-yellow-700',
 
   };
 

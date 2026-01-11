@@ -1,16 +1,18 @@
 import Button from "@/components/ui/Button";
 import StatCard from "../StatCard";
 import SearchInput from "@/components/_shared/SearchInput";
-import Modal from "@/components/ui/modal/Modal";
-import RequestLoan from "@/components/ui/modal/loan/RequestLoan";
-import { Form } from "@/components/ui/form";
-import { useForm } from "react-hook-form";
+// import Modal from "@/components/ui/modal/Modal";
+// import RequestLoan from "@/components/ui/modal/loan/RequestLoan";
+// import { Form } from "@/components/ui/form";
+// import { useForm } from "react-hook-form";
 import { useState } from "react";
-import type { LoanRequestForm } from "@/types/loan";
+// import type { LoanRequestForm } from "@/types/loan";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
-import InvestTable from "./InvestTable";
+// import InvestTable from "./InvestTable";
+import AllTable from "./AllTable";
+
 
 const InvestMainSkeleton = () => (
   <div className="bg-white shadow-2xl">
@@ -36,30 +38,11 @@ const InvestMainSkeleton = () => (
 );
 
 export default function InvestMain() {
-  const [isAddGuarantorOpen, setIsAddGuarantorOpen] = useState(false);
+
   const [isLoading] = useState(false);
 
-  const form = useForm<LoanRequestForm>({
-    defaultValues: {
-      email: "useremail@test.com",
-      amount: "",
-      loanType: "",
-      duration: "",
-      reason: "",
-      note: "",
-    },
-  });
 
-  const onSubmit = (data: LoanRequestForm) => {
-    console.log("Loan request submitted:", data);
-    // Handle loan request submission here
-    setIsAddGuarantorOpen(false);
-    form.reset();
-  };
 
-  const handleRequestLoan = () => {
-    setIsAddGuarantorOpen(true);
-  };
 
   if (isLoading) {
     return <InvestMainSkeleton />;
@@ -69,41 +52,45 @@ export default function InvestMain() {
     <div className="bg-white shadow-2xl">
       <motion.div initial={{ x: 20 }} transition={{ duration: 0.1 }} animate={{ x: 0 }}>
         <div className=" flex items-center justify-between  px-6 py-4">
-          <h3 className=" font-bold text-brand-purple min-w-28">Loans </h3>
-          <Button
-            content="Request for Loan "
-            classes="primary-btn btn-md"
-            onClick={handleRequestLoan}
-          />
+          <h3 className=" font-bold text-brand-purple min-w-28">Invest </h3>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-6 py-4">
           <StatCard
-            title="Approved Loan"
+            title="Lend"
             value="₦5,000,000.00"
             titleSize="lg"
             variant="one"
+            action={
+              <Button
+                content="Lend Now"
+                classes="secondary-btn btn-sm sm:btn-md"
+                onClick={() => console.log("Lend Now clicked")}
+              />
+            }
           />
           <StatCard
-            title="Unapproved Loan"
+            title="Invest"
             value="₦0.00"
             variant="two"
             titleSize="lg"
+            action={
+              <Button
+                content="Save Now"
+                classes="secondary-btn btn-sm sm:btn-md"
+                onClick={() => console.log("Save Now clicked")}
+              />
+            }
           />
-          <StatCard
-            title="Paid Loan"
-            value="₦0.00"
-            variant="three"
-            titleSize="lg"
-          />
+     
         </div>
         
         <div className="px-4 sm:px-6">
           <SearchInput />
         </div>
-        <InvestTable />
+        <AllTable />
         {/* Request Loan Modal */}
-        <Modal
+        {/* <Modal
           isOpen={isAddGuarantorOpen}
           onClose={() => setIsAddGuarantorOpen(false)}
           title=""
@@ -128,8 +115,9 @@ export default function InvestMain() {
               </div>
             </form>
           </Form>
-        </Modal>
+        </Modal> */}
       </motion.div>
+    
     </div>
   );
 }
