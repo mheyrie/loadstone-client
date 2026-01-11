@@ -3,7 +3,8 @@ import Button from "@/components/ui/Button";
 import { StatusBadge } from "../table/StatusBadge";
 import Icon from "@mdi/react";
 import { mdiArrowLeft, mdiAccountCircle } from "@mdi/js";
-import type { Guarantor } from "@/features/guarantorColumns";
+import type { Guarantor } from "@/types/guarantor";
+
 
 // Mock data - in a real app, fetch this based on the ID
 const mockGuarantors: Guarantor[] = [

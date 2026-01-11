@@ -1,15 +1,16 @@
 import SearchInput from "@/components/_shared/SearchInput";
 import Button from "@/components/ui/Button";
 import GuarantorTable from "./GuarantorTable";
+import { useNavigate } from "react-router-dom";
 
 
 export default function GuarantorMain() {
+  const navigate = useNavigate();
  
 
-  const handleAddGuarantor = () => {
-    console.log("Add new guarantor");
-    // TODO: Open modal to add new guarantor
-  };
+const handleAddGuarantor = () => {
+  navigate("/dashboard/guarantors/add");
+};
 
   return (
     <div className="bg-white shadow-2xl">

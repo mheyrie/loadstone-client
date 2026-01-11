@@ -1,5 +1,5 @@
 import { DataTable } from "../table/DataTable";
-import { guarantorColumns, type Guarantor } from "@/features/guarantorColumns";
+import { guarantorColumns } from "@/features/guarantorColumns";
 import { useState } from "react";
 import EmptyState from "../EmptyState";
 import Button from "@/components/ui/Button";
@@ -7,6 +7,7 @@ import BaseDirectories from "@/baseDir/baseDirectories";
 import { useNavigate } from "react-router-dom";
 import DeleteGuarantorModal from "./DeleteGuarantorModal";
 import SuccessModal from "./SuccessModal";
+import type { Guarantor } from "@/types/guarantor";
 
 // Mock data - replace with actual data from your API
 const mockGuarantors: Guarantor[] = [
@@ -80,10 +81,9 @@ export default function GuarantorTable() {
     }, 1000);
   };
 
-  const handleAddGuarantor = () => {
-    console.log("Add new guarantor");
-    // TODO: Open modal to add new guarantor
-  };
+const handleAddGuarantor = () => {
+  navigate("/dashboard/guarantors/add");
+};
 
   const closeSuccessModal = () => {
     setIsSuccessModalOpen(false);

@@ -2,27 +2,9 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { StatusBadge } from "../components/dashboard/table/StatusBadge";
 import Icon from "@mdi/react";
 import { mdiEye, mdiTrashCan } from "@mdi/js";
+import type { Guarantor } from "@/types/guarantor";
 
-export type Guarantor = {
-  id: string;
-  fullName: string;
-  email: string;
-  phoneNumber: string;
-  status: "approved" | "pending" | "inactive";
-  gender: "Male" | "Female" | "Other";
-    dob?: string;
-    address?: string;
-    occupation?: string;
-    relationship?: string;
-    bvn?: string;
-    nin?: string;
-    employerOrCompanyName?: string;
-    dateAdded?: string;
-    lga?: string;
-    state?: string;
-    country?: string;
-    
-};
+
 
 export const guarantorColumns = (
   onView?: (guarantor: Guarantor) => void,
@@ -53,7 +35,9 @@ export const guarantorColumns = (
     header: "Status",
     accessorKey: "status",
     cell: ({ row }) => {
-      return <StatusBadge status={row.getValue("status") as Guarantor["status"]} />;
+      return (
+        <StatusBadge status={row.getValue("status") as Guarantor["status"]} />
+      );
     },
   },
   {
