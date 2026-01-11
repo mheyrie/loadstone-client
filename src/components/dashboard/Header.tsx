@@ -10,7 +10,7 @@ export default function Header({
   onClick: () => void;
 }) {
   return (
-    <header className="sticky top-0 z-50 h-20 flex justify-between items-center px-10 pt-12">
+    <header className="sticky top-0 z-50 h-24 flex justify-between items-center px-10 pt-12">
       {/* Mobile hamburger */}
       <div className="flex lg:hidden w-full items-center justify-between">
         {" "}

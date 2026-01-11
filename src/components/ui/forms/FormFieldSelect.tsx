@@ -22,6 +22,7 @@ type FormFieldSelectProps<T extends FieldValues> = {
   label: string
   options: { value: string; label: string }[]
   placeholder?: string
+  className?: string
 }
 
 export function FormFieldSelect<T extends FieldValues>({
@@ -30,6 +31,7 @@ export function FormFieldSelect<T extends FieldValues>({
   label,
   options,
   placeholder = "Select an option",
+  className,
 }: FormFieldSelectProps<T>) {
   return (
     <FormField
@@ -46,7 +48,7 @@ export function FormFieldSelect<T extends FieldValues>({
             </FormControl>
             <SelectContent className="z-[9999]">
               {options.map((option) => (
-                <SelectItem key={option.value} value={option.value}>
+                <SelectItem key={option.value} value={option.value} className={className}>
                   {option.label}
                 </SelectItem>
               ))}
