@@ -5,14 +5,56 @@ import EmptyState from "./EmptyState";
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/modal/Modal";
 import RequestLoan from "@/components/ui/modal/loan/RequestLoan";
+import LoanDetailsModal from "@/components/ui/modal/loan/LoanDetailsModal";
 import { Form } from "@/components/ui/form";
-import type { LoanRequestForm } from "@/types/loan";
+import { DataTable } from "../table/DataTable";
+import { paidLoanColumns } from "@/features/loanColumns";
+import type { LoanRequestForm, Loan } from "@/types/loan";
 
 
 
 export default function LoanTable() {
   const [activeTab, setActiveTab] = useState(0);
   const [isRequestLoanModalOpen, setIsRequestLoanModalOpen] = useState(false);
+  const [isLoanDetailsModalOpen, setIsLoanDetailsModalOpen] = useState(false);
+  const [selectedLoan, setSelectedLoan] = useState<Loan | null>(null);
+  
+  // Mock data for paid loans - replace with actual data from your API
+  const paidLoans: Loan[] = [
+    {
+      id: "LN001",
+      purpose: "Business Expansion",
+      amount: "₦5,000,000.00",
+      loanTenor: "12 months",
+      monthlyInterest: "5%",
+      status: "paid",
+      loanType: "Business Loan",
+      email: "user@example.com",
+      duration: "12 months",
+      reason: "Business Expansion",
+      note: "Fully repaid",
+      createdAt: "2025-01-10",
+    },
+    {
+      id: "LN002",
+      purpose: "Education",
+      amount: "₦2,500,000.00",
+      loanTenor: "6 months",
+      monthlyInterest: "4%",
+      status: "paid",
+      loanType: "Personal Loan",
+      email: "user@example.com",
+      duration: "6 months",
+      reason: "Education",
+      note: "Completed payment",
+      createdAt: "2024-12-15",
+    },
+  ];
+
+  const handleViewLoanDetails = (loan: Loan) => {
+    setSelectedLoan(loan);
+    setIsLoanDetailsModalOpen(true);
+  };
   
   const form = useForm<LoanRequestForm>({
     defaultValues: {
@@ -76,18 +118,26 @@ export default function LoanTable() {
         </Tabs>
         {/* Table content here */}
         {activeTab === 0 && (
-          <EmptyState
-            title="No loans yet"
-            message="You haven't applied for any loans yet. Start your application now to get the funds you need."
-            // imageSrc={`${BaseDirectories.IMAGES_DIR}/403.png`}
-            actionButton={
-              <Button 
-                content="Request for Loan" 
-                classes="primary-btn btn-md"
-                onClick={handleRequestLoan}
+          <div className="p-4">
+            {paidLoans.length > 0 ? (
+              <DataTable 
+                data={paidLoans} 
+                columns={paidLoanColumns(handleViewLoanDetails)} 
               />
-            }
-          />
+            ) : (
+              <EmptyState
+                title="No paid loans"
+                message="You haven't fully paid off any loans yet."
+                actionButton={
+                  <Button 
+                    content="Request for Loan" 
+                    classes="primary-btn btn-md"
+                    onClick={handleRequestLoan}
+                  />
+                }
+              />
+            )}
+          </div>
         )}
         {activeTab === 1 && (
           <EmptyState
@@ -161,6 +211,17 @@ export default function LoanTable() {
                 onClick={() => setIsRequestLoanModalOpen(false)}
                 type="button"
               />
+
+      {/* Loan Details Modal */}
+      <Modal
+        isOpen={isLoanDetailsModalOpen}
+        onClose={() => setIsLoanDetailsModalOpen(false)}
+        title=""
+        maxWidth="2xl"
+        useBackgroundImage={false}
+      >
+        {selectedLoan && <LoanDetailsModal loan={selectedLoan} />}
+      </Modal>
               <Button
                 content="Submit Request"
                 classes="primary-btn btn-md"
