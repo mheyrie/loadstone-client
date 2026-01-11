@@ -7,23 +7,30 @@ import {
   FormControl,
   FormMessage,
 } from "@/components/ui/form"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import type { Control, FieldValues, Path } from "react-hook-form"
-import OtpInput from "react-otp-input"
-import { Input } from "../input"
 
-type FormFieldOTPProps<T extends FieldValues> = {
+type FormFieldSelectProps<T extends FieldValues> = {
   control: Control<T>
   name: Path<T>
   label: string
-  length?: number
+  options: { value: string; label: string }[]
+  placeholder?: string
 }
 
 export function FormFieldSelect<T extends FieldValues>({
   control,
   name,
   label,
-  length = 6,
-}: FormFieldOTPProps<T>) {
+  options,
+  placeholder = "Select an option",
+}: FormFieldSelectProps<T>) {
   return (
     <FormField
       control={control}
@@ -31,24 +38,20 @@ export function FormFieldSelect<T extends FieldValues>({
       render={({ field }) => (
         <FormItem>
           <FormLabel>{label}</FormLabel>
-
-          <FormControl>
-            <OtpInput
-              value={field.value || ""}
-              onChange={field.onChange}
-              numInputs={length}
-              inputType="tel"
-              shouldAutoFocus
-              renderInput={(props) => (
-                <Input
-                  {...props}
-                  className="h-12 w-12 rounded-md border text-center focus:border-brand-purple focus:outline-none"
-                />
-              )}
-              containerStyle="flex gap-2"
-            />
-          </FormControl>
-
+          <Select onValueChange={field.onChange} value={field.value}>
+            <FormControl>
+              <SelectTrigger>
+                <SelectValue placeholder={placeholder} />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent className="z-[9999]">
+              {options.map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                  {option.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           <FormMessage name={name} />
         </FormItem>
       )}

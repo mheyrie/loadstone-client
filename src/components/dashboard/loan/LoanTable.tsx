@@ -1,10 +1,40 @@
 import { Tabs, Tab } from "@mui/material";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import EmptyState from "./EmptyState";
 import Button from "@/components/ui/Button";
+import Modal from "@/components/ui/modal/Modal";
+import RequestLoan from "@/components/ui/modal/loan/RequestLoan";
+import { Form } from "@/components/ui/form";
+import type { LoanRequestForm } from "@/types/loan";
+
+
 
 export default function LoanTable() {
   const [activeTab, setActiveTab] = useState(0);
+  const [isRequestLoanModalOpen, setIsRequestLoanModalOpen] = useState(false);
+  
+  const form = useForm<LoanRequestForm>({
+    defaultValues: {
+      email: "uuseremail@test.com",
+      amount: "",
+      loanType: "",
+      duration: "",
+      reason: "",
+      note: "",
+    },
+  });
+
+  const onSubmit = (data: LoanRequestForm) => {
+    console.log("Loan request submitted:", data);
+    // Handle loan request submission here
+    setIsRequestLoanModalOpen(false);
+    form.reset();
+  };
+
+  const handleRequestLoan = () => {
+    setIsRequestLoanModalOpen(true);
+  };
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setActiveTab(newValue);
@@ -51,7 +81,11 @@ export default function LoanTable() {
             message="You haven't applied for any loans yet. Start your application now to get the funds you need."
             // imageSrc={`${BaseDirectories.IMAGES_DIR}/403.png`}
             actionButton={
-              <Button content="Request for Loan" classes="primary-btn btn-md" />
+              <Button 
+                content="Request for Loan" 
+                classes="primary-btn btn-md"
+                onClick={handleRequestLoan}
+              />
             }
           />
         )}
@@ -59,27 +93,83 @@ export default function LoanTable() {
           <EmptyState
             title="No approved loans"
             message="You don't have any approved loans at the moment."
+            actionButton={
+              <Button 
+                content="Request for Loan" 
+                classes="primary-btn btn-md"
+                onClick={handleRequestLoan}
+              />
+            }
           />
         )}
         {activeTab === 2 && (
           <EmptyState
             title="No unapproved loans"
             message="You don't have any pending loan applications."
+            actionButton={
+              <Button 
+                content="Request for Loan" 
+                classes="primary-btn btn-md"
+                onClick={handleRequestLoan}
+              />
+            }
           />
         )}
         {activeTab === 3 && (
           <EmptyState
             title="No paid loans"
             message="You haven't fully paid off any loans yet."
+            actionButton={
+              <Button 
+                content="Request for Loan" 
+                classes="primary-btn btn-md"
+                onClick={handleRequestLoan}
+              />
+            }
           />
         )}
         {activeTab === 4 && (
           <EmptyState
             title="No unpaid loans"
             message="All your loans are paid up. Great job!"
+            actionButton={
+              <Button 
+                content="Request for Loan" 
+                classes="primary-btn btn-md"
+                onClick={handleRequestLoan}
+              />
+            }
           />
         )}
       </div>
+
+      {/* Request Loan Modal */}
+      <Modal
+        isOpen={isRequestLoanModalOpen}
+        onClose={() => setIsRequestLoanModalOpen(false)}
+        title=""
+        maxWidth="lg"
+        useBackgroundImage={false}
+      >
+        <Form form={form}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
+            <RequestLoan control={form.control} />
+            <div className="flex gap-3 justify-end mt-6">
+              <Button
+                content="Cancel"
+                classes="secondary-btn btn-md"
+                onClick={() => setIsRequestLoanModalOpen(false)}
+                type="button"
+              />
+              <Button
+                content="Submit Request"
+                classes="primary-btn btn-md"
+                type="submit"
+              />
+            </div>
+          </form>
+        </Form>
+      </Modal>
     </div>
   );
 }

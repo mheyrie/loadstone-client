@@ -6,6 +6,7 @@ interface ModalProps {
   children: React.ReactNode;
   title?: string;
   maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
+  useBackgroundImage?: boolean;
 }
 
 export default function Modal({
@@ -14,6 +15,7 @@ export default function Modal({
   children,
   title,
   maxWidth = "lg",
+  useBackgroundImage = true,
 }: ModalProps) {
   // close modal on escape key press
   useEffect(() => {
@@ -62,11 +64,15 @@ export default function Modal({
       <div
         className={`relative bg-white rounded-2xl shadow-2xl ${maxWidthClasses[maxWidth]} w-full mx-4 my-auto max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-100`}
         onClick={(e) => e.stopPropagation()}
-        style={{
-          backgroundImage: "url('/images/landing/onboarding.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        style={
+          useBackgroundImage
+            ? {
+                backgroundImage: "url('/images/landing/onboarding.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }
+            : undefined
+        }
       >
         {/* close button */}
         <button
