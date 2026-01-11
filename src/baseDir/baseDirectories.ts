@@ -3,9 +3,14 @@ const BaseDirectories = {
   IMAGES_DIR: "/images",
   LOGOS_DIR: "/images/logos",
   ICONS_DIR: "/images/icons",
+  LANDING_DIR: "/images/landing",
+  ABOUT_US_DIR: "/images/landing/AboutUs",
+  CONTACT_US_DIR: "/images/landing/ContactUs",
+  BLOG_MAIN_DIR: "images/landing/BlogMain"
+
 
   // Usage
-  //    <img src={`${BaseDirectories.IMAGES_DIR}/403.png`}  alt="Trade Lenda"/>
+  //    <img src={`${BaseDirectories.IMAGES_DIR}/403.png`}  alt="Loadstone"/>
 };
 
 export default BaseDirectories;

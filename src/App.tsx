@@ -1,15 +1,14 @@
-
-import './App.css'
-import MainRoutes from "./routes/MainRoutes"
+import { Toaster } from "react-hot-toast";
+import "./App.css";
+import MainRoutes from "./routes/MainRoutes";
 
 function App() {
- 
-
   return (
     <>
-   <MainRoutes />
+      <Toaster position="bottom-right" reverseOrder={false} />
+      <MainRoutes />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
