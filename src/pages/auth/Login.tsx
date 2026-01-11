@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "../../components/ui/Button";
 import { FormFieldText } from "@/components/ui/forms/FormFieldText";
 import type { LoginFormData } from "@/types/onboarding";
-import { useForm, type Control } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
 import { FormFieldPassword } from "@/components/ui/forms/FormFieldPassword";
 

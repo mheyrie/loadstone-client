@@ -130,7 +130,7 @@ export default function AuthMethod({
           content="Sign Up"
           type="submit"
           disabled={isLoading}
-          // onClick={handleSubmit}
+          onClick={handleSubmit}
           classes="primary-btn btn-md mb-2 !w-full mt-6"
         />
       )}

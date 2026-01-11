@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function NewsCard({
-  id = "",
+  // id = "",
   category = "Fina",
   date = "September 14, 2025",
   headline = "Sample headline goes here",
