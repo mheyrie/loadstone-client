@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -36,8 +35,6 @@ export default function AllTable() {
   const [activeTab, setActiveTab] = useState<TabType>("invest");
   const [isLoading] = useState(false);
 
-
-
   if (isLoading) {
     return <InvestMainSkeleton />;
   }
@@ -49,22 +46,31 @@ export default function AllTable() {
       transition={{ duration: 0.5 }}
       className="bg-white shadow-2xl"
     >
-   
-      
-
       {/* Tabs */}
       <div className="px-4 sm:px-6 border-b border-gray-200">
         <div className="flex gap-4">
-            <Tabs>
-                <Tab label="Investments" onClick={() => setActiveTab("invest")} 
-                className={activeTab === "invest" ? "text-brand-purple border-b-2 border-brand-purple" : "text-gray-500 hover:text-gray-700"} />
-                <Tab label="Savings" onClick={() => setActiveTab("save")} 
-                className={activeTab === "save" ? "text-brand-purple border-b-2 border-brand-purple" : "text-gray-500 hover:text-gray-700"} />  
-            </Tabs>
+          <Tabs>
+            <Tab
+              label="Investments"
+              onClick={() => setActiveTab("invest")}
+              className={
+                activeTab === "invest"
+                  ? "text-brand-purple border-b-2 border-brand-purple"
+                  : "text-gray-500 hover:text-gray-700"
+              }
+            />
+            <Tab
+              label="Savings"
+              onClick={() => setActiveTab("save")}
+              className={
+                activeTab === "save"
+                  ? "text-brand-purple border-b-2 border-brand-purple"
+                  : "text-gray-500 hover:text-gray-700"
+              }
+            />
+          </Tabs>
         </div>
       </div>
-
-
 
       {/* Table Content */}
       <div className="px-4 sm:px-6 pb-6">
