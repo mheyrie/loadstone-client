@@ -56,7 +56,7 @@ export default function InvestTable() {
   }
 
   return (
-    <div>
+    <div className="overflow-x-scroll">
       <DataTable
         data={investments}
         columns={investmentColumns}

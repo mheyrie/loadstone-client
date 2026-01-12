@@ -37,7 +37,7 @@ export function DataTable<T>({ data, columns, pageSize = 10 }: DataTableProps<T>
 
   return (
     <div className="space-y-4">
-      <div className="overflow-x-auto rounded-xl border bg-white">
+      <div className="overflow-x-scroll rounded-xl border bg-white">
         <table className="w-full text-sm">
           <thead className="bg-gray-50">
             {table.getHeaderGroups().map(headerGroup => (
