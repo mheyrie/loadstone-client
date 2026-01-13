@@ -2,16 +2,16 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { StatusBadge } from "../components/dashboard/table/StatusBadge";
+import { formatCurrency } from "@/lib/utils";
 
 export type Investment = {
   id: string;
-  name: string;
   amount: number;
   duration: string;
   returns: number;
   startDate: string;
   maturityDate: string;
-  status: "Active" | "Matured" | "Pending" | "Failed";
+  status: "active" | "matured" | "pending" | "failed";
 };
 
 export const investmentColumns: ColumnDef<Investment>[] = [
@@ -20,13 +20,9 @@ export const investmentColumns: ColumnDef<Investment>[] = [
     accessorKey: "id",
   },
   {
-    header: "Investment Name",
-    accessorKey: "name",
-  },
-  {
-    header: "Amount Invested",
+    header: "Amount",
     accessorKey: "amount",
-    cell: (info) => `₦${info.getValue<number>().toLocaleString()}`,
+    cell: (info) => formatCurrency(info.getValue<number>()),
   },
   {
     header: "Duration",
@@ -35,7 +31,7 @@ export const investmentColumns: ColumnDef<Investment>[] = [
   {
     header: "Expected Returns",
     accessorKey: "returns",
-    cell: (info) => `₦${info.getValue<number>().toLocaleString()}`,
+    cell: (info) => formatCurrency(info.getValue<number>()),
   },
   {
     header: "Start Date",

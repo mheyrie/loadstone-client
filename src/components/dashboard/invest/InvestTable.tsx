@@ -9,23 +9,23 @@ import BaseDirectories from "@/baseDir/baseDirectories";
 const mockInvestments: Investment[] = [
   {
     id: "INV001",
-    name: "Real Estate Fund",
+    // name: "Real Estate Fund",
     amount: 500000,
     duration: "12 months",
     returns: 575000,
     startDate: "2024-01-15",
     maturityDate: "2025-01-15",
-    status: "Active",
+    status: "active",
   },
   {
     id: "INV002",
-    name: "Tech Startup Fund",
+    // name: "Tech Startup Fund",
     amount: 250000,
     duration: "6 months",
     returns: 280000,
     startDate: "2024-06-01",
     maturityDate: "2024-12-01",
-    status: "Matured",
+    status: "matured",
   },
 ];
 
