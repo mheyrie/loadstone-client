@@ -116,8 +116,8 @@ export default function InvestMain() {
           transition={{ duration: 0.1 }}
           animate={{ x: 0 }}
         >
-          <div className=" flex items-center justify-between  px-6 py-4">
-            <h3 className=" font-bold text-brand-purple min-w-28">Invest </h3>
+          <div className="flex items-center justify-between px-4 sm:px-6 py-4">
+            <h3 className="font-bold text-brand-purple min-w-20 sm:min-w-28 text-sm sm:text-base">Invest</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-6 py-4">
