@@ -1,5 +1,3 @@
-// features/investments/investmentColumns.tsx
-
 import type { ColumnDef } from "@tanstack/react-table";
 import { StatusBadge } from "../components/dashboard/table/StatusBadge";
 import { formatCurrency } from "@/lib/utils";

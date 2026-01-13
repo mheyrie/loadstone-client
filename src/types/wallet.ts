@@ -3,8 +3,9 @@ export type WalletTransaction = {
   amount: number;
   time: string;
   detail: string;
-  status: "Success" | "Pending" | "Failed";
+  status: "success" | "pending" | "failed";
 };
+
 export type BillType = "Airtime" | "Data" | "Cable" | "Electricity";
 
 export type BillPaymentForm = {

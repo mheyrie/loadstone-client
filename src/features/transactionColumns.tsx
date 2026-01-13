@@ -9,7 +9,7 @@ export type Transaction = {
   amount: number;
   time: string;
   detail: string;
-  status: "Success" | "Pending";
+  status: "success" | "pending";
 };
 
 export const transactionColumns: ColumnDef<Transaction>[] = [
