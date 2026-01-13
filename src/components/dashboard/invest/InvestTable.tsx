@@ -1,15 +1,16 @@
 import { DataTable } from "../table/DataTable";
-import { investmentColumns, type Investment } from "@/features/investmentColumns";
+import { investmentColumns } from "@/features/investmentColumns";
 import { useState } from "react";
 import EmptyState from "../EmptyState";
 import Button from "@/components/ui/Button";
 import BaseDirectories from "@/baseDir/baseDirectories";
+import type { Investment } from "@/types/invest";
 
 // Mock data - replace with actual data from your API
 const mockInvestments: Investment[] = [
   {
     id: "INV001",
-    // name: "Real Estate Fund",
+    interest: 8,
     amount: 500000,
     duration: "12 months",
     returns: 575000,
@@ -19,7 +20,7 @@ const mockInvestments: Investment[] = [
   },
   {
     id: "INV002",
-    // name: "Tech Startup Fund",
+    interest: 16,
     amount: 250000,
     duration: "6 months",
     returns: 280000,
@@ -57,11 +58,7 @@ export default function InvestTable() {
 
   return (
     <div className="overflow-x-scroll">
-      <DataTable
-        data={investments}
-        columns={investmentColumns}
-        pageSize={10}
-      />
+      <DataTable data={investments} columns={investmentColumns} pageSize={10} />
     </div>
   );
 }
