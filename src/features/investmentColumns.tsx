@@ -16,6 +16,11 @@ export const investmentColumns: ColumnDef<Investment>[] = [
     cell: (info) => formatCurrency(info.getValue<number>()),
   },
   {
+    header: "Interest",
+    accessorKey: "interest",
+    cell: (info) => `${info.getValue<number>()}%`,
+  },
+  {
     header: "Duration",
     accessorKey: "duration",
   },
