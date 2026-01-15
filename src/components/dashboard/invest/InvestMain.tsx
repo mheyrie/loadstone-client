@@ -51,38 +51,38 @@ export default function InvestMain() {
   const [selectedPlan, setSelectedPlan] = useState<InvestmentPlan | null>(null);
   const [investmentAmount, setInvestmentAmount] = useState<number>(0);
 
-  // Step 1: Open type selection modal
+  //  Open type selection modal
   const handleInvestNowClick = () => {
     setIsTypeModalOpen(true);
   };
 
-  // Step 2: Plan selected, show details
+  // View Plan Details with Graph
   const handleSelectType = (plan: InvestmentPlan) => {
     setSelectedPlan(plan);
     setIsTypeModalOpen(false);
     setIsPlanDetailsModalOpen(true);
   };
 
-  // Step 3: From plan details, click "Lend" to go to amount input
+  // Enter Investment Amount
   const handleLendClick = () => {
     setIsPlanDetailsModalOpen(false);
     setIsAmountModalOpen(true);
   };
 
-  // Step 4: Amount entered, go to confirmation
+  // Amount entered, go to confirmation
   const handleAmountSubmit = (amount: number) => {
     setInvestmentAmount(amount);
     setIsAmountModalOpen(false);
     setIsConfirmationModalOpen(true);
   };
 
-  // Step 5: Confirmed, go to payment
+  // Confirmed, go to payment
   const handleConfirmInvestment = () => {
     setIsConfirmationModalOpen(false);
     setIsPaymentModalOpen(true);
   };
 
-  // Step 6: Payment complete, show success
+  //  Payment complete, show success
   const handlePaymentComplete = () => {
     setIsPaymentModalOpen(false);
     setIsSuccessModalOpen(true);
