@@ -6,15 +6,15 @@ import { mdiCheckCircleOutline } from "@mdi/js";
 interface InvestmentSuccessModalProps {
   isOpen: boolean;
   onClose: () => void;
-  investmentType: string;
-  amount: string;
+  investmentType?: string;
+  amount?: string;
 }
 
 export default function InvestmentSuccessModal({
   isOpen,
   onClose,
-  investmentType,
-  amount,
+  investmentType = "Investment",
+  amount = "0",
 }: InvestmentSuccessModalProps) {
   return (
     <Modal isOpen={isOpen} onClose={onClose} maxWidth="sm" useBackgroundImage={false}>

@@ -3,6 +3,7 @@ import Button from "../../Button";
 import Icon from "@mdi/react";
 import { mdiChartLine } from "@mdi/js";
 
+
 interface InvestmentPlan {
   type: "basic" | "classic" | "elite" | "diamond";
   title: string;
@@ -17,8 +18,9 @@ interface InvestmentPlan {
 interface InvestmentPlanDetailsModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onLend: () => void;
-  plan: InvestmentPlan;
+  onLend?: () => void;
+  plan?: InvestmentPlan | null;
+  onNext?: () => void;
 }
 
 export default function InvestmentPlanDetailsModal({
@@ -26,7 +28,10 @@ export default function InvestmentPlanDetailsModal({
   onClose,
   onLend,
   plan,
+  onNext,
 }: InvestmentPlanDetailsModalProps) {
+  if (!plan) return null;
+   
   return (
     <Modal isOpen={isOpen} onClose={onClose} maxWidth="4xl" useBackgroundImage={false}>
       <div className="p-6">
@@ -108,6 +113,11 @@ export default function InvestmentPlanDetailsModal({
             content="Cancel"
             classes="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-lg transition btn-md"
             onClick={onClose}
+          />
+          <Button
+            content="Next"
+            classes="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-lg transition btn-md"
+            onClick={onNext}
           />
         </div>
       </div>
