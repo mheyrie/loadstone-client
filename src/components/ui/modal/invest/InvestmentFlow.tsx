@@ -47,14 +47,14 @@ export default function InvestmentFlow() {
 
   return (
     <>
-      {/*Select Investment Type */}
+      {/* Select Investment Type */}
       <InvestmentTypeModal
         isOpen={currentStep === "type"}
         onClose={handleClose}
         onSelectType={handlePlanSelect}
       />
 
-      {/*  View Plan Details */}
+      {/* View Plan Details */}
       {selectedPlan && (
         <InvestmentPlanDetailsModal
           isOpen={currentStep === "details"}
@@ -87,7 +87,7 @@ export default function InvestmentFlow() {
         />
       )}
 
-      {/*  Complete Payment */}
+      {/* Complete Payment */}
       {selectedPlan && (
         <InvestmentPaymentModal
           isOpen={currentStep === "payment"}
