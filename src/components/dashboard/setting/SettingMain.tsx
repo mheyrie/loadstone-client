@@ -1,19 +1,42 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import SettingsTabs from "./SettingsTabs";
+import AccountProfile from "./AccountProfile";
+
+type SettingsTab = "account" | "security" | "pin" | "notification" | "delete";
+
 export default function SettingMain() {
+  const [activeTab, setActiveTab] = useState<SettingsTab>("account");
+
   return (
-     <>
-    
-        <motion.div
-          initial={{ x: 20 }}
-          transition={{ duration: 0.1 }}
-          animate={{ x: 0 }}
-        >
-          <div className="flex items-center justify-between px-4 sm:px-6 py-4">
-            <h3 className="font-bold text-brand-purple min-w-20 sm:min-w-28 text-sm sm:text-base">Settings</h3>
-          </div>
-        </motion.div>
+    <>
+      <motion.div
+        initial={{ x: 20 }}
+        transition={{ duration: 0.1 }}
+        animate={{ x: 0 }}
+        className="bg-white min-h-screen"
+      >
+        {/* Header */}
+        <div className="px-4 sm:px-6 py-4">
+          <h1 className="text-2xl font-bold text-brand-purple">Settings</h1>
+        </div>
+
+        {/* Settings Navigation Tabs */}
+        <SettingsTabs activeTab={activeTab} onTabChange={setActiveTab} />
+
+        <div className="border-t-4 border-brand-purple mb-6"></div>
+
+        {/* Tab Content */}
+        {activeTab === "account" && <AccountProfile />}
         
- 
+        {activeTab !== "account" && (
+          <div className="px-4 sm:px-6">
+            <div className="text-center py-12">
+              <p className="text-gray-500 capitalize">{activeTab} settings coming soon...</p>
+            </div>
+          </div>
+        )}
+      </motion.div>
     </>
-  )
+  );
 }
