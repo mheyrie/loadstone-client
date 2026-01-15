@@ -197,14 +197,7 @@ export default function InvestmentPaymentModal({
           </div>
         )}
 
-        <div className="mt-6 flex justify-end">
-          <Button
-            content="Cancel"
-            classes="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-lg transition btn-md"
-            onClick={onClose}
-            disabled={isProcessing}
-          />
-        </div>
+    
       </div>
     </Modal>
   );

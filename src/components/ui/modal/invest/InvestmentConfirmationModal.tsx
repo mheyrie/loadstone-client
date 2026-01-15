@@ -32,7 +32,7 @@ export default function InvestmentConfirmationModal({
     <Modal isOpen={isOpen} onClose={onClose} maxWidth="md" useBackgroundImage={false}>
       <div className="p-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-2">
-          Confirm Investment
+          Confirm Payment
         </h2>
         <p className="text-gray-600 mb-6">
           Please review your investment details before confirming

@@ -47,14 +47,14 @@ export default function InvestmentFlow() {
 
   return (
     <>
-      {/* Step 1: Select Investment Type */}
+      {/*Select Investment Type */}
       <InvestmentTypeModal
         isOpen={currentStep === "type"}
         onClose={handleClose}
         onSelectType={handlePlanSelect}
       />
 
-      {/* Step 2: View Plan Details */}
+      {/*  View Plan Details */}
       {selectedPlan && (
         <InvestmentPlanDetailsModal
           isOpen={currentStep === "details"}
@@ -64,7 +64,7 @@ export default function InvestmentFlow() {
         />
       )}
 
-      {/* Step 3: Enter Investment Amount */}
+      {/* Enter Investment Amount */}
       {selectedPlan && (
         <InvestmentAmountModal
           isOpen={currentStep === "amount"}
@@ -76,7 +76,7 @@ export default function InvestmentFlow() {
         />
       )}
 
-      {/* Step 4: Confirm Investment */}
+      {/* Confirm Investment */}
       {selectedPlan && (
         <InvestmentConfirmationModal
           isOpen={currentStep === "confirmation"}
@@ -87,7 +87,7 @@ export default function InvestmentFlow() {
         />
       )}
 
-      {/* Step 5: Complete Payment */}
+      {/*  Complete Payment */}
       {selectedPlan && (
         <InvestmentPaymentModal
           isOpen={currentStep === "payment"}
@@ -98,7 +98,7 @@ export default function InvestmentFlow() {
         />
       )}
 
-      {/* Step 6: Success Confirmation */}
+      {/*  Success Confirmation */}
       {selectedPlan && (
         <InvestmentSuccessModal
           isOpen={currentStep === "success"}
