@@ -61,7 +61,7 @@ export default function Navbar() {
           <img
             src={`${BaseDirectories.LOGOS_DIR}/brand.png`}
             alt="LoadStone"
-            className="h-8"
+            className="h-10"
           />
         </Link>
 

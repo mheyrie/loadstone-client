@@ -29,7 +29,7 @@ export const navLink = [
   },
   {
     text: "Support",
-    url: "/support",
+    url: "/contact-us",
   },
 ];
 
