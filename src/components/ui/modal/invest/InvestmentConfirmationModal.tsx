@@ -1,14 +1,13 @@
 import Modal from "../Modal";
 import Button from "../../Button";
-import { useState } from "react";
-import type { InvestmentFormData } from "./InvestmentDetailsModal";
 
 interface InvestmentConfirmationModalProps {
   isOpen: boolean;
   onClose: () => void;
   onConfirm: () => void;
   investmentType: string;
-  investmentData: InvestmentFormData | null;
+  amount: number;
+  userId?: string;
 }
 
 export default function InvestmentConfirmationModal({
@@ -16,33 +15,17 @@ export default function InvestmentConfirmationModal({
   onClose,
   onConfirm,
   investmentType,
-  investmentData,
+  amount,
+  userId = "USR-2024-12345",
 }: InvestmentConfirmationModalProps) {
-  const [isProcessing, setIsProcessing] = useState(false);
+  const transactionFee = (amount || 0) * 0.015; // 1.5% transaction fee
+  const total = (amount || 0) + transactionFee;
 
-  const handleConfirm = () => {
-    setIsProcessing(true);
-    // Simulate processing
-    setTimeout(() => {
-      setIsProcessing(false);
-      onConfirm();
-    }, 2000);
-  };
-
-  if (!investmentData) return null;
-
-  const formatAmount = (amount: string) => {
-    return `₦${Number(amount).toLocaleString()}`;
-  };
-
-  const formatDuration = (duration: string) => {
-    return duration.replace("-", " ").replace(/\b\w/g, l => l.toUpperCase());
-  };
-
-  const formatPaymentMethod = (method: string) => {
-    return method.split("-").map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(" ");
+  const formatAmount = (value: number) => {
+    if (value === undefined || value === null || isNaN(value)) {
+      return '₦0.00';
+    }
+    return `₦${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   };
 
   return (
@@ -60,34 +43,34 @@ export default function InvestmentConfirmationModal({
           <h3 className="font-bold text-gray-900 mb-4">Investment Summary</h3>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-gray-600">Investment Type:</span>
+              <span className="text-gray-600">User ID:</span>
+              <span className="font-semibold text-gray-900">
+                {userId}
+              </span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-gray-600">Investment Plan:</span>
               <span className="font-semibold text-gray-900 capitalize">
-                {investmentType.replace("-", " ")}
+                {investmentType}
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Amount:</span>
               <span className="font-semibold text-gray-900">
-                {formatAmount(investmentData.amount)}
+                {formatAmount(amount)}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Duration:</span>
+              <span className="text-gray-600">Transaction Fee (1.5%):</span>
               <span className="font-semibold text-gray-900">
-                {formatDuration(investmentData.duration)}
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-600">Payment Method:</span>
-              <span className="font-semibold text-gray-900">
-                {formatPaymentMethod(investmentData.paymentMethod)}
+                {formatAmount(transactionFee)}
               </span>
             </div>
             <div className="border-t border-purple-200 pt-3 mt-3">
               <div className="flex justify-between">
-                <span className="text-gray-600">Expected Returns (15%):</span>
+                <span className="text-gray-900 font-semibold">Total:</span>
                 <span className="font-bold text-brand-purple text-lg">
-                  {formatAmount(String(Number(investmentData.amount) * 1.15))}
+                  {formatAmount(total)}
                 </span>
               </div>
             </div>
@@ -109,13 +92,11 @@ export default function InvestmentConfirmationModal({
             classes="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-lg transition btn-md flex-1"
             onClick={onClose}
             type="button"
-            disabled={isProcessing}
           />
           <Button
-            content={isProcessing ? "Processing..." : "Confirm Investment"}
+            content="Confirm"
             classes="primary-btn btn-md flex-1"
-            onClick={handleConfirm}
-            disabled={isProcessing}
+            onClick={onConfirm}
           />
         </div>
       </div>
