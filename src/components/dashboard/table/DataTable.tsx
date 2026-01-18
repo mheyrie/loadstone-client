@@ -37,7 +37,7 @@ export function DataTable<T>({ data, columns, pageSize = 10 }: DataTableProps<T>
 
   return (
     <div className="space-y-4">
-      <div className="overflow-x-auto rounded-xl border bg-white">
+      <div className="overflow-x-scroll rounded-xl border bg-white">
         <table className="w-full text-sm">
           <thead className="bg-gray-50">
             {table.getHeaderGroups().map(headerGroup => (
@@ -62,7 +62,7 @@ export function DataTable<T>({ data, columns, pageSize = 10 }: DataTableProps<T>
               table.getRowModel().rows.map(row => (
                 <tr
                   key={row.id}
-                  className="border-t hover:bg-gray-50 transition"
+                  className="border-t hover:bg-gray-50 text-start transition"
                 >
                   {row.getVisibleCells().map(cell => (
                     <td key={cell.id} className="px-6 py-4">

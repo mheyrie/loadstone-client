@@ -4,6 +4,8 @@ import { Checkbox } from "../../checkbox";
 import { FormFieldText } from "../../forms/FormFieldText";
 import { Label } from "../../label";
 import type { Control } from "react-hook-form";
+import { PhoneInput } from "react-international-phone";
+import "react-phone-input-2/lib/style.css";
 
 export default function Account({
   control,
@@ -59,6 +61,20 @@ export default function Account({
           </small>
         </div>
         <div className="text-start">
+          <PhoneInput 
+            defaultCountry="ng" 
+            value="" 
+            onChange={() => {}} 
+            inputClassName="!w-full"
+            className="!w-full"
+            style={{ width: '100%' }}
+            inputStyle={{ width: '100%' }}
+          />
+          <small className="text-gray-500 mt-0">
+            Your phone number must be a valid phone number
+          </small>
+        </div>
+        {/* <div className="text-start">
           <FormFieldText
             control={control}
             name="userName"
@@ -69,12 +85,12 @@ export default function Account({
           <small className="text-gray-500 mt-0">
             Your username must contain only letters (a-z) and numbers (0-9)
           </small>
-        </div>
+        </div> */}
       </div>
-    <Button
+      <Button
         content="Next"
         type="submit"
-        // onClick={onNext} 
+        // onClick={onNext}
         // disabled={loading}
         classes="primary-btn btn-md mb-2"
       />

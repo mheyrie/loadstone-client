@@ -5,7 +5,7 @@ interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
   title?: string;
-  maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
+  maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
   useBackgroundImage?: boolean;
   className?: string;
 }
@@ -48,6 +48,8 @@ export default function Modal({
     xl: "max-w-4xl",
     "2xl": "max-w-6xl",
     "3xl": "max-w-7xl",
+    "4xl": "max-w-8xl",
+    "5xl": "max-w-9xl",
   };
 
   return (

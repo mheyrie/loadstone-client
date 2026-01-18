@@ -1,7 +1,7 @@
 import { Tabs, Tab } from "@mui/material";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import EmptyState from "./EmptyState";
+import EmptyState from "../EmptyState";
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/modal/Modal";
 import RequestLoan from "@/components/ui/modal/loan/RequestLoan";
@@ -102,7 +102,7 @@ export default function LoanTable() {
     setActiveTab(newValue);
   };
   return (
-    <div className="px-2 sm:px-4">
+    <div className="px-4 sm:px-6">
       <div className="border-b border-gray-200 overflow-x-auto">
         <Tabs
           value={activeTab}
@@ -138,7 +138,7 @@ export default function LoanTable() {
         </Tabs>
         {/* Table content here */}
         {activeTab === 0 && (
-          <div className="p-4">
+          <div className="p-2 sm:p-4">
             {allLoans.length > 0 ? (
               <DataTable
                 data={allLoans}
@@ -161,7 +161,7 @@ export default function LoanTable() {
           </div>
         )}
         {activeTab === 1 && (
-          <div className="p-4">
+          <div className="p-2 sm:p-4">
             {allLoans.filter(loan => loan.status === "approved").length > 0 ? (
               <DataTable
                 data={allLoans.filter(loan => loan.status === "approved")}
@@ -184,7 +184,7 @@ export default function LoanTable() {
           </div>
         )}
       {activeTab === 2 && (
-          <div className="p-4">
+          <div className="p-2 sm:p-4">
             {allLoans.filter(loan => loan.status === "pending").length > 0 ? (
               <DataTable
                 data={allLoans.filter(loan => loan.status === "pending")}
@@ -207,7 +207,7 @@ export default function LoanTable() {
           </div>
         )}
         {activeTab === 3 && (
-          <div className="p-4">
+          <div className="p-2 sm:p-4">
             {allLoans.filter(loan => loan.status === "paid").length > 0 ? (
               <DataTable
                 data={allLoans.filter(loan => loan.status === "paid")}
@@ -230,7 +230,7 @@ export default function LoanTable() {
           </div>
         )}
      {activeTab === 4 && (
-          <div className="p-4">
+          <div className="p-2 sm:p-4">
             {allLoans.filter(loan => loan.status === "unpaid").length > 0 ? (
               <DataTable
                 data={allLoans.filter(loan => loan.status === "unpaid")}
@@ -252,12 +252,14 @@ export default function LoanTable() {
             )}
           </div>
         )}
-        <div className="h-4 flex justify-between items-center px-4 py-3 rounded-lg my-4">
-          <span className="border"> See More</span>
-          <span className="flex items-center gap-2">
-            <Icon path={mdiChevronRight} size={1} className="rotate-180" />{" "}
+        <div className="flex justify-between items-center px-4 py-3 rounded-lg my-4">
+          <button className="border px-3 py-1.5 rounded text-sm sm:text-base hover:bg-gray-50">
+            See More
+          </button>
+          <button className="flex items-center gap-1 sm:gap-2 text-sm sm:text-base hover:text-brand-purple">
+            <Icon path={mdiChevronRight} size={0.8} className="rotate-180" />
             <span>Back</span>
-          </span>
+          </button>
         </div>
       </div>
 

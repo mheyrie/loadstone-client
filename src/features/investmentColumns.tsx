@@ -1,18 +1,9 @@
-// features/investments/investmentColumns.tsx
-
 import type { ColumnDef } from "@tanstack/react-table";
 import { StatusBadge } from "../components/dashboard/table/StatusBadge";
+import { formatCurrency } from "@/lib/utils";
+import type { Investment } from "@/types/invest";
 
-export type Investment = {
-  id: string;
-  name: string;
-  amount: number;
-  duration: string;
-  returns: number;
-  startDate: string;
-  maturityDate: string;
-  status: "Active" | "Matured" | "Pending" | "Failed";
-};
+
 
 export const investmentColumns: ColumnDef<Investment>[] = [
   {
@@ -20,13 +11,14 @@ export const investmentColumns: ColumnDef<Investment>[] = [
     accessorKey: "id",
   },
   {
-    header: "Investment Name",
-    accessorKey: "name",
+    header: "Amount",
+    accessorKey: "amount",
+    cell: (info) => formatCurrency(info.getValue<number>()),
   },
   {
-    header: "Amount Invested",
-    accessorKey: "amount",
-    cell: (info) => `₦${info.getValue<number>().toLocaleString()}`,
+    header: "Interest",
+    accessorKey: "interest",
+    cell: (info) => `${info.getValue<number>()}%`,
   },
   {
     header: "Duration",
@@ -35,7 +27,7 @@ export const investmentColumns: ColumnDef<Investment>[] = [
   {
     header: "Expected Returns",
     accessorKey: "returns",
-    cell: (info) => `₦${info.getValue<number>().toLocaleString()}`,
+    cell: (info) => formatCurrency(info.getValue<number>()),
   },
   {
     header: "Start Date",
@@ -56,7 +48,7 @@ export const investmentColumns: ColumnDef<Investment>[] = [
     header: "Action",
     cell: () => {
       return (
-        <button className="rounded-full bg-purple-100 px-4 py-2 text-xs text-purple-700">
+        <button className="rounded-full bg-purple-100 px-4 py-2 text-[10px] text-purple-700">
           View details
         </button>
       );

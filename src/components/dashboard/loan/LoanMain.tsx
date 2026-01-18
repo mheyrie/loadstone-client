@@ -68,11 +68,11 @@ export default function LoanMain() {
   return (
     <div className="bg-white shadow-2xl">
       <motion.div initial={{ x: 20 }} transition={{ duration: 0.1 }} animate={{ x: 0 }}>
-        <div className=" flex items-center justify-between  px-6 py-4">
-          <h3 className=" font-bold text-brand-purple min-w-28">Loans </h3>
+        <div className="flex items-center justify-between px-4 sm:px-6 py-4">
+          <h3 className="font-bold text-brand-purple min-w-20 sm:min-w-28 text-sm sm:text-base">Loans</h3>
           <Button
-            content="Request for Loan "
-            classes="primary-btn btn-md"
+            content="Request for Loan"
+            classes="primary-btn btn-sm sm:btn-md text-xs sm:text-sm"
             onClick={handleRequestLoan}
           />
         </div>

@@ -55,6 +55,8 @@ export default function Transfer() {
         <h3 className="text-xl font-bold text-brand-purple">
           Transfer to Bank
         </h3>
+        //NOTE - wallet balance
+        <div className="bg-brand-purple-light p-4 w-full rounded-md"># 0.00</div>
         <div className="space-y-3">
           <FormFieldSelect
             control={bankTransferForm.control}
