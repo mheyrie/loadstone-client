@@ -22,6 +22,7 @@ import Guarantors from "@/pages/dashboard/Guarantors";
 import FAQ from "@/pages/landing/FAQ";
 import GuarantorDetails from "@/components/dashboard/guarantor/GuarantorDetails";
 import AddGuarantorForm from "@/components/dashboard/guarantor/AddGuarantorForm";
+import NotFound from "@/pages/NotFound";
 
 export default function MainRoutes() {
   AOS.init();
@@ -29,6 +30,7 @@ export default function MainRoutes() {
   return (
     <>
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/products" element={<Products />} />
@@ -59,6 +61,7 @@ export default function MainRoutes() {
           <Route path="wallet" element={<Wallet />} />
 
           <Route path="settings" element={<Settings />} />
+           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
