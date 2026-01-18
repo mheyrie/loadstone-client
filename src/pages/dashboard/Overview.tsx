@@ -4,7 +4,7 @@ import { useState } from "react";
 import Spinner from "@/components/ui/Spinner";
 
 export default function Overview() {
-  const [loading, setLoading] = useState(false);
+  const [loading, ] = useState(false);
   return (
     <>
       {loading ? <Spinner/> : 

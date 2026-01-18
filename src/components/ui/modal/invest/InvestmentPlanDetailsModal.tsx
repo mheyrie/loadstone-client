@@ -1,7 +1,7 @@
 import Modal from "../Modal";
 import Button from "../../Button";
 import BaseDirectories from "@/baseDir/baseDirectories";
-import { mdiMenuDown } from "@mdi/js";
+import { mdiArrowLeft, mdiMenuDown } from "@mdi/js";
 import Icon from "@mdi/react";
 
 interface InvestmentPlan {
@@ -38,6 +38,9 @@ export default function InvestmentPlanDetailsModal({
       maxWidth="4xl"
       useBackgroundImage={false}
     >
+         <span className="flex cursor-pointer items-start text-start" onClick={onClose}>
+              <Icon path={mdiArrowLeft} size={1} className="text-gray-500" /> Back
+            </span>
       <div className="p-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
           Investment Plan Details

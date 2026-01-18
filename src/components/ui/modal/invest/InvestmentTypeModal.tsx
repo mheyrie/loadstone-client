@@ -1,7 +1,7 @@
 import Modal from "../Modal";
 import Button from "../../Button";
 import Icon from "@mdi/react";
-import { mdiMenuDown, mdiFlowerTulipOutline } from "@mdi/js";
+import { mdiMenuDown, mdiFlowerTulipOutline, mdiArrowLeft } from "@mdi/js";
 
 export interface InvestmentPlan {
   type: "basic" | "classic" | "elite" | "diamond";
@@ -85,6 +85,9 @@ export default function InvestmentTypeModal({
       maxWidth="lg"
       useBackgroundImage={false}
     >
+         <span className="flex cursor-pointer items-start text-start" onClick={onClose}>
+              <Icon path={mdiArrowLeft} size={1} className="text-gray-500" /> Back
+            </span>
       <div className="p-6">
         <h4 className="text-2xl text-start font-bold text-gray-900 mb-2">
           Lending Plans
