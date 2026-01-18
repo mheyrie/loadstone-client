@@ -1,15 +1,15 @@
 import Modal from "../Modal";
 import Button from "../../Button";
 import Icon from "@mdi/react";
-import { mdiChartLine,  mdiMenuDown, mdiFlowerTulipOutline } from "@mdi/js";
+import { mdiMenuDown, mdiFlowerTulipOutline } from "@mdi/js";
 
 export interface InvestmentPlan {
   type: "basic" | "classic" | "elite" | "diamond";
-  icon: string;
+
   title: string;
   description: string;
   color: string;
-  icon2: string;
+
   percent: string;
   duration: string;
   priceRange: string;
@@ -31,86 +31,95 @@ export default function InvestmentTypeModal({
   const investmentTypes: InvestmentPlan[] = [
     {
       type: "basic" as const,
-      icon: mdiFlowerTulipOutline,
-      title: "Basic",
-      description: "Invest in company shares with high growth potential",
+      title: "Basic lend Invest",
+      description: "The Basic Lend investment plan ranges between",
       color: "bg-purple-100 text-purple-600",
-      icon2: mdiMenuDown,
-      percent: '8%',
-      duration: '6 months',
-      priceRange: '₦50,000 - ₦500,000',
+      percent: "8%",
+      duration: "6 months",
+      priceRange: "₦50,000 - ₦500,000",
       minAmount: 50000,
       maxAmount: 500000,
     },
     {
       type: "classic" as const,
-      icon: mdiFlowerTulipOutline,
-      title: "Classic",
+
+      title: "Classic lend Invest",
       description: "Fixed income securities with lower risk",
-      color: "bg-blue-100 text-blue-600",
-      icon2: mdiMenuDown,
-      percent: '10%',
-      duration: '12 months',
-      priceRange: '₦100,000 - ₦1,000,000',
+      color: "bg-purple-100 text-purple-600",
+      percent: "10%",
+      duration: "12 months",
+      priceRange: "₦100,000 - ₦1,000,000",
       minAmount: 100000,
       maxAmount: 1000000,
     },
     {
       type: "elite" as const,
-      icon: mdiFlowerTulipOutline,
-      title: "Elite",
+
+      title: "Elite lend Invest",
       description: "Property investment with steady returns",
-      color: "bg-green-100 text-green-600",
-      icon2: mdiMenuDown,
-      percent: '12%',
-      duration: '18 months',
-      priceRange: '₦200,000 - ₦2,000,000',
+      color: "bg-purple-100 text-purple-600",
+      percent: "12%",
+      duration: "18 months",
+      priceRange: "₦200,000 - ₦2,000,000",
       minAmount: 200000,
       maxAmount: 2000000,
     },
     {
       type: "diamond" as const,
-      icon: mdiChartLine,
-      title: "Diamond",
+
+      title: "Diamond lend Invest",
       description: "Diversified portfolio managed by experts",
-      color: "bg-orange-100 text-orange-600",
-      icon2: mdiMenuDown,
-      percent: '15%',
-      duration: '24 months',
-      priceRange: '₦500,000 - ₦5,000,000',
+      color: "bg-purple-100 text-purple-600",
+      percent: "15%",
+      duration: "24 months",
+      priceRange: "₦500,000 - ₦5,000,000",
       minAmount: 500000,
       maxAmount: 5000000,
     },
   ];
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} maxWidth="lg" useBackgroundImage={false}>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      maxWidth="lg"
+      useBackgroundImage={false}
+    >
       <div className="p-6">
         <h4 className="text-2xl text-start font-bold text-gray-900 mb-2">
           Lending Plans
         </h4>
-      
 
         <div className="grid grid-rows-1 gap-4 justify-center items-center">
           {investmentTypes.map((item) => (
             <button
               key={item.type}
               onClick={() => onSelectType(item)}
-              className="flex px-6 border-2  hover:border-gray-200 rounded-lg border-brand-purple hover:shadow-lg transition-all text-left group"
+              className="flex px-6 border-2 justify-center items-center hover:border-gray-200 rounded-lg border-brand-purple hover:shadow-lg transition-all text-left group"
             >
-              <div className={`w-12 h-12 rounded-full ${item.color} flex items-center justify-center mb-4`}>
-                <Icon path={item.icon} size={1.2} />
+              <div
+                className={`w-12 h-12 rounded-2xl mr-2 ${item.color} flex items-center justify-center my-4 border-2`}
+              >
+                <Icon
+                  path={mdiFlowerTulipOutline}
+                  size={1.2}
+                  className="bg-purple-100 text-purple-600"
+                />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2 text-lg group-hover:text-brand-purple transition">
+              <h3 className="font-bold text-brand-purple mb-2 text-md group-hover:text-brand-purple transition">
                 {item.title}
               </h3>
-              <Icon path={item.icon2} size={1} className="ml-auto text-green-400 group-hover:text-brand-purple transition" />
+              <Icon
+                path={mdiMenuDown}
+                size={1}
+                className="ml-auto text-green-400 group-hover:text-brand-purple transition"
+              />
+              <p className="text-green-400 text-sm"> {item.percent}</p>-
+              <p className="text-gray-600 text-sm">{item.duration}</p>
               <div className="ml-4 flex gap-2">
-                <p className="text-gray-600 text-sm"> {item.percent}</p>
-                <p className="text-gray-600 text-sm">{item.duration}</p>
+                {" "}
                 <p className="text-gray-600 text-sm"> {item.priceRange}</p>
               </div>
-              
             </button>
           ))}
         </div>
