@@ -6,13 +6,12 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
 import AllTable from "./AllTable";
-import InvestmentTypeModal from "@/components/ui/modal/invest/InvestmentTypeModal";
-import InvestmentDetailsModal, { type InvestmentFormData } from "@/components/ui/modal/invest/InvestmentDetailsModal";
+import InvestmentTypeModal, { type InvestmentPlan } from "@/components/ui/modal/invest/InvestmentTypeModal";
+import InvestmentPlanDetailsModal from "@/components/ui/modal/invest/InvestmentPlanDetailsModal";
+import InvestmentAmountModal from "@/components/ui/modal/invest/InvestmentAmountModal";
 import InvestmentConfirmationModal from "@/components/ui/modal/invest/InvestmentConfirmationModal";
-import InvestmentSuccessModal from "@/components/ui/modal/invest/InvestmentSuccessModal";
 import InvestmentPaymentModal from "@/components/ui/modal/invest/InvestmentPaymentModal";
-
-type InvestmentType = "basic" | "classic" | "elite" | "diamond";
+import InvestmentSuccessModal from "@/components/ui/modal/invest/InvestmentSuccessModal";
 
 const InvestMainSkeleton = () => (
   <div className="bg-white shadow-2xl">
@@ -39,67 +38,85 @@ const InvestMainSkeleton = () => (
 
 export default function InvestMain() {
   const [isLoading] = useState(false);
+  
+  // Modal states for the new flow
   const [isTypeModalOpen, setIsTypeModalOpen] = useState(false);
-  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+  const [isPlanDetailsModalOpen, setIsPlanDetailsModalOpen] = useState(false);
+  const [isAmountModalOpen, setIsAmountModalOpen] = useState(false);
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
-   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
- 
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
 
   // Investment data
-  const [selectedType, setSelectedType] = useState<InvestmentType | "">("");
-  const [investmentData, setInvestmentData] =
-    useState<InvestmentFormData | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<InvestmentPlan | null>(null);
+  const [investmentAmount, setInvestmentAmount] = useState<number>(0);
 
+  //  Open type selection modal
   const handleInvestNowClick = () => {
     setIsTypeModalOpen(true);
   };
 
-  const handleSelectType = (type: InvestmentType) => {
-    setSelectedType(type);
+  // View Plan Details with Graph
+  const handleSelectType = (plan: InvestmentPlan) => {
+    setSelectedPlan(plan);
     setIsTypeModalOpen(false);
-    setIsDetailsModalOpen(true);
+    setIsPlanDetailsModalOpen(true);
   };
 
-  const handleDetailsNext = (data: InvestmentFormData) => {
-    setInvestmentData(data);
-    setIsDetailsModalOpen(false);
+  // Enter Investment Amount
+  const handleLendClick = () => {
+    setIsPlanDetailsModalOpen(false);
+    setIsAmountModalOpen(true);
+  };
+
+  // Amount entered, go to confirmation
+  const handleAmountSubmit = (amount: number) => {
+    setInvestmentAmount(amount);
+    setIsAmountModalOpen(false);
     setIsConfirmationModalOpen(true);
   };
 
+  // Confirmed, go to payment
   const handleConfirmInvestment = () => {
     setIsConfirmationModalOpen(false);
-    setIsSuccessModalOpen(true);
+    setIsPaymentModalOpen(true);
   };
 
+  //  Payment complete, show success
   const handlePaymentComplete = () => {
     setIsPaymentModalOpen(false);
     setIsSuccessModalOpen(true);
   };
 
+  // Close handlers
   const handleCloseSuccess = () => {
     setIsSuccessModalOpen(false);
     // Reset all data
-    setSelectedType("");
-    setInvestmentData(null);
+    setSelectedPlan(null);
+    setInvestmentAmount(0);
   };
 
   const handleCloseTypeModal = () => {
     setIsTypeModalOpen(false);
-    setSelectedType("");
+    setSelectedPlan(null);
   };
 
-  const handleCloseDetailsModal = () => {
-    setIsDetailsModalOpen(false);
+  const handleClosePlanDetailsModal = () => {
+    setIsPlanDetailsModalOpen(false);
     setIsTypeModalOpen(true);
+  };
+
+  const handleCloseAmountModal = () => {
+    setIsAmountModalOpen(false);
+    setIsPlanDetailsModalOpen(true);
   };
 
   const handleCloseConfirmationModal = () => {
     setIsConfirmationModalOpen(false);
-    setIsDetailsModalOpen(true);
+    setIsAmountModalOpen(true);
   };
 
-   const handleClosePaymentModal = () => {
+  const handleClosePaymentModal = () => {
     setIsPaymentModalOpen(false);
     setIsConfirmationModalOpen(true);
   };
@@ -116,8 +133,8 @@ export default function InvestMain() {
           transition={{ duration: 0.1 }}
           animate={{ x: 0 }}
         >
-          <div className=" flex items-center justify-between  px-6 py-4">
-            <h3 className=" font-bold text-brand-purple min-w-28">Invest </h3>
+          <div className="flex items-center justify-between px-4 sm:px-6 py-4">
+            <h3 className="font-bold text-brand-purple min-w-20 sm:min-w-28 text-sm sm:text-base">Invest</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-6 py-4">
@@ -154,71 +171,61 @@ export default function InvestMain() {
             <SearchInput />
           </div>
           <AllTable />
-          {/* Request Loan Modal */}
-          {/* <Modal
-          isOpen={isAddGuarantorOpen}
-          onClose={() => setIsAddGuarantorOpen(false)}
-          title=""
-          maxWidth="lg"
-          useBackgroundImage={false}
-        >
-          <Form form={form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-              <RequestLoan control={form.control} />
-              <div className="flex gap-3 justify-end mt-6">
-                <Button
-                  content="Cancel"
-                  classes="secondary-btn btn-md"
-                  onClick={() => setIsAddGuarantorOpen(false)}
-                  type="button"
-                />
-                <Button
-                  content="Submit Request"
-                  classes="primary-btn btn-md"
-                  type="submit"
-                />
-              </div>
-            </form>
-          </Form>
-        </Modal> */}
         </motion.div>
       </div>
 
-      {/* Investment Modals - Sequential Flow */}
+      {/* Investment Modals - New Sequential Flow */}
+      {/* Select Investment Type */}
       <InvestmentTypeModal
         isOpen={isTypeModalOpen}
         onClose={handleCloseTypeModal}
         onSelectType={handleSelectType}
       />
 
-      <InvestmentDetailsModal
-        isOpen={isDetailsModalOpen}
-        onClose={handleCloseDetailsModal}
-        onNext={handleDetailsNext}
-        investmentType={selectedType}
+      {/* View Plan Details with Graph */}
+      <InvestmentPlanDetailsModal
+        isOpen={isPlanDetailsModalOpen}
+        onClose={handleClosePlanDetailsModal}
+        onLend={handleLendClick}
+        plan={selectedPlan}
       />
 
+      {/* Enter Investment Amount */}
+      {selectedPlan && (
+        <InvestmentAmountModal
+          isOpen={isAmountModalOpen}
+          onClose={handleCloseAmountModal}
+          onNext={handleAmountSubmit}
+          minAmount={selectedPlan.minAmount}
+          maxAmount={selectedPlan.maxAmount}
+          planTitle={selectedPlan.title}
+        />
+      )}
+
+      {/* Confirm with User ID and Fees */}
       <InvestmentConfirmationModal
         isOpen={isConfirmationModalOpen}
         onClose={handleCloseConfirmationModal}
         onConfirm={handleConfirmInvestment}
-        investmentType={selectedType}
-        investmentData={investmentData}
+        investmentType={selectedPlan?.title || ""}
+        amount={investmentAmount}
       />
 
-       <InvestmentPaymentModal
+      {/* Payment Options & Summary */}
+      <InvestmentPaymentModal
         isOpen={isPaymentModalOpen}
         onClose={handleClosePaymentModal}
         onPaymentComplete={handlePaymentComplete}
-        investmentType={selectedType}
-        investmentData={investmentData}
+        investmentType={selectedPlan?.title || ""}
+        amount={investmentAmount}
       />
 
+      {/* Success */}
       <InvestmentSuccessModal
         isOpen={isSuccessModalOpen}
         onClose={handleCloseSuccess}
-        investmentType={selectedType}
-        amount={investmentData?.amount || "0"}
+        investmentType={selectedPlan?.title}
+        amount={investmentAmount.toString()}
       />
     </>
   );

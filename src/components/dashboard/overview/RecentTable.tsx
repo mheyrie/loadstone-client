@@ -5,7 +5,7 @@ import { formatCurrency } from "../../../lib/utils";
 
 export default function RecentTable() {
   return (
-    <div className="flex flex-col md:w-2xl w-[90%]  space-y-4">
+    <div className="flex flex-col w-full max-w-2xl space-y-4">
       <div className="bg-brand-white p-4 rounded-lg shadow-sm">
         <div className=" flex items-center justify-between mb-4">
           <div className="flex">
@@ -23,7 +23,7 @@ export default function RecentTable() {
         {/* <div className="overflow-x-auto mt-4"></div>*/}
         <div className="space-y-4">
           {recentTransactions.map((tx, id) => (
-            <div key={id} className="flex items-center justify-between">
+            <div key={id} className="flex items-center justify-between gap-2 text-xs sm:text-sm flex-wrap sm:flex-nowrap">
               <div>
                 <p className="text-sm text-gray-500">Today</p>
               </div>

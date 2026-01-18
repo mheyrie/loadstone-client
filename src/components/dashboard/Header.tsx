@@ -10,9 +10,9 @@ export default function Header({
   onClick: () => void;
 }) {
   return (
-    <header className="sticky top-0 z-50 h-24 flex justify-between items-center px-10 pt-12">
+    <header className="sticky top-0 z-50 h-16 sm:h-20 lg:h-24 flex justify-between items-center px-4 sm:px-6 lg:px-10 py-4">
       {/* Mobile hamburger */}
-      <div className="flex lg:hidden w-full items-center justify-between">
+      <div className="flex lg:hidden w-full items-center justify-between gap-4">{" "}
         {" "}
         <button
           onClick={onClick}

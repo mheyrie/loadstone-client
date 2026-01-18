@@ -9,3 +9,15 @@ export type Savings = {
   maturityDate: string;
   status: "active" | "completed" | "pending" | "paused";
 };
+
+
+export type Investment = {
+  id: string;
+  interest:number;
+  amount: number;
+  duration: string;
+  returns: number;
+  startDate: string;
+  maturityDate: string;
+  status: "active" | "matured" | "pending" | "failed";
+};

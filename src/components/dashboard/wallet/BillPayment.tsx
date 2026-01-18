@@ -9,6 +9,7 @@ import Electricity from "./billPayment/Electricity";
 import type { BillPaymentForm, BillType } from "@/types/wallet";
 import Data from "./billPayment/Data";
 import Cable from "./billPayment/Cable";
+import Airtime from "./billPayment/Airtime";
 
 export default function BillPayment() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,13 +28,6 @@ export default function BillPayment() {
       meterNumber: "",
     },
   });
-
-
-
-
-
-
-
 
   const billPaymentCards = [
     {
@@ -77,7 +71,7 @@ export default function BillPayment() {
         return (
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-brand-purple">Buy Airtime</h3>
-         
+            <Airtime />
           </div>
         );
       case "Data":
@@ -88,9 +82,7 @@ export default function BillPayment() {
           </div>
         );
       case "Cable":
-        return (
-       <Cable/>
-        );
+        return <Cable />;
       case "Electricity":
         return (
           <div className="space-y-4">

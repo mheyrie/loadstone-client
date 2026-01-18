@@ -49,10 +49,9 @@ export default function AllTable() {
       {/* Tabs */}
       <div className="px-4 sm:px-6 border-b border-gray-200">
         <div className="flex gap-4">
-          <Tabs>
+          <Tabs value={activeTab === "invest" ? 0 : 1} onChange={(_, value) => setActiveTab(value === 0 ? "invest" : "save")}>
             <Tab
               label="Investments"
-              onClick={() => setActiveTab("invest")}
               className={
                 activeTab === "invest"
                   ? "text-brand-purple border-b-2 border-brand-purple"
@@ -61,7 +60,6 @@ export default function AllTable() {
             />
             <Tab
               label="Savings"
-              onClick={() => setActiveTab("save")}
               className={
                 activeTab === "save"
                   ? "text-brand-purple border-b-2 border-brand-purple"

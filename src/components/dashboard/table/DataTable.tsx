@@ -62,7 +62,7 @@ export function DataTable<T>({ data, columns, pageSize = 10 }: DataTableProps<T>
               table.getRowModel().rows.map(row => (
                 <tr
                   key={row.id}
-                  className="border-t hover:bg-gray-50 transition"
+                  className="border-t hover:bg-gray-50 text-start transition"
                 >
                   {row.getVisibleCells().map(cell => (
                     <td key={cell.id} className="px-6 py-4">
