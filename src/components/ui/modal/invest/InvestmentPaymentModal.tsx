@@ -81,7 +81,7 @@ export default function InvestmentPaymentModal({
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left side - Payment Options */}
+        
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Payment Method</h3>
             <div className="space-y-3 mb-6">
@@ -126,7 +126,7 @@ export default function InvestmentPaymentModal({
             />
           </div>
 
-          {/* Right side - Payment Summary */}
+        
           <div>
             <h3 className="font-semibold text-gray-900 mb-4">Payment Summary</h3>
             <div className="bg-purple-50 rounded-lg p-4">
@@ -163,8 +163,7 @@ export default function InvestmentPaymentModal({
                 </div>
               </div>
             </div>
-
-            {/* Additional Info */}
+\
             <div className="mt-4 bg-gray-50 rounded-lg p-4">
               <h4 className="font-semibold text-gray-900 mb-2 text-sm">Payment Information</h4>
               <ul className="space-y-2 text-xs text-gray-600">
@@ -185,7 +184,6 @@ export default function InvestmentPaymentModal({
           </div>
         </div>
 
-        {/* Processing Indicator */}
         {isProcessing && (
           <div className="mt-4 p-3 bg-purple-50 rounded-lg">
             <div className="flex items-center gap-3">

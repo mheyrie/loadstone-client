@@ -38,7 +38,6 @@ export default function InvestmentConfirmationModal({
           Please review your investment details before confirming
         </p>
 
-        {/* Investment Summary */}
         <div className="bg-purple-50 rounded-lg p-4 mb-6">
           <h3 className="font-bold text-gray-900 mb-4">Investment Summary</h3>
           <div className="space-y-3">
@@ -77,7 +76,7 @@ export default function InvestmentConfirmationModal({
           </div>
         </div>
 
-        {/* Terms */}
+
         <div className="bg-gray-50 rounded-lg p-4 mb-6">
           <p className="text-sm text-gray-600">
             By confirming this investment, you agree to our terms and conditions. 
@@ -85,7 +84,7 @@ export default function InvestmentConfirmationModal({
           </p>
         </div>
 
-        {/* Action Buttons */}
+      
         <div className="flex gap-4">
           <Button
             content="Back"
