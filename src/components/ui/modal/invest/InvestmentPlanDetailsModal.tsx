@@ -65,7 +65,7 @@ export default function InvestmentPlanDetailsModal({
             </div>
             <div className="flex">
               Tenor returns{" "}
-              <span className="bg-green-200 h-4 w-8 rounded-full ml-2">
+              <span className="bg-green-200 flex rounded-2xl px-4 ml-2">
                 {" "}
                 <span className="">
                   <Icon
@@ -77,12 +77,12 @@ export default function InvestmentPlanDetailsModal({
                 <span> {plan.percent}</span>
               </span>
             </div>
-            <div className="bg-purple-50 rounded-lg p-4 space-y-3">
+            <div className="bg-purple-50 rounded-lg p-4 space-y-3 text-start max-w-lg">
               <span className="text-gray-600 font-medium">
                 Duration:{plan.duration}
               </span>
             </div>
-            <div className="bg-purple-50 rounded-lg p-4 space-y-3">
+            <div className="bg-purple-50 rounded-lg p-4 space-y-3 text-start">
               <span className="text-brand-purple font-medium">
                 Amount:{plan.priceRange}
               </span>
