@@ -9,7 +9,7 @@ export default function WhatWeDo() {
         <div className="text-md text-brand-purple flex justify-center items-center font-bold mb-4">
           {" "}
           <Icon path={mdiCircleSmall} size={3} className="" />{" "}
-          <span className="uppercase -ml-4">What We Do</span>{" "}
+          <span className="uppercase -ml-4">What We Do</span>
         </div>
         <h2 className="text-6xl font-bold mb-8 md:mx-2 mx-4">
           Transforming Business for MSMEs
