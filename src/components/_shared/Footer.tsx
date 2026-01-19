@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="relative">
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                 <img
-                  src={`${BaseDirectories.ICONS_DIR}/Mail.png`}
+                  src={`${BaseDirectories.LOGOS_DIR}/brand.png`}
                   alt="Mail icon"
                 />
               </span>

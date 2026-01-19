@@ -11,7 +11,7 @@ export default function WhatWeDo() {
           <Icon path={mdiCircleSmall} size={3} className="" />{" "}
           <span className="uppercase -ml-4">What We Do</span>{" "}
         </div>
-        <h2 className="text-6xl font-bold mb-8 mx-2">
+        <h2 className="text-6xl font-bold mb-8 md:mx-2 mx-4">
           Transforming Business for MSMEs
         </h2>
       </div>
@@ -20,7 +20,7 @@ export default function WhatWeDo() {
           <p className="max-w-lg text-start font-medium leading-10 text-2xl ">
             We make access to B2B financing simple and easy. No collaterals or
             long forms.
-          </p>{" "}
+          </p>
           <div className="flex justify-center items-center gap-4">
             <div className="before:content-[''] before:block before:w-2 before:h-32 before:bg-brand-purple before:mx-auto before:my-4" />
             <div className="text-start">
