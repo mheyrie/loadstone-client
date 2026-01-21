@@ -15,7 +15,7 @@ type FormFieldTextProps<T extends FieldValues> = {
   name: Path<T>;
   label: string;
   placeholder?: string;
-  type?: "text" | "email" | "password" ;
+  type?: "text" | "email" | "password" | "date";
   className?: string;
   required?: boolean | string;
 };
