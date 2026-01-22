@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="relative">
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                 <img
-                  src={`${BaseDirectories.LOGOS_DIR}/brand.png`}
+                  src={`${BaseDirectories.ICONS_DIR}/Mail.png`}
                   alt="Mail icon"
                 />
               </span>
@@ -53,9 +53,9 @@ export default function Footer() {
             <div className="w-1/5 min-w-[200px]">
               <div className="mb-4 mx-6">
                 <img
-                  src={`${BaseDirectories.ICONS_DIR}/loadstone.png`}
+                  src={`${BaseDirectories.ICONS_DIR}/brand.png`}
                   alt="Loadstone Logo"
-                  className="h-12 w-auto"
+                  className=" size-40"
                 />
               </div>
               <div className="lg:w-[225px] lg:h-[110px] mx-4  fw-500 text-start lg:pt-[55px]">
