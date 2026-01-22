@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import EditableField from "@/components/ui/EditableField";
 import { Form } from "@/components/ui/form";
@@ -109,9 +110,15 @@ export default function NextOfKinSection() {
   };
 
   return (
-    <Form form={form}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="max-w-5xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Form form={form}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             {fields.map((field) => (
               <EditableField
@@ -170,8 +177,9 @@ export default function NextOfKinSection() {
               </>
             )}
           </div>
-        </div>
-      </form>
-    </Form>
+          </div>
+        </form>
+      </Form>
+    </motion.div>
   );
 }

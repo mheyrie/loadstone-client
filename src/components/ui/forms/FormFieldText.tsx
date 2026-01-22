@@ -40,8 +40,8 @@ export function FormFieldText<T extends FieldValues>({
             : required || false,
       }}
       render={({ field }) => (
-        <FormItem className={`${className} text-start text-brand-white `}>
-          <FormLabel >{label}</FormLabel>
+        <FormItem className={`${className} text-start text-gray-700 `}>
+          <FormLabel className="text-start">{label}</FormLabel>
 
           <FormControl>
             <Input type={type} placeholder={placeholder} {...field} />

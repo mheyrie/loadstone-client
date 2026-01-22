@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Icon from "@mdi/react";
 import { mdiBell } from "@mdi/js";
 import Button from "@/components/ui/Button";
@@ -30,7 +31,13 @@ export default function NotificationSection() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 sm:px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+      className="max-w-2xl mx-auto px-4 sm:px-6"
+    >
       {/* Notification Icon and Title */}
       <div className="flex flex-col items-center mb-8">
         <div className="w-24 h-24 rounded-full bg-brand-purple flex items-center justify-center mb-4">
@@ -105,6 +112,6 @@ export default function NotificationSection() {
           onClick={handleSave}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }

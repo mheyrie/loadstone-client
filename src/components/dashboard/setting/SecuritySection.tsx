@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 import Icon from "@mdi/react";
 import { mdiShieldLock, mdiCheck } from "@mdi/js";
 import Button from "@/components/ui/Button";
@@ -39,9 +40,15 @@ export default function SecuritySection() {
   };
 
   return (
-    <Form form={form}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Form form={form}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="max-w-2xl mx-auto px-4 sm:px-6">
           {/* Security Icon and Title */}
           <div className="flex flex-col items-center mb-8">
             <div className="relative mb-4">
@@ -99,8 +106,9 @@ export default function SecuritySection() {
               classes="primary-btn btn-md px-8"
             />
           </div>
-        </div>
-      </form>
-    </Form>
+          </div>
+        </form>
+      </Form>
+    </motion.div>
   );
 }
