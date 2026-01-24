@@ -3,8 +3,17 @@ import StatCard from "../StatCard";
 import RecentTable from "./RecentTable";
 import Services from "./Services";
 import Button from "@/components/ui/Button";
+import { useState } from "react";
+import Modal from "@/components/ui/modal/Modal";
+import WalletDetailsModal from "@/components/ui/modal/wallet/WalletDetailsModal";
 
 export default function Main() {
+  const [isWalletDetailsModalOpen, setIsWalletDetailsModalOpen] = useState(false);
+
+  const openWalletDetailsModal = () => {
+    setIsWalletDetailsModalOpen(true);
+  };
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-4">
@@ -15,7 +24,7 @@ export default function Main() {
           title2="LOANSTONE"
           value2="01234567890"
           icon2={mdiContentCopy}
-          action={<Button content="Fund Wallet" classes="primary-btn btn-md" />}
+          action={<Button content="Fund Wallet" classes="primary-btn btn-md" onClick={openWalletDetailsModal} />}
           variant="one"
         />
 
@@ -43,6 +52,14 @@ export default function Main() {
         <Services />
       </div>
       <RecentTable />
+      <Modal
+        isOpen={isWalletDetailsModalOpen}
+        onClose={() => setIsWalletDetailsModalOpen(false)}
+        title="Wallet Details"
+        maxWidth="lg"
+      >
+        <WalletDetailsModal />
+      </Modal>
     </>
   );
 }
