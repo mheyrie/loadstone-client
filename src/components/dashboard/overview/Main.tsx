@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import { useState } from "react";
 import Modal from "@/components/ui/modal/Modal";
 import WalletDetailsModal from "@/components/ui/modal/wallet/WalletDetailsModal";
+import { Link } from "react-router-dom";
 
 export default function Main() {
   const [isWalletDetailsModalOpen, setIsWalletDetailsModalOpen] = useState(false);
@@ -24,21 +25,27 @@ export default function Main() {
           title2="LOANSTONE"
           value2="01234567890"
           icon2={mdiContentCopy}
-          action={<Button content="Fund Wallet" classes="primary-btn btn-md" onClick={openWalletDetailsModal} />}
+          action={
+            <Button
+              content="Fund Wallet"
+              classes="primary-btn btn-md"
+              onClick={openWalletDetailsModal}
+            />
+          }
           variant="one"
         />
 
         <StatCard
           title="Loans"
           value="₦0.00"
-          action={<span className="text-sm underline">View all</span>}
+          action={<Link to="/dashboard/loans" className="text-sm underline">View all</Link>}
           variant="two"
         />
 
         <StatCard
           title="Investment"
           value="₦0.00"
-          action={<span className="text-sm underline">View all</span>}
+          action={<Link to="/dashboard/invest" className="text-sm underline">View all</Link>}
           variant="three"
         />
       </div>
@@ -56,7 +63,8 @@ export default function Main() {
         isOpen={isWalletDetailsModalOpen}
         onClose={() => setIsWalletDetailsModalOpen(false)}
         title="Wallet Details"
-        maxWidth="lg"
+        maxWidth="md"
+        useBackgroundImage={false}
       >
         <WalletDetailsModal />
       </Modal>

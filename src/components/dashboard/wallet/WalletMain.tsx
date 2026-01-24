@@ -33,7 +33,11 @@ export default function WalletMain() {
               icon={mdiWallet}
               value="₦5,000,000.00"
               action={
-                <Button content="Wallet Details" classes="primary-btn btn-md" onClick={openWalletDetailsModal} />
+                <Button
+                  content="Wallet Details"
+                  classes="primary-btn btn-md"
+                  onClick={openWalletDetailsModal}
+                />
               }
               variant="one"
             />
@@ -52,8 +56,9 @@ export default function WalletMain() {
       <Modal
         isOpen={isWalletDetailsModalOpen}
         onClose={() => setIsWalletDetailsModalOpen(false)}
-        title="Wallet Details"
-        maxWidth="lg"
+        // title="Wallet Details"
+        maxWidth="md"
+        useBackgroundImage={false}
       >
         <WalletDetailsModal />
       </Modal>
