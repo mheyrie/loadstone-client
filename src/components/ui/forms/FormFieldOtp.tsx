@@ -54,7 +54,7 @@ export function FormFieldOTP<T extends FieldValues>({
                     {...props}
                     type={inputType}
                     placeholder={placeholder || "*"}
-                    className="w-14 h-14 rounded-md border border-purple-200 text-center text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple bg-white text-gray-900 focus:border-transparent transition"
+                    className="w-10! h-10 rounded-md border border-purple-200 text-center text-2xl font-semibold focus:outline-none focus:ring-2 focus:ring-brand-purple bg-white text-gray-900 focus:border-transparent transition"
                   />
                 )}
                 containerStyle={containerStyle || "flex justify-center gap-4"}
