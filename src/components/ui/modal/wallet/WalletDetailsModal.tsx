@@ -42,13 +42,35 @@ export default function WalletDetailsModal() {
           <p className="text-sm text-white">₦10,000,000.00</p>
         </div>
       </div>
-      <div className="flex flex-col">
-        <div className="flex justify-baseline">
+      <div className="flex flex-col opacity-50 w-full">
+        <div className="flex justify-between items-center">
           <h5 className="">Tier 2</h5>
           <Button content="Upgrade Account" classes="primary-btn btn-md" />
         </div>
+        <div className="flex justify-between items-center">
+          <h5 className="">Transaction daily Limit</h5>
+          <p className="text-sm ">₦10,000,000.00</p>
+        </div>
+        <div className="flex justify-between items-center">
+          <h5 className="">Transaction Single Limit</h5>
+          <p className="text-sm ">₦10,000,000.00</p>
+        </div>
       </div>
-      <div className=""></div>
+      <hr className="w-full border-gray-200" />
+      <div className="flex flex-col opacity-50 w-full">
+        <div className="flex justify-between items-center">
+          <h5 className="">Tier 3</h5>
+          <Button content="Upgrade Account" classes="primary-btn btn-md" />
+        </div>
+        <div className="flex justify-between items-center">
+          <h5 className="">Transaction daily Limit</h5>
+          <p className="text-sm ">₦10,000,000.00</p>
+        </div>
+        <div className="flex justify-between items-center">
+          <h5 className="">Transaction Single Limit</h5>
+          <p className="text-sm ">₦10,000,000.00</p>
+        </div>
+      </div>
     </div>
   );
 }
