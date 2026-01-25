@@ -21,8 +21,9 @@ export default function SecuritySection() {
     },
   });
 
-  const { control, handleSubmit, watch, setError } = form;
-  const newPassword = watch("newPassword");
+  // const { control, handleSubmit, watch, setError } = form;
+  const { control, handleSubmit, setError } = form;
+  // const newPassword = watch("newPassword");
 
   const onSubmit = (data: SecurityFormData) => {
     // Validate that new password and confirm password match
