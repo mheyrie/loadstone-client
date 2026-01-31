@@ -44,8 +44,9 @@ const mockTransactions: WalletTransaction[] = [
 export default function WalletTable() {
   return (
     <div className="py-4 text-start">
-   
+
       <DataTable data={mockTransactions} columns={walletColumns} pageSize={10} />
     </div>
   );
 }
+//comment 
